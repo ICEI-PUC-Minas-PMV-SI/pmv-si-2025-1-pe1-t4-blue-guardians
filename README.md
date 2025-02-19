@@ -1,4 +1,4 @@
-# Aqua Sentinel
+# Salve o Mar
 
 `CURSO: Sistemas de Informação`
 
