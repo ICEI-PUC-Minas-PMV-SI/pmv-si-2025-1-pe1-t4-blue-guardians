@@ -12,6 +12,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 * Claire Hausman de Morais
 * Elisangela Maria da Silva
+* Gabriel Souza Batista
 * Gabriela Leite de Andrade
 * Pedro Manuel Rodrigues Lima de Moura
 * Wesley Azevedo Gomes
