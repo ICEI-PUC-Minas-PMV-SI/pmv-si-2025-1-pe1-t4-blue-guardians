@@ -6,9 +6,7 @@
 
 `SEMESTRE: 1º`
 
-O projeto em desenvolvimento tem como foco a proteção e conservação dos ecossistemas marinhos, visando combater as principais ameaças à biodiversidade oceânica, como a poluição, a pesca predatória, as mudanças climáticas e a degradação de habitats. A iniciativa busca implementar soluções sustentáveis, como a criação de áreas marinhas protegidas, a promoção de práticas de pesca responsável e a redução de plásticos e outros poluentes nos oceanos. Além disso, o projeto inclui ações de monitoramento e pesquisa científica para entender melhor os ecossistemas marinhos e desenvolver estratégias eficazes de preservação. 
-
-A conscientização pública e o engajamento das comunidades costeiras também são pilares fundamentais, com o objetivo de promover a educação ambiental e a participação ativa na proteção dos mares
+O projeto em desenvolvimento tem como foco a proteção e conservação dos ecossistemas marinhos, visando combater as principais ameaças à biodiversidade oceânica, como a poluição, a pesca predatória, as mudanças climáticas e a degradação de habitats. A iniciativa busca implementar soluções sustentáveis, como a criação de áreas marinhas protegidas, a promoção de práticas de pesca responsável e a redução de plásticos e outros poluentes nos oceanos. Além disso, o projeto inclui ações de monitoramento e pesquisa científica para entender melhor os ecossistemas marinhos e desenvolver estratégias eficazes de preservação. A conscientização pública e o engajamento das comunidades costeiras também são pilares fundamentais, com o objetivo de promover a educação ambiental e a participação ativa na proteção dos mares
 
 ## Integrantes
 
