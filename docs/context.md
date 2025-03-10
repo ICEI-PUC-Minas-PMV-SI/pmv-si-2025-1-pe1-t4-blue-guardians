@@ -1,12 +1,8 @@
-# Introdução
+## Introdução
 
-Imagine que você deseja apresentar este projeto para investidores que deverão decidir se investem ou não no desenvolvimento da sua ferramenta.
+Os oceanos são essenciais para a vida no planeta, regulando o clima, fornecendo alimento e sustentando ecossistemas complexos. No entanto, esses ecossistemas estão sob ameaça constante devido às atividades humanas. A poluição marinha, causada por plásticos, redes de pesca abandonadas, esgoto não tratado e resíduos têxteis, tem impactado drasticamente a biodiversidade e a saúde dos oceanos. No Brasil, por exemplo, estima-se que 25 milhões de animais marinhos são afetados anualmente apenas pela "pesca fantasma", prática em que redes de pesca abandonadas continuam capturando animais indefesos. Além disso, o plástico descartado incorretamente chega aos oceanos, onde é ingerido por espécies marinhas, causando ferimentos, mutilações e até a morte. Um exemplo emblemático foi a baleia encontrada morta com 40 kg de sacolas plásticas no estômago. Esses problemas não se limitam aos animais: microplásticos já foram detectados no cérebro humano, evidenciando a gravidade da contaminação e sua conexão direta com a saúde humana.
 
-A **Introdução** consiste das etapas: *Contextualização -- Definição do problema -- Definição dos Objetivos -- Justificativa*, e tem como função situar o seu trabalho dentro de um contexto de mercado e mostrar a importância da sua proposta para resolver a dor de um usuário.
-
-A Contextualização deve situar sem projeto em um determinado contexto de mercado, a fim de fornecer informações adicionais que possam ajudar a entender melhor o assunto que você irá abordar. Serve também para definir a relevância do seu assunto, uma vez que mostra o tamanho do mercado em que se está inserido. Ela pode envolver a análise de vários aspectos, como o ambiente histórico, cultural, político e social em que o problema a ser atacado surgiu.
-
-Escreva de 2 a 3 parágrafos para contetualizar o seu projeto.
+A motivação para este projeto surge da necessidade urgente de combater a poluição marinha, que afeta não apenas os ecossistemas, mas também a saúde humana e a economia global. Além disso, a falta de saneamento básico em muitas regiões resulta no despejo de esgoto no mar, agravando a contaminação da água e afetando comunidades costeiras. A criação de uma ferramenta tecnológica que auxilie na identificação e mitigação desses problemas é justificada pela crescente demanda por soluções inovadoras no mercado de conservação ambiental. Aplicativos como o **Ima Denuncie** já demonstraram o potencial da tecnologia para facilitar a fiscalização e a participação cidadã na proteção do meio ambiente. Portanto, este projeto não apenas contribui para a preservação dos oceanos, mas também promove a conscientização e a adoção de práticas mais sustentáveis, alinhando-se às necessidades do mercado e às expectativas da sociedade.
 
 ## Problema
 
