@@ -23,9 +23,9 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Nosso projeto tem como foco a preservação dos oceanos e a conscientização sobre os impactos da poluição marinha. Buscamos entender como a degradação dos mares afeta não apenas a fauna e a flora marinhas, mas também as comunidades que dependem desses ecossistemas para sua subsistência.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+Sendo assim, buscaremos desenvolver um software capaz de auxiliar na identificação e na mitigação dos impactos ambientais causados pela poluição.
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
