@@ -23,9 +23,13 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-Nosso projeto tem como foco a preservação dos oceanos e a conscientização sobre os impactos da poluição marinha. Buscamos entender como a degradação dos mares afeta não apenas a fauna e a flora marinhas, mas também as comunidades que dependem desses ecossistemas para sua subsistência.
+Nosso projeto tem como foco a preservação dos oceanos e a conscientização sobre os impactos da poluição marinha. 
 
-Sendo assim, buscaremos desenvolver um software capaz de auxiliar na identificação e na mitigação dos impactos ambientais causados pela poluição.
+Buscamos entender como a degradação dos mares afeta não apenas a fauna e a flora marinhas, mas também as comunidades que dependem desses ecossistemas para sua subsistência.  
+
+Através de pesquisas e análises, queremos identificar soluções sustentáveis para reduzir a contaminação dos oceanos, promover práticas mais responsáveis e minimizar os danos já causados.
+
+Sendo assim, buscaremos desenvolver um software capaz de auxiliar na identificação e na mitigação dos impactos ambientais causados pela poluição.
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
