@@ -41,44 +41,104 @@ O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estat�
 
 O público-alvo da aplicação é composto por diferentes perfis de indivíduos que têm envolvimento direto ou indireto com a preservação ambiental da costa de Camaçari e Itacimirim, seja por meio do turismo, atividades econômicas locais ou da defesa ativa do meio ambiente. Esses usuários apresentam variados níveis de conhecimento sobre tecnologia e engajamento ambiental, mas compartilham preocupações comuns sobre os impactos ambientais na região.
 
-Perfis de Usuários
-Ambientalistas e Pesquisadores
+## **Perfis de Usuários**
 
-Perfil: Profissionais como oceanógrafos e membros de projetos ambientais (ex.: Projeto Tamar).
-Conhecimento Tecnológico: Moderado a avançado, dependendo do uso de ferramentas científicas e plataformas ambientais.
-Relação com a Tecnologia: Utilizam tecnologia para pesquisa, monitoramento e divulgação de dados ambientais.
-Necessidades: Acesso a dados sobre impacto ambiental, relatórios interativos e ferramentas para conscientização.
-Motivação: Preservação da biodiversidade e implementação de políticas ambientais eficazes.
-Educadores e Instrutores de Esportes
+### **1. Ambientalistas e Pesquisadores**
+- **Perfil**: Profissionais como oceanógrafos e membros de projetos ambientais (ex.: Projeto Tamar).  
+- **Conhecimento Tecnológico**: Moderado a avançado.  
+- **Relação com a Tecnologia**: Utilizam tecnologia para pesquisa, monitoramento e divulgação de dados ambientais.  
+- **Necessidades**: Acesso a dados sobre impacto ambiental, relatórios interativos e ferramentas para conscientização.  
+- **Motivação**: Preservação da biodiversidade e implementação de políticas ambientais eficazes.
 
-Perfil: Professores de surf, guias turísticos, instrutores de mergulho e outros profissionais ligados ao ecoturismo.
-Conhecimento Tecnológico: Variável, indo do básico ao intermediário.
-Relação com a Tecnologia: Utilizam redes sociais, aplicativos de monitoramento e plataformas educacionais.
-Necessidades: Recursos para conscientização ambiental, informações sobre preservação e impacto ambiental.
-Motivação: Manter a qualidade ambiental para práticas esportivas e turismo sustentável.
-Comunidade Local e Pescadores
+### **2. Educadores e Instrutores de Esportes**
+- **Perfil**: Professores de surf, guias turísticos, instrutores de mergulho e outros profissionais ligados ao ecoturismo.  
+- **Conhecimento Tecnológico**: Variável, do básico ao intermediário.  
+- **Relação com a Tecnologia**: Usam redes sociais, aplicativos de monitoramento e plataformas educacionais.  
+- **Necessidades**: Recursos para conscientização ambiental e informações sobre preservação.  
+- **Motivação**: Manter a qualidade ambiental para práticas esportivas e turismo sustentável.  
 
-Perfil: Moradores da região que dependem da pesca ou do turismo como fonte de renda.
-Conhecimento Tecnológico: Básico, com acesso a redes sociais e comunicação digital.
-Relação com a Tecnologia: Usam smartphones para comunicação e informações básicas.
-Necessidades: Educação ambiental acessível, mapas interativos sobre áreas protegidas e canais diretos de denúncia ambiental.
-Motivação: Proteção dos recursos naturais para garantir sua subsistência.
-Turistas e Visitantes
+### **3. Comunidade Local e Pescadores**
+- **Perfil**: Moradores da região que dependem da pesca ou do turismo como fonte de renda.  
+- **Conhecimento Tecnológico**: Básico.  
+- **Relação com a Tecnologia**: Acesso a redes sociais e comunicação digital.  
+- **Necessidades**: Educação ambiental acessível, mapas interativos sobre áreas protegidas e canais diretos de denúncia ambiental.  
+- **Motivação**: Proteção dos recursos naturais para garantir sua subsistência.  
 
-Perfil: Pessoas que frequentam as praias da região, incluindo surfistas e banhistas.
-Conhecimento Tecnológico: Variado, podendo incluir o uso de redes sociais e aplicativos de viagem.
-Relação com a Tecnologia: Consomem informações digitais, principalmente via redes sociais e aplicativos de turismo.
-Necessidades: Informações sobre boas práticas ambientais, mapas interativos e campanhas de conscientização.
-Motivação: Garantia de um ambiente preservado para lazer e turismo sustentável.
-Empreendedores e Comerciantes Locais
+### **4. Turistas e Visitantes**
+- **Perfil**: Pessoas que frequentam as praias da região, incluindo surfistas e banhistas.  
+- **Conhecimento Tecnológico**: Variado.  
+- **Relação com a Tecnologia**: Consomem informações digitais, principalmente via redes sociais e aplicativos de viagem.  
+- **Necessidades**: Informações sobre boas práticas ambientais, mapas interativos e campanhas de conscientização.  
+- **Motivação**: Garantia de um ambiente preservado para lazer e turismo sustentável.  
 
-Perfil: Proprietários de barracas de praia, vendedores ambulantes e gestores de pousadas e restaurantes.
-Conhecimento Tecnológico: Básico a intermediário, dependendo do perfil do negócio.
-Relação com a Tecnologia: Utilizam redes sociais para divulgar seus serviços e informações de mercado.
-Necessidades: Boas práticas para destinação do lixo, incentivos para adoção de medidas sustentáveis e impacto ambiental do turismo.
-Motivação: Manter a atratividade do turismo na região e evitar impactos negativos nos negócios.
+### **5. Empreendedores e Comerciantes Locais**
+- **Perfil**: Proprietários de barracas de praia, vendedores ambulantes e gestores de pousadas e restaurantes.  
+- **Conhecimento Tecnológico**: Básico a intermediário.  
+- **Relação com a Tecnologia**: Utilizam redes sociais para divulgar seus serviços e informações de mercado.  
+- **Necessidades**: Boas práticas para destinação do lixo, incentivos para adoção de medidas sustentáveis e impacto ambiental do turismo.  
+- **Motivação**: Manter a atratividade do turismo na região e evitar impactos negativos nos negócios.  
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+---
+
+## **Personas**
+A seguir, algumas personas representando os diferentes perfis identificados:
+
+### **1. Ana, a Oceanógrafa Consciente**  
+- **Idade**: 35 anos  
+- **Profissão**: Oceanógrafa e pesquisadora ambiental  
+- **Objetivo**: Monitorar e reduzir impactos ambientais na região  
+- **Desafios**: Falta de fiscalização, desorganização no crescimento urbano  
+- **Necessidades**: Dados confiáveis e ferramentas para engajamento da população  
+
+### **2. Carlos, o Professor de Surf**  
+- **Idade**: 28 anos  
+- **Profissão**: Instrutor de surf e ambientalista voluntário  
+- **Objetivo**: Ensinar o esporte enquanto promove a preservação da praia  
+- **Desafios**: Alto volume de lixo na praia e falta de conscientização  
+- **Necessidades**: Materiais de educação ambiental para alunos e turistas  
+
+### **3. João, o Pescador Local**  
+- **Idade**: 50 anos  
+- **Profissão**: Pescador tradicional  
+- **Objetivo**: Preservar os recursos naturais para sustento próprio e das futuras gerações  
+- **Desafios**: Poluição marinha e pesca prejudicada  
+- **Necessidades**: Acesso a informações sobre regulamentações ambientais e impacto da poluição  
+
+### **4. Mariana, a Turista Consciente**  
+- **Idade**: 32 anos  
+- **Profissão**: Advogada e viajante sustentável  
+- **Objetivo**: Curtir a praia sem prejudicar o meio ambiente  
+- **Desafios**: Falta de informação clara sobre boas práticas ambientais  
+- **Necessidades**: Conteúdo acessível sobre turismo sustentável e opções de participação em ações ecológicas  
+
+### **5. Pedro, o Comerciante da Praia**  
+- **Idade**: 40 anos  
+- **Profissão**: Dono de barraca de praia  
+- **Objetivo**: Manter o turismo sustentável para garantir renda  
+- **Desafios**: Gestão de resíduos e impacto ambiental das atividades comerciais  
+- **Necessidades**: Incentivos para práticas ecológicas e alternativas para descarte de lixo  
+
+---
+
+## **Mapa de Stakeholders**
+O seguinte mapeamento ilustra os principais grupos que interagem no ecossistema da aplicação e suas relações:
+
+### **📌 Alto Impacto & Alta Influência**
+- Ambientalistas e projetos de conservação (ex.: Projeto Tamar)  
+- Pescadores e comunidade local  
+- Educadores e instrutores esportivos  
+
+### **📌 Alto Impacto & Baixa Influência**
+- Turistas e visitantes  
+- Comerciantes e empresários locais  
+
+### **📌 Baixo Impacto & Alta Influência**
+- Governos locais e órgãos ambientais (responsáveis pela fiscalização)  
+
+### **📌 Baixo Impacto & Baixa Influência**
+- População geral que visita esporadicamente a região  
+
+---
 
 > **Links Úteis**:
 > - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
