@@ -39,7 +39,44 @@ O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estat�
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+O público-alvo da aplicação é composto por diferentes perfis de indivíduos que têm envolvimento direto ou indireto com a preservação ambiental da costa de Camaçari e Itacimirim, seja por meio do turismo, atividades econômicas locais ou da defesa ativa do meio ambiente. Esses usuários apresentam variados níveis de conhecimento sobre tecnologia e engajamento ambiental, mas compartilham preocupações comuns sobre os impactos ambientais na região.
+
+Perfis de Usuários
+Ambientalistas e Pesquisadores
+
+Perfil: Profissionais como oceanógrafos e membros de projetos ambientais (ex.: Projeto Tamar).
+Conhecimento Tecnológico: Moderado a avançado, dependendo do uso de ferramentas científicas e plataformas ambientais.
+Relação com a Tecnologia: Utilizam tecnologia para pesquisa, monitoramento e divulgação de dados ambientais.
+Necessidades: Acesso a dados sobre impacto ambiental, relatórios interativos e ferramentas para conscientização.
+Motivação: Preservação da biodiversidade e implementação de políticas ambientais eficazes.
+Educadores e Instrutores de Esportes
+
+Perfil: Professores de surf, guias turísticos, instrutores de mergulho e outros profissionais ligados ao ecoturismo.
+Conhecimento Tecnológico: Variável, indo do básico ao intermediário.
+Relação com a Tecnologia: Utilizam redes sociais, aplicativos de monitoramento e plataformas educacionais.
+Necessidades: Recursos para conscientização ambiental, informações sobre preservação e impacto ambiental.
+Motivação: Manter a qualidade ambiental para práticas esportivas e turismo sustentável.
+Comunidade Local e Pescadores
+
+Perfil: Moradores da região que dependem da pesca ou do turismo como fonte de renda.
+Conhecimento Tecnológico: Básico, com acesso a redes sociais e comunicação digital.
+Relação com a Tecnologia: Usam smartphones para comunicação e informações básicas.
+Necessidades: Educação ambiental acessível, mapas interativos sobre áreas protegidas e canais diretos de denúncia ambiental.
+Motivação: Proteção dos recursos naturais para garantir sua subsistência.
+Turistas e Visitantes
+
+Perfil: Pessoas que frequentam as praias da região, incluindo surfistas e banhistas.
+Conhecimento Tecnológico: Variado, podendo incluir o uso de redes sociais e aplicativos de viagem.
+Relação com a Tecnologia: Consomem informações digitais, principalmente via redes sociais e aplicativos de turismo.
+Necessidades: Informações sobre boas práticas ambientais, mapas interativos e campanhas de conscientização.
+Motivação: Garantia de um ambiente preservado para lazer e turismo sustentável.
+Empreendedores e Comerciantes Locais
+
+Perfil: Proprietários de barracas de praia, vendedores ambulantes e gestores de pousadas e restaurantes.
+Conhecimento Tecnológico: Básico a intermediário, dependendo do perfil do negócio.
+Relação com a Tecnologia: Utilizam redes sociais para divulgar seus serviços e informações de mercado.
+Necessidades: Boas práticas para destinação do lixo, incentivos para adoção de medidas sustentáveis e impacto ambiental do turismo.
+Motivação: Manter a atratividade do turismo na região e evitar impactos negativos nos negócios.
 
 Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
 
