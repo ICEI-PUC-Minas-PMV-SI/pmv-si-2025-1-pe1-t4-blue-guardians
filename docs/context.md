@@ -10,7 +10,7 @@ O problema que esta pesquisa busca resolver é: como garantir a proteção dos e
 
 Os oceanos, que cobrem mais de 70% da superfície do planeta, desempenham um papel essencial na regulação do clima, na produção de oxigênio e na manutenção da biodiversidade global. No entanto, esses ecossistemas enfrentam sérias ameaças. De acordo com o relatório O Estado Mundial da Pesca e Aquicultura (SOFIA), divulgado em 2020 pela FAO, 34,2% dos estoques pesqueiros mundiais estão sendo explorados além de seus limites sustentáveis. Além disso, o relatório Planeta Vivo Azul, publicado pela WWF em 2015, revela um declínio alarmante de 49% nas populações marinhas entre 1970 e 2012. Esses dados destacam a urgência de adotar medidas eficazes para proteger e recuperar os ecossistemas marinhos, garantindo sua saúde e sustentabilidade para as gerações presentes e futuras.
 
- A solução proposta consiste no desenvolvimento de uma aplicação web cujas funcionalidades serão projetadas para resolver ou, ao menos, amenizar o problema descrito. Essa plataforma terá como objetivo principal oferecer ferramentas e recursos que contribuam diretamente para a mitigação dos desafios apresentados, promovendo ações eficazes e a conscientização dos usuários.
+A solução proposta consiste no desenvolvimento de uma aplicação web cujas funcionalidades serão projetadas para resolver ou, ao menos, amenizar o problema descrito. Essa plataforma terá como objetivo principal oferecer ferramentas e recursos que contribuam diretamente para a mitigação dos desafios apresentados, promovendo ações eficazes e a conscientização dos usuários.
 
 
 ## Objetivos
@@ -28,11 +28,18 @@ Sendo assim, buscaremos desenvolver um software capaz de auxiliar na identifica�
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A poluição dos oceanos é um problema ambiental crítico que afeta a biodiversidade marinha, a saúde humana e a economia global. Estima-se que 8 milhões de toneladas métricas de plástico são despejadas nos oceanos anualmente, representando cerca de 80% de toda a poluição marinha. Essa contaminação resulta em áreas como a Grande Mancha de Lixo do Pacífico, que contém aproximadamente 1,8 trilhão de peças de plástico, pesando cerca de 80.000 toneladas métricas.
 
-Lembre-se de pesquisar e utilizar números que justifiquem por que é importante que tal problema seja resolvido ou que mostrem o impacto do problema na vida das pessoas.
+Além disso, a poluição plástica tem impactos diretos na vida marinha, afetando mais de 1.300 espécies, incluindo aves, peixes e mamíferos marinhos, que frequentemente ingerem ou ficam presos em resíduos plásticos. Essa situação não apenas ameaça a biodiversidade, mas também coloca em risco a saúde humana, uma vez que os microplásticos entram na cadeia alimentar.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Diante desse cenário alarmante, é essencial desenvolver soluções inovadoras que promovam a conscientização ambiental e incentivem práticas sustentáveis. A tecnologia pode desempenhar um papel crucial nesse contexto, facilitando o monitoramento ambiental, educando a população e promovendo a participação ativa na preservação dos oceanos.
+
+A proposta de uma aplicação web voltada para a preservação ambiental justifica-se pela necessidade urgente de mitigar os impactos da poluição marinha. Essa ferramenta permitirá:
+
+Monitoramento ambiental participativo, onde usuários podem relatar e visualizar áreas afetadas pela poluição;
+Educação e conscientização, fornecendo informações sobre os efeitos da poluição plástica e maneiras de reduzi-la;
+Engajamento comunitário, incentivando ações coletivas de limpeza e conservação.
+Ao implementar essa aplicação, espera-se contribuir para a redução da poluição plástica nos oceanos, proteger a vida marinha e promover um ambiente mais saudável para as futuras gerações.
 
 > **Links Úteis**:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
@@ -41,7 +48,7 @@ O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estat�
 
 O público-alvo da aplicação é composto por diferentes perfis de indivíduos que têm envolvimento direto ou indireto com a preservação ambiental da costa de Camaçari e Itacimirim, seja por meio do turismo, atividades econômicas locais ou da defesa ativa do meio ambiente. Esses usuários apresentam variados níveis de conhecimento sobre tecnologia e engajamento ambiental, mas compartilham preocupações comuns sobre os impactos ambientais na região.
 
-## **Perfis de Usuários**
+### **Perfis de Usuários**
 
 ### **1. Ambientalistas e Pesquisadores**
 - **Perfil**: Profissionais como oceanógrafos e membros de projetos ambientais (ex.: Projeto Tamar).  
