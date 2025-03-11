@@ -1,19 +1,9 @@
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizadas no desenvolvimento do trabalho.
+**[1]** - _Organização Proteção Animal Mundial_. **Maré Fantasma**. 7 de dezembro de 2018. Disponível em: <https://www.worldanimalprotection.org.br/mais-recente/noticias/pesca-fantasma-pode-impactar-69000-animais-marinhos-por-dia-no-brasil/>. Acesso em: 9 de Março de 2025.
 
-> **Links Úteis**:
-> - [Formato ABNT](https://www.normastecnicas.com/referencias/)
+**[2]** - _Ocean Conservancy_. **Plástico no oceano: baleia é encontrada morta com 40 kg de sacolas no estômago**. Filipinas, 18 de março de 2019. Disponível em: <https://www.bbc.com/portuguese/geral-47614367>. Acesso em: 10 de Março de 2025.
 
-Exemplos de referências bibliográficas:
+**[3]** - _BRK Ambiental_. **Esgoto no mar: 4 impactos da falta de saneamento para os oceanos**. Disponível em: <https://blog.brkambiental.com.br/esgoto-no-mar/>. Acesso em: 10 de Março de 2025.
 
-**[1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
-
-**[2]** - _COPPIN, Ben. **Inteligência artificial**. Rio de Janeiro, RJ: LTC, c2010. E-book. ISBN 978-85-216-2936-8._
-
-**[3]** - _CORMEN, Thomas H. et al. **Algoritmos: teoria e prática**. Rio de Janeiro, RJ: Elsevier, Campus, c2012. xvi, 926 p. ISBN 9788535236996._
-
-**[4]** - _SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514._
-
-**[5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
-
+**[4]** - _LOURENÇO, A._ **Microplastics in the Olfactory Bulb of the Human Brain**. 2024. Disponível em: <https://watermark.silverchair.com/amatoloureno_2024_oi_241151_1726069937.03397.pdf?token=...>. Acesso em: 8 de Março de 2025.
