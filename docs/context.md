@@ -6,49 +6,54 @@ Os oceanos são fundamentais para a vida no planeta, regulando o clima, fornecen
 
 A motivação para este projeto surge da necessidade urgente de combater a poluição marinha, que afeta não apenas os ecossistemas, mas também a saúde humana e a economia global. A criação de uma plataforma web que auxilie na identificação e mitigação desses problemas é justificada pela crescente demanda por soluções inovadoras no mercado de conservação ambiental. Aplicativos como o Ima Denuncie[5] já demonstraram o potencial da tecnologia para facilitar a fiscalização e a participação cidadã na proteção do meio ambiente. Portanto, este projeto não apenas contribui para a preservação dos oceanos, mas também promove a conscientização e a adoção de práticas mais sustentáveis, alinhando-se às necessidades do mercado e às expectativas da sociedade.
 
-## Problema
+---
 
-O problema que esta pesquisa busca resolver é: como garantir a proteção dos ecossistemas marinhos diante das muitas ameaças existentes, principalmente devido a atividades humanas, como poluição de (lixo, derramamento de petróleo, produtos químicos, escoto), pesca ilegal, destruição de habitats, mudanças climáticas. Esses fatores, combinados, têm levado à degradação acelerada dos ecossistemas marinhos, colocando em risco não apenas a vida marinha, mas também a sobrevivência de comunidades humanas que dependem dos recursos oceânicos para seu sustento e economia.
+## Problema  
 
-Os oceanos, que cobrem mais de 70% da superfície do planeta, desempenham um papel essencial na regulação do clima, na produção de oxigênio e na manutenção da biodiversidade global. No entanto, esses ecossistemas enfrentam sérias ameaças. De acordo com o relatório O Estado Mundial da Pesca e Aquicultura (SOFIA), divulgado em 2020 pela FAO, 34,2% dos estoques pesqueiros mundiais estão sendo explorados além de seus limites sustentáveis. Além disso, o relatório Planeta Vivo Azul, publicado pela WWF em 2015, revela um declínio alarmante de 49% nas populações marinhas entre 1970 e 2012. Esses dados destacam a urgência de adotar medidas eficazes para proteger e recuperar os ecossistemas marinhos, garantindo sua saúde e sustentabilidade para as gerações presentes e futuras.
+O problema que esta pesquisa busca resolver é: **como garantir a proteção dos animais marinhos que sofrem com a poluição nos mares causados por atividades humanas?** Esta situação tem levado à degradação acelerada do ecossistema marinho, colocando em risco não apenas a vida marinha, mas também a sobrevivência de comunidades humanas que dependem dos recursos oceânicos para seu sustento e economia.  
 
-A solução proposta consiste no desenvolvimento de uma aplicação web cujas funcionalidades serão projetadas para resolver ou, ao menos, amenizar o problema descrito. Essa plataforma terá como objetivo principal oferecer ferramentas e recursos que contribuam diretamente para a mitigação dos desafios apresentados, promovendo ações eficazes e a conscientização dos usuários.
+De acordo com o relatório **O Estado Mundial da Pesca e Aquicultura (SOFIA)**, divulgado em 2020 pela FAO, **34,2% dos estoques pesqueiros mundiais estão sendo explorados além de seus limites sustentáveis**. Além disso, o relatório **Planeta Vivo Azul**, publicado pela WWF em 2015, revela um declínio alarmante de **49% nas populações marinhas entre 1970 e 2012**. Esses dados destacam a urgência de adotar medidas eficazes para proteger e recuperar os ecossistemas marinhos, garantindo sua saúde e sustentabilidade para as gerações presentes e futuras.  
 
+A solução proposta consiste no desenvolvimento de uma aplicação web cujas funcionalidades serão projetadas para contribuir para amenizar o problema descrito. **A ferramenta permitirá o monitoramento da poluição marinha por meio de denúncias, disponibilizará informações sobre áreas críticas, integrará dados ambientais de fontes confiáveis e promoverá a educação ambiental por meio de campanhas interativas**. Essa plataforma terá como objetivo principal oferecer ferramentas e recursos que contribuam diretamente para a mitigação dos desafios apresentados, promovendo ações eficazes e a conscientização dos usuários como turistas, pescadores e pesquisadores.  
 
-## Objetivos
+---
 
-Nosso projeto tem como foco a preservação dos oceanos e a conscientização sobre os impactos da poluição marinha. 
+## Objetivos  
 
-Buscamos entender como a degradação dos mares afeta não apenas a fauna e a flora marinhas, mas também as comunidades que dependem desses ecossistemas para sua subsistência.  
+### Objetivo Geral  
 
-Através de pesquisas e análises, queremos identificar soluções sustentáveis para reduzir a contaminação dos oceanos, promover práticas mais responsáveis e minimizar os danos já causados.
+Desenvolver uma aplicação web inovadora que contribua ativamente para a preservação dos oceanos, fornecendo ferramentas para identificar, monitorar e mitigar os impactos da poluição marinha.  
 
-Sendo assim, buscaremos desenvolver um software capaz de auxiliar na identificação e na mitigação dos impactos ambientais causados pela poluição.
+### Objetivos Específicos  
+
+- **Analisar os impactos da poluição marinha** – Estudar como a degradação dos mares afeta a biodiversidade marinha e as comunidades costeiras que dependem desses ecossistemas para subsistência.  
+- **Identificar soluções sustentáveis** – Pesquisar e avaliar práticas eficazes para reduzir a contaminação dos oceanos, promovendo alternativas viáveis para a gestão de resíduos e proteção ambiental.  
+- **Desenvolver uma plataforma digital interativa** – Criar um sistema acessível que permita o monitoramento participativo da poluição, oferecendo ferramentas de denúncia, educação ambiental e engajamento comunitário.  
+- **Promover a conscientização ambiental** – A aplicação irá disponibilizar e repassar materiais educativos, como vídeos, PDFs e infográficos, para informar os usuários sobre os impactos da poluição marinha e incentivar práticas sustentáveis. Esses conteúdos serão acessíveis dentro da plataforma e poderão ser compartilhados para ampliar a disseminação da conscientização ambiental.  
+- **Fomentar a participação ativa da comunidade** – Incentivar turistas, pescadores, ambientalistas e comerciantes locais a contribuírem na identificação e mitigação de áreas afetadas pela poluição marinha.  
+- **Integrar dados e informações ambientais** – Disponibilizar relatórios, mapas interativos e alertas sobre áreas críticas, facilitando a tomada de decisão para políticas públicas e ações comunitárias.  
+
+---
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
-A poluição dos oceanos é um problema ambiental crítico que afeta a biodiversidade marinha, a saúde humana e a economia global. Estima-se que 8 milhões de toneladas métricas de plástico são despejadas nos oceanos anualmente, representando cerca de 80% de toda a poluição marinha. Essa contaminação resulta em áreas como a Grande Mancha de Lixo do Pacífico, que contém aproximadamente 1,8 trilhão de peças de plástico, pesando cerca de 80.000 toneladas métricas.
+Os ecossistemas marinhos desempenham um papel essencial no equilíbrio ambiental do planeta, sendo responsáveis por grande parte da produção de oxigênio, regulação do clima e manutenção da biodiversidade. No entanto, esses ambientes vêm sofrendo ameaças crescentes devido à poluição, mudanças climáticas, pesca predatória e destruição de habitats, colocando em risco inúmeras espécies e o bem-estar das populações que dependem dos oceanos.  
 
-Além disso, a poluição plástica tem impactos diretos na vida marinha, afetando mais de 1.300 espécies, incluindo aves, peixes e mamíferos marinhos, que frequentemente ingerem ou ficam presos em resíduos plásticos. Essa situação não apenas ameaça a biodiversidade, mas também coloca em risco a saúde humana, uma vez que os microplásticos entram na cadeia alimentar.
+A falta de monitoramento eficiente e de informações acessíveis sobre a qualidade dos oceanos dificulta a implementação de medidas eficazes para a preservação desses ecossistemas. Além disso, a conscientização da sociedade sobre os impactos das ações humanas no meio marinho ainda é um desafio.  
 
-Diante desse cenário alarmante, é essencial desenvolver soluções inovadoras que promovam a conscientização ambiental e incentivem práticas sustentáveis. A tecnologia pode desempenhar um papel crucial nesse contexto, facilitando o monitoramento ambiental, educando a população e promovendo a participação ativa na preservação dos oceanos.
-
-A proposta de uma aplicação web voltada para a preservação ambiental justifica-se pela necessidade urgente de mitigar os impactos da poluição marinha. Essa ferramenta permitirá:
-
-Monitoramento ambiental participativo, onde usuários podem relatar e visualizar áreas afetadas pela poluição;
-Educação e conscientização, fornecendo informações sobre os efeitos da poluição plástica e maneiras de reduzi-la;
-Engajamento comunitário, incentivando ações coletivas de limpeza e conservação.
-Ao implementar essa aplicação, espera-se contribuir para a redução da poluição plástica nos oceanos, proteger a vida marinha e promover um ambiente mais saudável para as futuras gerações.
+Diante desse cenário, torna-se cada vez mais necessário o desenvolvimento de estratégias e soluções que possibilitem um melhor acompanhamento da situação dos oceanos, contribuindo para sua conservação e garantindo a sustentabilidade dos recursos marinhos para as futuras gerações.  
 
 > **Links Úteis**:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
+---
+
 ## Público-Alvo
 
-O público-alvo da aplicação é composto por diferentes perfis de indivíduos que têm envolvimento direto ou indireto com a preservação ambiental da costa de Camaçari e Itacimirim, seja por meio do turismo, atividades econômicas locais ou da defesa ativa do meio ambiente. Esses usuários apresentam variados níveis de conhecimento sobre tecnologia e engajamento ambiental, mas compartilham preocupações comuns sobre os impactos ambientais na região.
+O público-alvo da aplicação é composto por diferentes perfis de indivíduos que têm envolvimento direto ou indireto com a preservação ambiental da **costa de Camaçari e Itacimirim, no estado da Bahia, Brasil**, seja por meio do turismo, atividades econômicas locais ou da defesa ativa do meio ambiente. Esses usuários apresentam variados níveis de conhecimento sobre tecnologia e engajamento ambiental, mas compartilham preocupações comuns sobre os impactos ambientais na região.  
 
 ### **Perfis de Usuários**
 
