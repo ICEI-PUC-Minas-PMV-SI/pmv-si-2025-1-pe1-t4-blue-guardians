@@ -74,14 +74,11 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 
 |ID    | Descrição do Requisito                                                                 | Prioridade | 
 |------|-----------------------------------------------------------------------------------------|------------| 
-|RF-001| A plataforma deve disponibilizar dados e conteúdo interativo sobre espécies marinhas como tartarugas, golfinhos e corais             | ALTA       |  
-|RF-002| A aplicação deve permitir o envio de compartilhamento de informações ou curiosidades pelos usuários              | ALTA       |  
-|RF-003| A aplicação deve oferecer materiais educativos sobre preservação ambiental            | ALTA       |  
-|RF-004| A aplicação deve possibilitar a visualização de mapas ilustrativos das espécies e seus habitats               | BAIXA       |  
-|RF-005| A aplicação deve permitir o cadastro e divulgação de atividades educativas e interativas    | BAIXA      |  
-|RF-006| A aplicação deve fornecer guias de boas práticas para convivência e preservação da fauna marinha para diferentes perfis     | MÉDIA      |  
-|RF-007| A aplicação deve ter área pública acessível sem necessidade de autenticação            | MÉDIA      |  
-|RF-008| A aplicação deve permitir compartilhamento de conteúdo em redes sociais                | BAIXA      |  
+|RF-001| A plataforma deve exibir informações sobre espécies marinhas (tartarugas, golfinhos, corais) com imagens e textos | ALTA       |  
+|RF-002| A aplicação deve permitir a visualização de vídeos e curiosidades sobre as espécies     | ALTA       |  
+|RF-003| A aplicação deve ser responsiva e funcionar bem em dispositivos móveis                  | ALTA       |  
+|RF-004| A aplicação deve ter uma interface simples e intuitiva                                  | MÉDIA      |
+|RF-005|  A aplicação deve permitir a organização de eventos de limpeza de praia                 | ALTA       |
 
 ### Requisitos Não Funcionais
 
