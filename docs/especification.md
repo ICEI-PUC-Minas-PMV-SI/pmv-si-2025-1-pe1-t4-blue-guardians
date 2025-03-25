@@ -78,7 +78,11 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 |RF-002| A aplicação deve permitir a visualização de vídeos e curiosidades sobre as espécies     | ALTA       |  
 |RF-003| A aplicação deve ser responsiva e funcionar bem em dispositivos móveis                  | ALTA       |  
 |RF-004| A aplicação deve ter uma interface simples e intuitiva                                  | MÉDIA      |
-|RF-005|  A aplicação deve permitir a organização de eventos de limpeza de praia                 | ALTA       |
+|RF-005| A aplicação deve permitir a organização de eventos de limpeza de praia                 | ALTA       |
+|RF-006| A aplicação deve oferecer materiais educativos sobre preservação ambiental              | ALTA       |  
+|RF-007| A aplicação deve permitir o cadastro e divulgação de atividades educativas e interativas    | BAIXA      |  
+|RF-008| A aplicação deve fornecer guias de boas práticas para convivência e preservação da fauna marinha para diferentes perfis     | MÉDIA      |  
+|RF-009| A aplicação deve permitir compartilhamento de conteúdo em redes sociais                | BAIXA      |
 
 ### Requisitos Não Funcionais
 
