@@ -63,13 +63,10 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 |Ana, a Oceanógrafa  | Registrar avistamentos de espécies em tempo real        | Compartilhar dados com outros pesquisadores e bancos científicos |
 |Carlos, o Surfista  | Criar e divulgar eventos de limpeza de praia com filtro por localidade       | Mobilizar voluntários da região de forma eficiente |
 |Carlos, o Surfista  | Buscar eventos de conservação próximos à minha cidade      | Participar ativamente de ações locais |
-
 |João, o Pescador    | Visualizar áreas protegidas e alertas de poluição  | Evitar zonas de risco e cumprir regulamentações ambientais |
 |João, o Pescador    | Acessar guias de boas práticas de pesca sustentável | Reduzir impactos no ecossistema marinho |
-
 |Mariana, a Turista  | Ver projetos ecológica e eventos de educação ambiental         | Planejar viagens com menor impacto ambiental |
 |Mariana, a Turista  | Compartilhar descobertas de espécies em redes sociais        | Conscientizar outros turistas |
-
 |Pedro, o Comerciante| Cadastrar ações de descarte correto de resíduos na plataforma       | Atrair turistas preocupados com sustentabilidade |
 |Pedro, o Comerciante| Acessar materiais educativos para distribuir em seu estabelecimento      | Alinhar seu negócio às normas ambientais |
 
