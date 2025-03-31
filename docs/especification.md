@@ -59,11 +59,19 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Ana, a Oceanógrafa  | Acessar relatórios e informações sobre espécies marinhas | Monitorar e planejar ações ambientais |
-|Carlos, o Surfista  | Organizar campanhas de limpeza de praia           | Engajar a comunidade em práticas de conscientização |
-|João, o Pescador    | Visualizar áreas protegidas e alertas de poluição | Evitar locais contaminados e proteger a pesca |
-|Mariana, a Turista  | Ver informações sobre praias preservadas          | Escolher destinos alinhados com turismo consciente e ecológico |
-|Pedro, o Comerciante| Receber orientações sobre descarte correto        | Evitar prejuízos ambientais e manter o fluxo turístico |
+|Ana, a Oceanógrafa  | Filtrar espécies marinhas por habitat, status de conservação e região geográfica | Coletar dados precisos para pesquisas e relatórios técnicos |
+|Ana, a Oceanógrafa  | Registrar avistamentos de espécies em tempo real        | Compartilhar dados com outros pesquisadores e bancos científicos |
+|Carlos, o Surfista  | Criar e divulgar eventos de limpeza de praia com filtro por localidade       | Mobilizar voluntários da região de forma eficiente |
+|Carlos, o Surfista  | Buscar eventos de conservação próximos à minha cidade      | Participar ativamente de ações locais |
+
+|João, o Pescador    | Visualizar áreas protegidas e alertas de poluição  | Evitar zonas de risco e cumprir regulamentações ambientais |
+|João, o Pescador    | Acessar guias de boas práticas de pesca sustentável | Reduzir impactos no ecossistema marinho |
+
+|Mariana, a Turista  | Ver projetos ecológica e eventos de educação ambiental         | Planejar viagens com menor impacto ambiental |
+|Mariana, a Turista  | Compartilhar descobertas de espécies em redes sociais        | Conscientizar outros turistas |
+
+|Pedro, o Comerciante| Cadastrar ações de descarte correto de resíduos na plataforma       | Atrair turistas preocupados com sustentabilidade |
+|Pedro, o Comerciante| Acessar materiais educativos para distribuir em seu estabelecimento      | Alinhar seu negócio às normas ambientais |
 
 
 ---
@@ -75,14 +83,16 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 |ID    | Descrição do Requisito                                                                 | Prioridade | 
 |------|-----------------------------------------------------------------------------------------|------------| 
 |RF-001| A plataforma deve exibir informações sobre espécies marinhas (tartarugas, golfinhos, corais) com imagens e textos | ALTA       |  
-|RF-002| A aplicação deve permitir a visualização de vídeos e curiosidades sobre as espécies     | ALTA       |  
+|RF-002| A aplicação deve permitir filtrar informações sobre espécies marinhas por categorias (habitat, status de conservação, região geográfica) via API     | ALTA       |  
 |RF-003| A aplicação deve ser responsiva e funcionar bem em dispositivos móveis                  | ALTA       |  
 |RF-004| A aplicação deve ter uma interface simples e intuitiva                                  | MÉDIA      |
-|RF-005| A aplicação deve permitir a organização de eventos de limpeza de praia                 | ALTA       |
-|RF-006| A aplicação deve oferecer materiais educativos sobre preservação ambiental              | ALTA       |  
-|RF-007| A aplicação deve permitir o cadastro e divulgação de atividades educativas e interativas    | BAIXA      |  
-|RF-008| A aplicação deve fornecer guias de boas práticas para convivência e preservação da fauna marinha para diferentes perfis     | MÉDIA      |  
-|RF-009| A aplicação deve permitir compartilhamento de conteúdo em redes sociais                | BAIXA      |
+|RF-005| A aplicação deve permitir o cadastro de usuários para criação de eventos                 | ALTA       |
+|RF-006| A aplicação deve permitir buscar eventos (mutirões, palestras, ações de conservação) filtrados por cidade ou estado              | ALTA       |  
+|RF-007| A aplicação deve permitir a organização de eventos de limpeza de praia     | ALTA      |  
+|RF-008| A aplicação deve permitir divulgação de atividades educativas e interativas por usuários cadastrados    | MÉDIA      |  
+|RF-009| A aplicação deve permitir compartilhamento de conteúdo em redes sociais               | BAIXA      |
+|RF-010| Toda informação publicada deve ser pública, exibindo o nome do criador do evento, mas mantendo dados sensíveis privados (como e-mail ou telefone)               | ALTA      |
+
 
 ### Requisitos Não Funcionais
 
@@ -91,9 +101,12 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 |RNF-001| A aplicação deve ser responsiva e acessível em dispositivos móveis       | ALTA       |
 |RNF-002| A interface deve ser intuitiva e amigável para diferentes perfis         | ALTA       |
 |RNF-003| A plataforma deve estar disponível 24/7 com tempo de resposta inferior a 15s | MÉDIA      |
-|RNF-004| O sistema deve utilizar dados de fontes confiáveis e atualizadas         | ALTA       |
-|RNF-005| Os conteúdos devem estar disponíveis em português com linguagem acessível| MÉDIA      |
-|RNF-006| A plataforma não deve exigir login para o acesso a conteúdos educativos  | MÉDIA      |
+|RNF-004| Dados sobre espécies marinhas deve vir exclusivamente de fontes validadas com atualização automática via API        | ALTA       |
+|RNF-005| Os conteúdos devem estar disponíveis em português com linguagem acessível | MÉDIA      |
+|RNF-006| Acesso sem login para conteúdos educativos, mas com cadastro obrigatório apenas para criação de eventos/registros  | MÉDIA      |
+|RNF-007| Dados sensíveis de usuários devem ser criptografados e nunca expostos publicamente, mesmo em eventos  | ALTA      |
+|RNF-008| APIs externas devem ser integradas via cache local para reduzir consumo de dados em conexões limitadas  | ALTA      |
+
 
 ---
 
@@ -105,3 +118,4 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 |02| Não pode ser desenvolvido um módulo de backend        |
 |03| Todas as funcionalidades devem funcionar em ambiente estático (frontend) |
 |04| A aplicação deve funcionar mesmo com conexão limitada à internet (mínimo de dados locais) |
+|05| As integrações com APIs devem ser feitas exclusivamente via frontend |
