@@ -6,7 +6,16 @@
 
 `SEMESTRE: 1º`
 
-O projeto em desenvolvimento tem como foco a proteção e conservação dos ecossistemas marinhos, visando combater as principais ameaças à biodiversidade oceânica, como a poluição, a pesca ilegal e a degradação de habitats. A iniciativa busca implementar soluções, como a criação de áreas marinhas protegidas, a promoção de práticas de pesca responsável e a redução de plásticos e outros poluentes nos oceanos.
+O Salve o Mar é uma plataforma web interativa desenvolvida para promover a conservação marinha, reunindo informações, ferramentas e comunidades em prol da proteção dos oceanos.
+Destaques:
+
+🌊 Central de informações sobre espécies marinhas ameaçadas (tartarugas, golfinhos, corais) com dados filtrados por habitat, região e status de conservação.
+
+🗓️ Organização de eventos de preservação, como mutirões de limpeza de praia, com cadastro simplificado e busca por localidade.
+
+🔬 Compartilhamento de observações em tempo real, permitindo que usuários registrem avistamentos e alterações ambientais.
+
+📚 Educação acessível com guias de boas práticas adaptados para diferentes públicos (pescadores, turistas, pesquisadores).
 
 
 ## Integrantes
@@ -14,8 +23,6 @@ O projeto em desenvolvimento tem como foco a proteção e conservação dos 
 * Claire Hausman de Morais
 * Elisangela Maria da Silva
 * Gabriel Souza Batista
-* Gabriela Leite de Andrade
-* Pedro Manuel Rodrigues Lima de Moura
 * Wesley Azevedo Gomes
 
 
