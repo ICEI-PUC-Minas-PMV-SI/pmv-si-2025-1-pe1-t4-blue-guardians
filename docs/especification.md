@@ -80,15 +80,14 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 |ID    | Descrição do Requisito                                                                 | Prioridade | 
 |------|-----------------------------------------------------------------------------------------|------------| 
 |RF-001| A plataforma deve exibir informações sobre espécies marinhas (tartarugas, golfinhos, corais) com imagens e textos | ALTA       |  
-|RF-002| A aplicação deve permitir filtrar informações sobre espécies marinhas por categorias (habitat, status de conservação, região geográfica) via API     | ALTA       |  
-|RF-003| A aplicação deve ser responsiva e funcionar bem em dispositivos móveis                  | ALTA       |  
-|RF-004| A aplicação deve ter uma interface simples e intuitiva                                  | MÉDIA      |
-|RF-005| A aplicação deve permitir o cadastro de usuários para criação de eventos                 | ALTA       |
-|RF-006| A aplicação deve permitir buscar eventos (mutirões, palestras, ações de conservação) filtrados por cidade ou estado              | ALTA       |  
-|RF-007| A aplicação deve permitir a organização de eventos de limpeza de praia     | ALTA      |  
-|RF-008| A aplicação deve permitir divulgação de atividades educativas e interativas por usuários cadastrados    | MÉDIA      |  
-|RF-009| A aplicação deve permitir compartilhamento de conteúdo em redes sociais               | BAIXA      |
-|RF-010| Toda informação publicada deve ser pública, exibindo o nome do criador do evento, mas mantendo dados sensíveis privados (como e-mail ou telefone)               | ALTA      |
+|RF-002| A aplicação deve permitir filtrar informações sobre espécies marinhas por categorias (habitat, status de conservação, região geográfica) via API     | ALTA      |
+|RF-003| O sistema deve permitir o cadastro de usuários na plataforma, com coleta de dados básicos                 | ALTA       |
+|RF-004| O sistema deve possibilitar o cadastro de eventos relacionados à conservação marinha                | ALTA       |
+|RF-005| A plataforma deve disponibilizar um canal para denúncias de atividades prejudiciais ao meio ambiente marinho                  | ALTA       |  
+|RF-006| A aplicação deve permitir buscar eventos (mutirões, palestras, ações de conservação) filtrados por cidade ou estado              | ALTA       |
+|RF-007| A aplicação deve oferecer funcionalidade para avaliação e feedback dos eventos pelos usuários               | MÉDIA      |
+|RF-008| O sistema deve permitir o compartilhamento de conteúdo em redes sociais diretamente da plataforma              | BAIXA      |
+
 
 
 ### Requisitos Não Funcionais
@@ -103,6 +102,9 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 |RNF-006| Acesso sem login para conteúdos educativos, mas com cadastro obrigatório apenas para criação de eventos/registros  | MÉDIA      |
 |RNF-007| Dados sensíveis de usuários devem ser criptografados e nunca expostos publicamente, mesmo em eventos  | ALTA      |
 |RNF-008| APIs externas devem ser integradas via cache local para reduzir consumo de dados em conexões limitadas  | ALTA      |
+|RF-009| Toda informação publicada deve ser pública, exibindo o nome do criador do evento, mas mantendo dados sensíveis privados (como e-mail ou telefone)               | ALTA      |
+|RF-010| A aplicação deve ter uma interface simples e intuitiva                                  | MÉDIA      |
+
 
 
 ---
