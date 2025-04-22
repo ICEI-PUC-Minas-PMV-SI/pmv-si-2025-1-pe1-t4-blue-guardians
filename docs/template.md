@@ -34,3 +34,5 @@ Outras seções podem ser adicionadas neste documento para apresentar padrões d
 > - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
 > - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
 > - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+
+Link do design: https://www.figma.com/design/Ql517VsOsYkSwWeFQHrGeC/Blue-Guradians?node-id=0-1&p=
