@@ -36,3 +36,6 @@ A tela inicial apresenta um menu lateral com as principais seções do portal, e
 > - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
 > - [Axure](https://www.axure.com/edu) (Licença Educacional)
 > - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+
+
+Link do userflow: https://miro.com/app/board/uXjVIFBgY0o=/
