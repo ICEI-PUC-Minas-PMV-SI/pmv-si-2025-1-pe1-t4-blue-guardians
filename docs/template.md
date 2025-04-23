@@ -19,7 +19,7 @@ A paleta foi selecionada para refletir a conexão com o mar, vida marinha e sust
 - Azul (#026395): Navegação e botões em páginas internas.
 - Cinza (#F3F4F6): Fundo de formulários e seções neutras.
 - Branco (#FFFFFF): Texto sobre fundo escuro, contraste geral.
-- Cinza Médio (#A3A3A3): Botões desativados (off).
+- Cinza Médio (#B2B2B2): Botões desativados (off).
 
 ## Tipografia
 A fonte principal utilizada no projeto é Poppins, por ser uma tipografia moderna, legível e versátil.
@@ -32,10 +32,10 @@ A fonte principal utilizada no projeto é Poppins, por ser uma tipografia modern
 | Corpo do texto         | Poppins | Regular  | 14–16px    
 
 ### Padronização de Botões
-- Botões maiores (ações principais como "Salvar", "Confirmar participação") usam Azul Céu (#1B9AE0).
+- Botões maiores (ações principais como "Salvar", "Confirmar participação") usam Azul (#026395).
 - Botões menores (filtros, navegação secundária) usam Azul (#026395).
 - Todos os botões possuem bordas arredondadas e espaçamento interno padronizado para manter uniformidade visual.
-- Botões desativados seguem com Cinza Médio (#A3A3A3) com contraste reduzido.
+- Botões desativados seguem com Cinza Médio (#B2B2B2) com contraste reduzido.
 
 ## Iconografia
 
