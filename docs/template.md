@@ -22,12 +22,20 @@ A paleta foi selecionada para refletir a conexão com o mar, vida marinha e sust
 - Cinza Médio (#A3A3A3): Botões desativados (off).
 
 ## Tipografia
-| Função                 | Fonte | Peso     | Tamanho aproximado |
-| ---------------------- | ----- | -------- | ------------------ |
-| Título da página       | Inter | Bold     | 20–24px            |
-| Títulos de seção       | Inter | SemiBold | 18–20px            |
-| Rótulos de componentes | Inter | Medium   | 14–16px            |
-| Corpo do texto         | Inter | Regular  | 14–16px            |
+A fonte principal utilizada no projeto é Poppins, por ser uma tipografia moderna, legível e versátil.
+
+| Função                 | Fonte   | Peso     | Tamanho aproximado |
+| ---------------------- | ------- | -------- | ------------------ |
+| Título da página       | Poppins | Bold     | 20–24px            |
+| Títulos de seção       | Poppins | SemiBold | 18–20px            |
+| Rótulos de componentes | Poppins | Medium   | 14–16px            |
+| Corpo do texto         | Poppins | Regular  | 14–16px    
+
+### Padronização de Botões
+- Botões maiores (ações principais como "Salvar", "Confirmar participação") usam Azul Céu (#1B9AE0).
+- Botões menores (filtros, navegação secundária) usam Azul (#026395).
+- Todos os botões possuem bordas arredondadas e espaçamento interno padronizado para manter uniformidade visual.
+- Botões desativados seguem com Cinza Médio (#A3A3A3) com contraste reduzido.
 
 ## Iconografia
 
