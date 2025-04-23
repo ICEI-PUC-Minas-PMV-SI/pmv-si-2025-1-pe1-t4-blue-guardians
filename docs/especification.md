@@ -83,36 +83,43 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito                                                                 | Prioridade | 
-|------|-----------------------------------------------------------------------------------------|------------| 
-|RF-001| Exibir informações sobre espécies marinhas com imagens e textos                        | ALTA       |  
-|RF-002| Permitir filtros por habitat, status de conservação, região geográfica via API         | ALTA       |
-|RF-003| Permitir cadastro de usuários com dados básicos                                        | ALTA       |
-|RF-004| Cadastro e divulgação de eventos ambientais                                            | ALTA       |
-|RF-005| Canal de denúncias com localização e mídia                                             | ALTA       |  
-|RF-006| Busca de eventos filtrados por cidade ou estado                                        | ALTA       |
-|RF-007| Avaliação e feedback de eventos                                                        | MÉDIA      |
-|RF-008| Compartilhamento de conteúdo em redes sociais                                          | BAIXA      |
-|RF-009| Integração com APIs científicas (OBIS, GBIF)                                           | ALTA       |
-|RF-010| Painel público com indicadores ambientais (espécies, áreas críticas, denúncias)        | MÉDIA      |
-|RF-011| Trilhas educativas gamificadas sobre preservação marinha                              | MÉDIA      |
+|ID    | Descrição do Requisito                                                                        | Prioridade | 
+|------|-----------------------------------------------------------------------------------------------|------------| 
+|RF-001| Permitir que usuários se cadastrem com nome, e-mail, senha e tipo de usuário.                 | ALTA       |  
+|RF-002| Deve autenticar usuários por meio de e-mail e senha previamente cadastrados.                  | ALTA       | 
+|RF-003| Deve restringir o acesso a funcionalidades administrativas com base no tipo de usuário.       | ALTA       |            
+|RF-004| Deve registrar e armazenar feedbacks enviados pelos usuários sobre os conteúdos acessados.    | ALTA       | 
+|RF-005| Permitir que usuários autorizados cadastrem denúncias ambientais com descrição e localização. | ALTA       | 
+|RF-006| Permitir filtros por habitat, status de conservação, região geográfica via API                | ALTA       |
+|RF-007| Registrar e armazenar feedbacks enviados pelos usuários sobre os conteúdos acessados.         | ALTA       |
+|RF-008| Cadastro e divulgação de eventos ambientais                                                   | ALTA       |
+|RF-009| Permitir que usuários visualizem as denúncias e eventos cadastrados publicamente.             | ALTA       | 
+|RF-010| Compartilhamento de conteúdo em redes sociais                                                 | BAIXA      |
+|RF-011| Integração com APIs científicas (OBIS, GBIF)                                                  | ALTA       |
+|RF-012| Painel público com indicadores ambientais (espécies, áreas críticas, denúncias)               | MÉDIA      |
 
 ### Requisitos Não Funcionais
 
-|ID     | Descrição do Requisito                                                   | Prioridade |
-|-------|--------------------------------------------------------------------------|------------|
-|RNF-001| Responsiva e acessível em dispositivos móveis                           | ALTA       |
-|RNF-002| Interface intuitiva para diferentes perfis                              | ALTA       |
-|RNF-003| Tempo de resposta inferior a 15s                                         | MÉDIA      |
-|RNF-004| Dados de espécies devem vir de fontes validadas com atualização via API | ALTA       |
-|RNF-005| Conteúdo em português e linguagem acessível                             | MÉDIA      |
-|RNF-006| Acesso sem login para conteúdos, com login apenas para contribuições    | MÉDIA      |
-|RNF-007| Dados sensíveis devem ser criptografados                                | ALTA       |
-|RNF-008| Cache local para dados externos                                          | ALTA       |
-|RNF-009| Suporte a uso offline parcial                                           | MÉDIA      |
-|RNF-010| Geolocalização para personalização de conteúdo                          | MÉDIA      |
-
-
+|ID     | Descrição do Requisito                                                                          | Prioridade |
+|-------|-------------------------------------------------------------------------------------------------|------------|
+|RNF-001| Deve ser responsiva, adaptando-se a diferentes tamanhos de tela (desktop, tablet, celular).     | ALTA       |
+|RNF-002| Interface intuitiva com menus claros, ícones ilustrativos e navegação fluida.                   | ALTA       |
+|RNF-003| Tempo de resposta inferior a 2 segundos.                                                        | ALTA       |
+|RNF-004| Deve estar disponível 99% do tempo, considerando a aplicação em ambiente de produção.           | MÉDIA      |                                             
+|RNF-005| Deve garantir a segurança de dados sensíveis, como senhas.                                      | ALTA       |  
+|RNF-006| Dados de espécies devem vir de fontes validadas com atualização via API.                        | ALTA       |
+|RNF-007| Conteúdo em português e linguagem acessível.                                                    | ALTA       |
+|RNF-008| Deve ter testes automatizados para funcionalidades críticas como login e envio de feedbacks.    | MÉDIA      | 
+|RNF-009| Cache local para dados externos.                                                                | ALTA       |           
+|RNF-010| Geolocalização para personalização de conteúdo.                                                 | MÉDIA      |
+|RNF-011| Deve funcionar nos principais navegadores modernos: Chrome, Firefox, Safari, Edge.              | ALTA       |
+|RNF-012| O filtro deve retornar resultados em tempo real, com respostas em até 2 segundos.               | ALTA       |
+|RNF-013| A interface do filtro deve ser intuitiva e de fácil uso.                                        | ALTA       |
+|RNF-014| Deve permitir múltiplos critérios de filtragem sem travar a aplicação.                          | ALTA       |
+|RNF-015| Os eventos devem ser organizados por data, em ordem decrescente.                                | ALTA       |
+|RNF-016| O carregamento da lista de eventos deve ser paginado ou por scroll infinito.                    | ALTA       |
+|RNF-017| O sistema deve permitir o envio de denúncia anônima (se previsto no fluxo).                     | MÉDIA      |
+|RNF-018| Os dados devem ser trafegados de forma segura via protocolo HTTP local (mesmo com json-server). | ALTA       |
 
 ---
 
