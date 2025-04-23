@@ -53,23 +53,29 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 - **Necessidades:** Orientações sobre gestão de resíduos e incentivos para educação e engajamento ambiental.  
 - **Como a aplicação ajuda:** Disponibiliza boas práticas para descarte de lixo, informações sobre impacto ambiental e suporte para adoção de medidas ecológicas.
 
+### 6. Maria, a Gestora Ambiental Municipal
+- **Idade:** 45 anos  
+- **Profissão:** Técnica da Secretaria de Meio Ambiente  
+- **Objetivo:** Planejar políticas públicas com base em dados confiáveis.  
+- **Desafios:** Falta de dados integrados e denúncias sem rastreamento.  
+- **Necessidades:** Ferramentas de monitoramento e relatórios de biodiversidade.  
+- **Como a aplicação ajuda:** Recebe denúncias com localização e acompanha dados científicos via APIs integradas.
+
 ---
 
 ## Histórias de Usuários
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Ana, a Oceanógrafa  | Filtrar espécies marinhas por habitat, status de conservação e região geográfica | Coletar dados precisos para pesquisas e relatórios técnicos |
-|Ana, a Oceanógrafa  | Registrar avistamentos de espécies em tempo real        | Compartilhar dados com outros pesquisadores e bancos científicos |
-|Carlos, o Surfista  | Criar e divulgar eventos de limpeza de praia com filtro por localidade       | Mobilizar voluntários da região de forma eficiente |
-|Carlos, o Surfista  | Buscar eventos de conservação próximos à minha cidade      | Participar ativamente de ações locais |
-|João, o Pescador    | Visualizar áreas protegidas e alertas de poluição  | Evitar zonas de risco e cumprir regulamentações ambientais |
-|João, o Pescador    | Acessar guias de boas práticas de pesca sustentável | Reduzir impactos no ecossistema marinho |
-|Mariana, a Turista  | Ver projetos ecológica e eventos de educação ambiental         | Planejar viagens com menor impacto ambiental |
-|Mariana, a Turista  | Compartilhar descobertas de espécies em redes sociais        | Conscientizar outros turistas |
-|Pedro, o Comerciante| Cadastrar ações de descarte correto de resíduos na plataforma       | Atrair turistas preocupados com sustentabilidade |
-|Pedro, o Comerciante| Acessar materiais educativos para distribuir em seu estabelecimento      | Alinhar seu negócio às normas ambientais |
-
+|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`|
+|--------------------|------------------------------------|------------------------|
+|Ana, a Oceanógrafa  | Filtrar espécies marinhas por habitat, status de conservação e região geográfica | Coletar dados precisos para pesquisas |
+|Ana, a Oceanógrafa  | Acessar dados do OBIS/GBIF integrados na plataforma | Monitorar biodiversidade regional |
+|Carlos, o Surfista  | Criar e divulgar eventos de limpeza de praia | Mobilizar voluntários locais |
+|Carlos, o Surfista  | Reportar lixo visível com localização | Ajudar na limpeza e engajar a comunidade |
+|João, o Pescador    | Visualizar áreas protegidas e alertas de poluição | Evitar riscos e seguir regras ambientais |
+|Mariana, a Turista  | Ver projetos e eventos ecológicos | Planejar viagens com menor impacto |
+|Mariana, a Turista  | Receber alertas sobre fauna local | Evitar danos à biodiversidade |
+|Pedro, o Comerciante| Acessar materiais educativos para distribuir | Apoiar turismo consciente |
+|Marina, a Gestora   | Visualizar denúncias e relatórios ambientais | Planejar ações públicas sustentáveis |
 
 ---
 
@@ -79,31 +85,32 @@ Esta seção descreve a fundamentação da solução a partir da perspectiva dos
 
 |ID    | Descrição do Requisito                                                                 | Prioridade | 
 |------|-----------------------------------------------------------------------------------------|------------| 
-|RF-001| A plataforma deve exibir informações sobre espécies marinhas (tartarugas, golfinhos, corais) com imagens e textos | ALTA       |  
-|RF-002| A aplicação deve permitir filtrar informações sobre espécies marinhas por categorias (habitat, status de conservação, região geográfica) via API     | ALTA      |
-|RF-003| O sistema deve permitir o cadastro de usuários na plataforma, com coleta de dados básicos                 | ALTA       |
-|RF-004| O sistema deve possibilitar o cadastro de eventos relacionados à conservação marinha                | ALTA       |
-|RF-005| A plataforma deve disponibilizar um canal para denúncias de atividades prejudiciais ao meio ambiente marinho                  | ALTA       |  
-|RF-006| A aplicação deve permitir buscar eventos (mutirões, palestras, ações de conservação) filtrados por cidade ou estado              | ALTA       |
-|RF-007| A aplicação deve oferecer funcionalidade para avaliação e feedback dos eventos pelos usuários               | MÉDIA      |
-|RF-008| O sistema deve permitir o compartilhamento de conteúdo em redes sociais diretamente da plataforma              | BAIXA      |
-
-
+|RF-001| Exibir informações sobre espécies marinhas com imagens e textos                        | ALTA       |  
+|RF-002| Permitir filtros por habitat, status de conservação, região geográfica via API         | ALTA       |
+|RF-003| Permitir cadastro de usuários com dados básicos                                        | ALTA       |
+|RF-004| Cadastro e divulgação de eventos ambientais                                            | ALTA       |
+|RF-005| Canal de denúncias com localização e mídia                                             | ALTA       |  
+|RF-006| Busca de eventos filtrados por cidade ou estado                                        | ALTA       |
+|RF-007| Avaliação e feedback de eventos                                                        | MÉDIA      |
+|RF-008| Compartilhamento de conteúdo em redes sociais                                          | BAIXA      |
+|RF-009| Integração com APIs científicas (OBIS, GBIF)                                           | ALTA       |
+|RF-010| Painel público com indicadores ambientais (espécies, áreas críticas, denúncias)        | MÉDIA      |
+|RF-011| Trilhas educativas gamificadas sobre preservação marinha                              | MÉDIA      |
 
 ### Requisitos Não Funcionais
 
 |ID     | Descrição do Requisito                                                   | Prioridade |
 |-------|--------------------------------------------------------------------------|------------|
-|RNF-001| A aplicação deve ser responsiva e acessível em dispositivos móveis       | ALTA       |
-|RNF-002| A interface deve ser intuitiva e amigável para diferentes perfis         | ALTA       |
-|RNF-003| A plataforma deve estar disponível 24/7 com tempo de resposta inferior a 15s | MÉDIA      |
-|RNF-004| Dados sobre espécies marinhas deve vir exclusivamente de fontes validadas com atualização automática via API        | ALTA       |
-|RNF-005| Os conteúdos devem estar disponíveis em português com linguagem acessível | MÉDIA      |
-|RNF-006| Acesso sem login para conteúdos educativos, mas com cadastro obrigatório apenas para criação de eventos/registros  | MÉDIA      |
-|RNF-007| Dados sensíveis de usuários devem ser criptografados e nunca expostos publicamente, mesmo em eventos  | ALTA      |
-|RNF-008| APIs externas devem ser integradas via cache local para reduzir consumo de dados em conexões limitadas  | ALTA      |
-|RF-009| Toda informação publicada deve ser pública, exibindo o nome do criador do evento, mas mantendo dados sensíveis privados (como e-mail ou telefone)               | ALTA      |
-|RF-010| A aplicação deve ter uma interface simples e intuitiva                                  | MÉDIA      |
+|RNF-001| Responsiva e acessível em dispositivos móveis                           | ALTA       |
+|RNF-002| Interface intuitiva para diferentes perfis                              | ALTA       |
+|RNF-003| Tempo de resposta inferior a 15s                                         | MÉDIA      |
+|RNF-004| Dados de espécies devem vir de fontes validadas com atualização via API | ALTA       |
+|RNF-005| Conteúdo em português e linguagem acessível                             | MÉDIA      |
+|RNF-006| Acesso sem login para conteúdos, com login apenas para contribuições    | MÉDIA      |
+|RNF-007| Dados sensíveis devem ser criptografados                                | ALTA       |
+|RNF-008| Cache local para dados externos                                          | ALTA       |
+|RNF-009| Suporte a uso offline parcial                                           | MÉDIA      |
+|RNF-010| Geolocalização para personalização de conteúdo                          | MÉDIA      |
 
 
 
