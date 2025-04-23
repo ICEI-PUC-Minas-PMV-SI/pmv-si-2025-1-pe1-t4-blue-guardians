@@ -14,7 +14,11 @@ O problema que esta pesquisa busca resolver é: **como garantir a proteção dos
 
 De acordo com o relatório **O Estado Mundial da Pesca e Aquicultura (SOFIA)**, divulgado em 2020 pela FAO, **34,2% dos estoques pesqueiros mundiais estão sendo explorados além de seus limites sustentáveis**. Além disso, o relatório **Planeta Vivo Azul**, publicado pela WWF em 2015, revela um declínio alarmante de **49% nas populações marinhas entre 1970 e 2012**. Esses dados destacam a urgência de adotar medidas eficazes para proteger e recuperar os ecossistemas marinhos, garantindo sua saúde e sustentabilidade para as gerações presentes e futuras.  
 
-A solução proposta consiste no desenvolvimento de uma aplicação web cujas funcionalidades serão projetadas para contribuir para amenizar o problema descrito. **A ferramenta permitirá o monitoramento da poluição marinha por meio de denúncias, disponibilizará informações sobre áreas críticas, integrará dados ambientais de fontes confiáveis e promoverá a educação ambiental por meio de campanhas interativas**. Essa plataforma terá como objetivo principal oferecer ferramentas e recursos que contribuam diretamente para a mitigação dos desafios apresentados, promovendo ações eficazes e a conscientização dos usuários como turistas, pescadores e pesquisadores.  
+A solução proposta consiste no desenvolvimento de uma plataforma web interativa chamada Blue Guardians, projetada para amenizar os impactos da poluição marinha na costa baiana. A aplicação contará com funcionalidades como denúncia ambiental georreferenciada, divulgação de eventos de preservação, compartilhamento de ações em redes sociais, além de um sistema de busca e visualização de dados ambientais sobre espécies marinhas.
+
+Os dados serão integrados a partir de APIs confiáveis como a OBIS (Ocean Biodiversity Information System) e a GBIF (Global Biodiversity Information Facility), permitindo a consulta de espécies registradas por região, profundidade, instituição fornecedora e grau de ameaça. O sistema de filtros permitirá buscas refinadas por nome da espécie, período do ano (mês e ano), e espécies ameaçadas em determinada localidade.
+
+A plataforma ainda oferecerá materiais educativos e relatórios visuais interativos, visando conscientizar diferentes perfis de usuários – como pesquisadores, turistas, educadores e moradores locais – sobre os riscos à biodiversidade marinha e as formas de engajamento comunitário. Assim, a ferramenta se posiciona como um recurso técnico e participativo para o monitoramento, educação e preservação dos oceanos.
 
 ---
 
@@ -26,17 +30,14 @@ Desenvolver uma aplicação web inovadora que contribua ativamente para a preser
 
 ### Objetivos Específicos  
 
-- **Analisar os impactos da poluição marinha** – Estudar como a degradação dos mares afeta a biodiversidade marinha e as comunidades costeiras que dependem desses ecossistemas para subsistência.  
 - **Identificar soluções sustentáveis** – Pesquisar e avaliar práticas eficazes para reduzir a contaminação dos oceanos, promovendo alternativas viáveis para a gestão de resíduos e proteção ambiental.  
 - **Desenvolver uma plataforma digital interativa** – Criar um sistema acessível que permita o monitoramento participativo da poluição, oferecendo ferramentas de denúncia, educação ambiental e engajamento comunitário.  
 - **Promover a conscientização ambiental** – A aplicação irá disponibilizar e repassar materiais educativos, como vídeos, PDFs e infográficos, para informar os usuários sobre os impactos da poluição marinha e incentivar práticas sustentáveis. Esses conteúdos serão acessíveis dentro da plataforma e poderão ser compartilhados para ampliar a disseminação da conscientização ambiental.  
 - **Fomentar a participação ativa da comunidade** – Incentivar turistas, pescadores, ambientalistas e comerciantes locais a contribuírem na identificação e mitigação de áreas afetadas pela poluição marinha.  
-- **Integrar dados e informações ambientais** – Disponibilizar relatórios, mapas interativos e alertas sobre áreas críticas, facilitando a tomada de decisão para políticas públicas e ações comunitárias.  
+- **Integrar dados e informações ambientais** – Disponibilizar relatórios, mapas interativos e alertas sobre áreas críticas, facilitando a tomada de decisão para políticas públicas e ações comunitárias.
+- **Implementar mecanismos de busca e compartilhamento de eventos ambientais** – Permitir que usuários descubram, registrem e compartilhem ações de preservação e engajamento ambiental, ampliando o alcance das iniciativas locais por meio de redes sociais.
 
 ---
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
@@ -45,9 +46,6 @@ Os ecossistemas marinhos desempenham um papel essencial no equilíbrio ambiental
 A falta de monitoramento eficiente e de informações acessíveis sobre a qualidade dos oceanos dificulta a implementação de medidas eficazes para a preservação desses ecossistemas. Além disso, a conscientização da sociedade sobre os impactos das ações humanas no meio marinho ainda é um desafio.  
 
 Diante desse cenário, torna-se cada vez mais necessário o desenvolvimento de estratégias e soluções que possibilitem um melhor acompanhamento da situação dos oceanos, contribuindo para sua conservação e garantindo a sustentabilidade dos recursos marinhos para as futuras gerações.  
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ---
 
@@ -153,9 +151,3 @@ O seguinte mapeamento ilustra os principais grupos que interagem no ecossistema 
 - População geral que visita esporadicamente a região  
 
 ---
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
