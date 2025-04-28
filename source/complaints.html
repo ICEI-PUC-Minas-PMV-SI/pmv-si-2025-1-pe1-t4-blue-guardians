@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tela de Denúncias</title>
+  <link rel="stylesheet" href="css/complaints.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+        <div class="top-bar">
+            <div class="menu-circle">
+                <i class="fas fa-arrow-left"></i>
+            </div>                    
+            <div class="search-wrapper">
+              <input class="search" type="text" placeholder="Digite a localidade ex: Salvador" />
+              <button class="search-btn">🔍</button>
+            </div>
+            <h1 class="title-centered">Denúncias</h1>
+        </div>                
+    </header>
+
+    <section class="action-bar">
+      <h2>Denúncias</h2>
+      <div class="actions">
+        <div class="ordenar-por">
+            <span class="ordenar-icon">⇅</span>
+            <label for="ordenar">Ordenar por</label>
+            <select id="ordenar">
+              <option>Mais recentes</option>
+              <option>Mais antigas</option>
+            </select>
+          </div>
+          
+        <button class="nova-denuncia">+ Nova Denúncia</button>
+      </div>
+    </section>
+
+    <main class="grid" id="cards-container"></main>
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+  <footer>
+    <nav>
+      <a href="#">Sobre</a>
+      <a href="#">Ajuda</a>
+      <a href="#">Termos</a>
+    </nav>
+  </footer>
+  <script>
+    const container = document.getElementById("cards-container");
+    const pagination = document.getElementById("pagination");
+  
+    const fakeData = [
+      {
+        titulo: "Lixo nas praias",
+        data: "05/06/2025",
+        autor: "Anônimo",
+        local: "Cabo de São Roque, RN",
+        imagem: "https://cdn.pixabay.com/photo/2025/04/17/23/04/iguana-9541365_1280.jpg"
+      },
+      {
+        titulo: "Oficina de Arte",
+        data: "12/06/2025",
+        autor: "EcoArt Bahia",
+        local: "MAM - Salvador",
+        imagem: "https://cdn.pixabay.com/photo/2025/04/17/23/04/iguana-9541365_1280.jpg"
+      },
+      {
+        titulo: "Descarte irregular",
+        data: "18/06/2025",
+        autor: "Morador Local",
+        local: "Farol da Barra, Salvador",
+        imagem: "https://cdn.pixabay.com/photo/2025/04/17/23/04/iguana-9541365_1280.jpg"
+      }
+    ];
+  
+    const totalCards = 68;
+    const cardsPerPage = 12;
+    const totalPages = Math.ceil(totalCards / cardsPerPage);
+    const cardsArray = [];
+  
+    // Gera 68 cards falsos
+    for (let i = 0; i < totalCards; i++) {
+      const item = fakeData[Math.floor(Math.random() * fakeData.length)];
+      cardsArray.push(item);
+    }
+  
+    let currentPage = 1;
+  
+    function renderCards(page) {
+      container.innerHTML = "";
+  
+      const start = (page - 1) * cardsPerPage;
+      const end = start + cardsPerPage;
+      const cards = cardsArray.slice(start, end);
+  
+      for (const item of cards) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `
+          <img src="${item.imagem}" alt="Imagem denúncia" />
+          <h3>${item.titulo}</h3>
+          <p><strong>Data:</strong> ${item.data}</p>
+          <p><strong>${item.autor.includes("EcoArt") ? "Organização" : "Denunciante"}:</strong> ${item.autor}</p>
+          <p><strong>Local:</strong> ${item.local}</p>
+        `;
+        container.appendChild(card);
+      }
+    }
+  
+    function renderPagination() {
+      pagination.innerHTML = "";
+  
+      function addButton(text, page = null, isActive = false) {
+        const btn = document.createElement("button");
+        btn.textContent = text;
+        if (isActive) btn.classList.add("active");
+        if (page !== null) {
+          btn.addEventListener("click", () => {
+            currentPage = page;
+            renderCards(currentPage);
+            renderPagination();
+          });
+        } else {
+          btn.disabled = true;
+        }
+        pagination.appendChild(btn);
+      }
+  
+      addButton("1", 1, currentPage === 1);
+      if (currentPage > 3) addButton("2", 2);
+  
+      if (currentPage > 4) addButton("...", null);
+  
+      const range = [currentPage - 1, currentPage, currentPage + 1].filter(p => p > 1 && p < totalPages);
+      range.forEach(p => addButton(p, p, currentPage === p));
+  
+      if (currentPage < totalPages - 3) addButton("...", null);
+      if (currentPage < totalPages - 1) addButton(totalPages - 1, totalPages - 1);
+      addButton(totalPages, totalPages, currentPage === totalPages);
+    }
+  
+    renderCards(currentPage);
+    renderPagination();
+  </script>
+  
+  
+</body>
+</html>

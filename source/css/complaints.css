@@ -1,0 +1,253 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fb;
+    color: #111;
+  }
+  
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+    
+  header .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #003366;
+    color: white;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .menu, .profile {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .search {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: none;
+  }
+  
+  .filter-icon {
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
+  .top-bar h1 {
+    flex: none;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  
+  .action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  .action-bar h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .nova-denuncia {
+    background-color: #0074cc;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .grid {
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    column-gap: 6rem; 
+    row-gap: 2.5rem;  
+  } 
+  
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .card img {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  
+  .card h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  footer {
+    background-color: #003366;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  footer nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+
+  .top-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #003366;
+    padding: 1rem;
+    gap: 1rem;
+    color: white;
+  }
+  
+  .menu-circle {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: #003366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-circle:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.08);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .menu-circle i {
+    font-size: 1.1rem;
+    pointer-events: none;
+  } 
+
+  .search-wrapper {
+    display: flex;
+    max-width: 500px;
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+  .search {
+    flex: 1;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    outline: none;
+  }
+  
+  .search-btn {
+    background: transparent;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #003366;
+    cursor: pointer;
+  }
+  
+  .title-centered {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .ordenar-por {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #222;
+  }
+  
+  .ordenar-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estiliza o select */
+  .ordenar-por select {
+    margin-left: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 2rem 0;
+  }
+  
+  .pagination button {
+    background-color: transparent;
+    border: none;
+    color: #0074cc;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #e0ecf9;
+  }
+  
+  .pagination button.active {
+    background-color: #0074cc;
+    color: white;
+    font-weight: bold;
+  }
+  
+  
