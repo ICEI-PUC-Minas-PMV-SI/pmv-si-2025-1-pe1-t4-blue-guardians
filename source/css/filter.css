@@ -19,8 +19,26 @@ body {
 header, footer {
   background-color: var(--color-ocean);
   color: var(--color-white);
-  padding: 2rem;
+  padding: 0.5rem;
   text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-ocean);
+  padding: 0.5rem 1rem;
+}
+
+.navbar-toggler {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.bg-ocean {
+    background-color: #13283E;
 }
 
 main {
