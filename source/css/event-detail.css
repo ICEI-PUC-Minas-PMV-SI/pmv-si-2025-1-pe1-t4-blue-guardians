@@ -7,6 +7,7 @@
   --color-neutral: #A3A3A3;
   --font-main: 'Poppins', sans-serif;
 }
+
 body {
   font-family: var(--font-main);
   font-size: 0.75rem;
@@ -20,6 +21,7 @@ header, footer {
   background-color: var(--color-ocean);
   color: var(--color-white);
 }
+
 button {
   padding: 0.4rem 0.8rem;
   border: none;
@@ -27,25 +29,36 @@ button {
   cursor: pointer;
   font-family: var(--font-main);
 }
+
 footer {
   padding: 1rem;
   text-align: center;
   font-size: 0.9rem;
 }
+
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 80vh;
+}
+
+.container-nav-pesquisa {
+  background-color: var(--color-blue);
+  padding: 0.3rem;
+}
+
+.btn-volta {
+  margin: 0.5rem;
 }
 
 .evento-card {
   font-family: var(--font-main);
   background-color: var(--color-white);
   border-radius: 0.5rem;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.20rem rgba(0, 0, 0, 0.1); /* 4px → 0.25rem */
   padding: 1rem;
-  max-width: 600px;
+  max-width: 35rem;
   margin: auto;
 }
 
@@ -64,7 +77,7 @@ main {
 
 .tag {
   padding: 0.25rem 0.75rem;
-  border: 2px solid var(--color-ocean);
+  border: 0.125rem solid var(--color-ocean);
   border-radius: 1rem;
   font-size: 0.8rem;
   color: var(--color-ocean);
