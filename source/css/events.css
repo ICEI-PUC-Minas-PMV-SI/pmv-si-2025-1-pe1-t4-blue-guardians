@@ -1,0 +1,133 @@
+:root {
+  --color-ocean: #13283E;
+  --color-sky: #1B9AE0;
+  --color-blue: #026395;
+  --color-light: #F8FAFA;
+  --color-white: #FFFFFF;
+  --color-neutral: #A3A3A3;
+  --font-main: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  background-color: var(--color-light);
+  margin: 0;
+  padding: 0;
+  color: var(--color-ocean);
+}
+
+header, footer {
+  background-color: var(--color-ocean);
+  color: var(--color-white);
+}
+
+.navbar {
+  background-color: var(--color-ocean);
+}
+
+.container-nav-pesquisa {
+  background-color: var(--color-blue);
+  padding: 0.5rem;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  font-family: var(--font-main);
+}
+
+.bnt-pesquisa-padrao {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.bnt-criar-evento {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.botoes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primario {
+  background-color: var(--color-sky);
+  border-radius: 1.25rem;
+  color: var(--color-white);
+}
+
+.btn-secundario {
+  background-color: var(--color-neutral);
+  border-radius: 1.25rem;
+  color: #000;
+}
+.event-card {
+  width: 15rem;
+  height: 24rem;
+  margin: 0.5rem;
+}
+
+.event-card img {
+  height: 10rem;
+  object-fit: cover;
+}
+
+.ordenar-btn {
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: var(--color-ocean);
+}
+label {
+  font-weight: bold;
+}
+.categoria{
+  margin-top: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.btn-categoria{
+  margin: 0.1rem;
+  background-color: var(--color-white);
+  color: var(--color-ocean);
+  border: 0.100rem solid var(--color-ocean);
+  border-radius: 80rem;
+  padding: 0.25rem 0.75rem;
+  font-weight: 500;
+  font-family: var(--font-main);
+  box-shadow: inset 0 0 0.100rem rgba(0, 0, 0, 0.2);
+}
+
+.paginacao {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.paginacao button {
+background-color: transparent;
+border: none;
+margin: 0 0.25rem;
+color: var(--color-blue);
+cursor: pointer;
+font-weight: 500;
+}
+
+.paginacao .ativo {
+font-weight: bold;
+text-decoration: underline;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
