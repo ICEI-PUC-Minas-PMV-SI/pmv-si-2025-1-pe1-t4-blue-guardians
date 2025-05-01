@@ -63,13 +63,94 @@
           </svg>
           Ordenar por
         </button>
-        <button class="btn bnt-criar-evento">Organize uma iniciativa!</button>
+        <button type="button" class="bnt-criar-evento" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Organize uma iniciativa!</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Cadastrar Evento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+                <div class="mb-2">
+                  <label for="Input" class="form-label">Título</label>
+                  <input type="text" class="form-control" id="inputTitle" placeholder="">
+                </div>
+                <div class="mb-2">
+                  <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+                  <textarea class="form-control" id="textareaDescricao" rows="3"></textarea>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="" class="form-label">Data</label>
+                    <input id="inputDate" class="form-control" type="date" />
+                  </div>
+                  <div class="col">
+                    <label for="" class="form-label">Horário</label>
+                    <input type="time" id="inputTime" class="form-control" name="appt" min="" max="" required />
+                  </div>
+                </div>
+                <!--Endereço-->
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="" class="form-label">CEP</label>
+                    <input type="text" class="form-control" placeholder="" aria-label="CEP">
+                  </div>
+                  <div class="col-sm">
+                    <label for="" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" placeholder="" aria-label="Cidade">
+                  </div>
+                  <div class="col-sm">
+                    <label for="" class="form-label">Estado</label>
+                    <input type="text" class="form-control" placeholder="" aria-label="Estado">
+                  </div>
+                  <div class="col-sm-8">
+                    <label for="Input" class="form-label">Rua</label>
+                    <input type="text" class="form-control" id="inputRua" placeholder="">
+                  </div>
+                  <div class="col-sm-3">
+                    <label for="Input" class="form-label">Número</label>
+                    <input type="number" class="form-control" id="inputNumero" placeholder="">
+                  </div>
+                  <div class="mb-2">
+                    <label for="Input" class="form-label">Ponto de Referência</label>
+                    <input type="text" class="form-control" id="" placeholder="">
+                  </div>
+                </div>
+                <!--Imagem-->
+                <form action="">
+                  <label for="img">Imagem:</label>
+                  <input type="file" id="img" name="img" accept="image/*">
+                  <input type="submit">
+                </form>
+
+                <!--Categorias-->
+                <div class="categoria">
+                  <label for="">Categorias:</label><br>
+                  <button type="button" class="btn-categoria">Limpreza de Praia</button>
+                  <button type="button" class="btn-categoria">Educação ambiental</button>
+                  <button type="button" class="btn-categoria">Caminhada</button>
+                  <button type="button" class="btn-categoria">Corrida</button>
+                  <button type="button" class="btn-categoria">Conscientização</button>
+                  <button type="button" class="btn-categoria">Surf</button>
+                </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-secundario" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn-primario">Salvar</button>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="container my-5">
       <div class="d-flex justify-content-center">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-4">
           
             <div class="card event-card">
               <img src="assets/images/mockups/oficina-artes.png">          
