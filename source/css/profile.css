@@ -1,0 +1,104 @@
+html, body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f2741;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .menu-icon, .user-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .profile-container {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile-form {
+    background-color: #f3f3f3;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    border-radius: 5px;
+  }
+  
+  .profile-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .profile-form input,
+  .profile-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .left-side,
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .alterar-senha {
+    background-color: #004a75;
+    color: white;
+    padding: 8px;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-salvar-container {
+    width: 20%;
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .btn-salvar {
+    background-color: #004a75;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  
+  .footer {
+    margin-top: 40px;
+    background-color: #0f2741;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
