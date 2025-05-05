@@ -41,7 +41,6 @@ button {
 
 .bnt-pesquisa-padrao {
   color: var(--color-white);
-  border-color: var(--color-white);
 }
 
 .bnt-criar-evento {
@@ -75,7 +74,9 @@ button {
   height: 24rem;
   margin: 0.5rem;
 }
-
+.btn-volta {
+  margin: 0.5rem;
+}
 .event-card img {
   height: 10rem;
   object-fit: cover;

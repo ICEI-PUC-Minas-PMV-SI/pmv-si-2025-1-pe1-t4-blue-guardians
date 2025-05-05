@@ -10,7 +10,6 @@
 
 body {
   font-family: var(--font-main);
-  font-size: 0.75rem;
   background-color: var(--color-light);
   margin: 0;
   padding: 0;
@@ -45,7 +44,7 @@ main {
 
 .container-nav-pesquisa {
   background-color: var(--color-blue);
-  padding: 0.3rem;
+  padding: 0.2rem;
 }
 
 .btn-volta {
@@ -54,10 +53,11 @@ main {
 
 .evento-card {
   font-family: var(--font-main);
+  font-size: 0.75rem;
   background-color: var(--color-white);
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.20rem rgba(0, 0, 0, 0.1); /* 4px → 0.25rem */
-  padding: 1rem;
+  box-shadow: 0 0 0.50rem rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
   max-width: 35rem;
   margin: auto;
 }
@@ -79,26 +79,23 @@ main {
   padding: 0.25rem 0.75rem;
   border: 0.125rem solid var(--color-ocean);
   border-radius: 1rem;
-  font-size: 0.8rem;
   color: var(--color-ocean);
   background-color: var(--color-white);
 }
 
 .evento-titulo {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-ocean);
   margin: 0.75rem 0 0.5rem;
 }
 
 .evento-info {
-  font-size: 0.9rem;
   color: var(--color-ocean);
   margin: 0.25rem 0;
 }
 
 .evento-descricao {
-  font-size: 0.9rem;
   color: var(--color-ocean);
   margin: 0.75rem 0;
 }
