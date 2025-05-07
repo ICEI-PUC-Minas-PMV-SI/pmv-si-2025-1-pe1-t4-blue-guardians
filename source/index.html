@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Blue Guardians - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/lottie-web@5.7.6/build/player/lottie.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Menu -->
+  <div class="navbar">
+    <a href="#home">Meu Perfil</a>
+    <a href="#news">Denúncias</a>
+    <a href="#news">Política de Privacidade</a>
+  </div>
+
+  <!-- Texto principal -->
+  <main class="container">
+    <section class="containertext">
+      <h2>Proteger os oceanos é proteger o nosso futuro.</h2>
+      <br>
+      
+      <p>Aqui, você encontra informações interativas sobre espécies marinhas, <br>monitora dados ambientais em tempo real e descobre como contribuir <br>para a preservação dos ecossistemas marinhos.</p>
+      <br>
+      <p><strong>Faça a diferença:</strong> denuncie ameaças ou junte-se a uma causa <br>como voluntário!</p>
+    </section>
+
+    <section class="containerimage">
+      <img src="assets/images/banner_1.jpg" alt="Imagem dos oceanos">
+    </section>
+  </main>
+
+  <!-- Cards de Conteúdos -->
+  <section class="cards">
+    <h1>Qual é o seu interesse?</h1>
+
+    <div class="card-grid">
+      <div class="card">
+        <img src="assets/images/card_1.jpg" alt="Ecossistemas Marinhos">
+        <div class="card-content">
+          <h3>Introdução aos Ecossistemas Marinhos</h3>
+          <p>Descubra por que eles são essenciais para a vida na Terra</p>
+          <a href="#" class="btn">Saber mais</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/card_2.jpg" alt="Espécies Marinhas">
+        <div class="card-content">
+          <h3>Espécies Marinhas e Sua Importância</h3>
+          <p>Descubra por que eles são essenciais para a vida na Terra</p>
+          <a href="#" class="btn">Saber mais</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/card_3.jpg" alt="Impactos da Poluição">
+        <div class="card-content">
+          <h3>Impactos da Poluição Marinha</h3>
+          <p>Descubra por que eles são essenciais para a vida na Terra</p>
+          <a href="#" class="btn">Saber mais</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/card_4.jpg" alt="Mudanças Climáticas">
+        <div class="card-content">
+          <h3>Mudanças Climáticas e os Oceanos</h3>
+          <p>Descubra por que eles são essenciais para a vida na Terra</p>
+          <a href="#" class="btn">Saber mais</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/card_5.jpg" alt="Conservação">
+        <div class="card-content">
+          <h3>Conservação e Sustentabilidade</h3>
+          <p>Descubra por que eles são essenciais para a vida na Terra</p>
+          <a href="#" class="btn">Saber mais</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/card_6.jpg" alt="Recifes">
+        <div class="card-content">
+          <h3>O Papel dos Recifes e Corais nos Oceanos</h3>
+          <p>Descubra por que eles são essenciais para a vida na Terra</p>
+          <a href="#" class="btn">Saber mais</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-btn">
+      <a href="#" class="btncard">Ver todos os conteúdos</a>
+    </div>
+  </section>
+
+  <!-- Botão para denúncias -->
+  <section class="complaints">
+    <div class="textct">
+      <p>Você sabia que pode ajudar na preservação dos oceanos? Se encontrar <br>qualquer sinal de poluição, resíduos plásticos, pesca ilegal ou qualquer <br>outro impacto ambiental, faça uma denúncia!</p>
+      <br>
+      <p>Com a sua participação, podemos proteger os ecossistemas marinhos e <br>garantir um futuro melhor para a vida nos oceanos. </p>
+    </div>
+
+    <div class="lottiect">
+      <div id="lottie-animation"></div>
+      <a class="report-button">Clique aqui e faça sua parte!</a>
+    
+      <script>
+        lottie.loadAnimation({
+          container: document.getElementById('lottie-animation'),
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: 'assets/lotties/report.json'
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- Conteúdos para tipos -->
+  <div class="tabs-container">
+    <div class="tabs">
+      <div class="tab">
+        <img src="assets/images/student.png" alt="Estudante">
+        <p>Estudante</p>
+      </div>
+      <div class="tab active">
+        <img src="assets/images/teacher.png" alt="Professor(a)">
+        <p>Professor(a)</p>
+      </div>
+      <div class="tab">
+        <img src="assets/images/father.png" alt="Pai ou Mãe">
+        <p>Pai ou Mãe</p>
+      </div>
+    </div>
+  
+    <div class="cardsimages">
+      <img src="assets/images/class_1.png" alt="Card 1">
+      <img src="assets/images/class_2.png" alt="Card 2">
+      <img src="assets/images/class_3.png" alt="Card 3">
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>Blue Guardians</h2>
+      </div>
+      <!-- <div class="footer-links">
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+        <a href="#">Ajuda</a>
+      </div> -->
+      <div class="footer-social">
+        <a href="#"><img src="assets/images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/images/twitter.png" alt="Twitter"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Blue Guardians. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
