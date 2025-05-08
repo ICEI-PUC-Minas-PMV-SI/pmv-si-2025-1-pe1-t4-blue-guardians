@@ -33,14 +33,18 @@
     left: 0;
     z-index: 1000;
   }
-  
+
   .navbar a {
-    float: left;
-    font-size: 16px;
-    color: var(--cor-texto-base_clara);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+      float: left;
+      font-size: 16px;
+      color: var(--cor-texto-base_clara);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+
+  .navbar a:hover {
+      color: #ffffffc9;
   }
 
   /* Texto e slide */
