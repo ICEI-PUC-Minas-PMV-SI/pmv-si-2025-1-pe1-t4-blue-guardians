@@ -10,58 +10,39 @@
 </head>
 <body>
   <header>
-    <nav class="navbar d-flex justify-content-between align-items-center px-3">
-      <!-- Lado esquerdo: botão hamburguer + menu -->
-      <div class="d-flex align-items-center position-relative">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" fill="white" class="bi bi-list" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-          </svg>
-        </button>
-        <!--<div class="collapse mt-1 position-absolute bg-ocean p-4 rounded" id="navbarToggler" style="top: 100%; left: 0;">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Meu Perfil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Denúncias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Política de Privacidade</a>
-            </li>
-          </ul>
-        </div> -->
+    <div class="navbar">
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      
+      <div class="navbar-links">
+        <a href="#news">Denúncias</a>
+        <a href="events.html">Eventos</a>
+        <a href="politics.html">Política de Privacidade</a>
       </div>
-  
-      <!-- Lado direito: ícone perfil fixo -->
-      <div class="d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-        </svg>
-      </div>
-    </nav>
-
-    <div class="d-flex justify-content-between align-items-center mb-3 container-nav-pesquisa">
-      <div class="d-flex align-items-center gap-3">
-        <button class="btn btn-volta" aria-label="Voltar">
-          <a href="events.html"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" fill="white" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/></a>
-          </svg>
-        </button>
-        <input type="text" class="form-control" style="border-radius: 2rem;" placeholder="Buscar eventos...">
-        <button class="btn bnt-pesquisa-padrao">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-          </svg>
-        </button>
+      
+      <div class="dropdown-user">
+        <i class="fa-solid fa-circle-user"></i>
+        <div class="dropdown-content">
+          <a href="profile.html">Meu Perfil</a>
+          <a href="login.html">Entrar</a>
+          <a href="register.html">Cadastrar-se</a>
+        </div>
       </div>
     </div>
-  </header>
+  </header>  
 
-  <main class="container mt-4">
-    <div class="container-organizacao-eventos-custom">
-      <div class="organizacao-botoes">
+  <main class="container mt-5 pt-5" style="margin-top: 2rem !important;">
+    <div class="container-organizacao-eventos-custom d-flex flex-wrap gap-3 justify-content-between align-items-center">
+      <div class="navbar-pesquisa">
+        <div class="d-flex gap-3 align-items-center">
+          <input type="text" class="form-control input-pesquisa" placeholder="Buscar eventos...">
+          <button class="btn btn-pesquisa">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+          </button>
+        </div>
+      </div>      
+      <div class="organizacao-botoes d-flex gap-2">
         <div class="dropdown">
           <button class="ordenar-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
@@ -69,11 +50,11 @@
             </svg>
             Ordenar por
           </button>
-          <button type="button" class="bnt-criar-evento" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Organize uma iniciativa!</button>
         </div>
+        <button type="button" class="bnt-criar-evento" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Organize uma iniciativa!</button>
       </div>
     </div>
-
+    
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -235,5 +216,13 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.navbar-links');
+  
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('show');
+    });
+  </script>  
 </body>
 </html>
