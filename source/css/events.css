@@ -174,7 +174,7 @@ button {
 }
 
 .btn-primario {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-secundaria);
   border-radius: 1.25rem;
   color: var(--cor-texto-base_clara);
 }

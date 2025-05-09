@@ -165,13 +165,13 @@ button {
 }
 
 .btn-primario {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-secundaria);
   color: var(--cor-texto-base_clara);
   border-radius: 1.25rem;
 }
 
 .btn-secundario {
-  background-color: var(--cor-secundaria);
+  background-color: var(--cor-texto-base_escuro);
   border-radius: 1.25rem;
   color: var(--cor-texto-base_clara);
 }
