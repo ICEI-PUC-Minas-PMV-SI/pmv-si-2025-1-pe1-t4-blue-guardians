@@ -10,13 +10,13 @@
     --cor-texto-base_clara: #FFFF;
 }
 
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+ }
 
-html, body {
+ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -25,71 +25,122 @@ html, body {
     font-family: 'Poppins';
     background-color: var(--cor-fundo);
     color: var(--cor-texto-base_escuro);
-}
+ }
 
-/* Menu */
-
-.navbar {
+  /* Menu */
+  
+  .navbar {
     width: 100%;
     background-color: var(--cor-primaria);
-    overflow: hidden;
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
 
-.navbar a {
-    float: left;
+  .navbar-links {
+    display: flex;
+  }
+
+  .navbar-links a {
     font-size: 16px;
     color: var(--cor-texto-base_clara);
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
+  }
 
-.navbar a:hover {
+  .navbar-links a:hover {
     color: #ffffffc9;
-}
+  }
 
-/* Conteúdo */
+  .dropdown-user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    cursor: pointer;
+  }
 
-.container {
+  .dropdown-user i {
+    font-size: 26px;
+    color: var(--cor-texto-base_clara);
+    padding: 0 16px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1001;
+  }
+
+  .dropdown-content a {
+    color: var(--cor-texto-base_escuro);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+  }
+
+  .dropdown-content a:hover {
+    color: #535252c9;
+  }
+
+  .dropdown-user:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-user:hover .user-icon {
+    color: #ffffffc9;
+  }
+
+ /* Conteúdo */
+
+ .container {
     flex: 1;
     padding: 100px 32px 32px;
     max-width: 1000px;
     margin: 0 auto;
     line-height: 1.8;
-}
+ }
 
-.container h1 {
+ .container h1 {
     text-align: center;
     color: var(--cor-primaria);
     margin-bottom: 10px;
-}
+ }
 
-.container p {
+ .container p {
     margin-bottom: 20px;
     font-size: 16px;
-}
+ }
 
-.container h2 {
+ .container h2 {
     color: var(--cor-secundaria);
     margin-top: 30px;
     margin-bottom: 10px;
     font-size: 20px;
-}
+ }
 
-/* Rodapé */
+ /* Rodapé */
 
-.footer {
+ .footer {
     background-color: #0a2540;
     color: #ffffff;
     padding: 40px 20px 20px;
     font-size: 14px;
-}
+ }
 
-.footer-container {
+ .footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -97,7 +148,7 @@ html, body {
     max-width: 1200px;
     margin: auto;
     gap: 20px;
-}
+ }
 
  .footer-logo h2 {
     margin: 0;

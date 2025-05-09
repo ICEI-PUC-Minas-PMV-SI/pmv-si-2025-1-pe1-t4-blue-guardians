@@ -136,14 +136,8 @@
   .cards {
     padding: 25px;
     background-color: var(--cor-fundo);
-    height: 990px;
+    height: 1300px;
     width: 100%;
-  }
-
-  .cards h1 {
-    color: var(--cor-texto-base_escuro);
-    font-size: 18px;
-    text-align: center;
   }
   
   .card-grid {
@@ -209,11 +203,6 @@
     background-color: #115094de;
   }
 
-  .center-btn {
-    text-align: center;
-    margin-top: 60px; /* opcional */
-  }
-
   .btncard {
     background-color: var(--cor-terciaria);
     color: white;
@@ -233,132 +222,9 @@
     background-color: #1b9be0da
   }
 
-  /* Seção de denúncias */
+   /* Rodapé */
 
-  .complaints {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 0px 30px;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
-
-  .textct {
-      flex: 1;
-      min-width: 300px;
-      text-align: start; /* Centraliza o texto dentro do seu bloco */
-      color: var(--cor-texto-base_escuro);
-  }
-
-  .lottiect {
-    flex: 1;
-    min-width: 250px;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column; /* empilha a animação e o botão */
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* espaço entre a animação e o botão */
-  }
-  
-  .report-button {
-    background-color: var(--cor-terciaria);
-    color: white;
-    text-decoration: none;
-    font-size: 12px;
-    padding: 7px 50px;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .report-button:hover {
-    background-color: #1b9be0da
-  }
-
-  /* Conteúdos para tipos */
-
-  .tabs-container {
-    width: 100%;
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    margin-top: 30px;
-    padding: 40px 20px;
-    text-align: center;
-    background-color: var(--cor-fundo);
-  }
-  
-  .tabs {
-    display: flex;
-    justify-content: center;
-    gap: 180px;
-    margin-bottom: 30px;
-  }
-  
-  .tab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .tab img {
-    width: 65px;
-    height: 65px;
-  }
-  
-  .tab p {
-    margin-top: 8px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .tab.active p {
-    color: #007BFF;
-  }
-  
-  .tab.active::after {
-    content: "";
-    height: 4px;
-    width: 100%;
-    background-color: #007BFF;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    border-radius: 2px;
-  }
-  
-  .cardsimages {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .cardsimages img {
-    width: 250px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 2px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-
-  .cardsimages img:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Rodapé */
-
-  .footer {
+   .footer {
     background-color: #0a2540;
     color: #ffffff;
     padding: 40px 20px 20px;
@@ -394,8 +260,3 @@
     font-size: 12px;
   }
   
-
-
-  
-
-

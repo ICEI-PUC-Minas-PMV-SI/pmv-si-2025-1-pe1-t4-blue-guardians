@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --cor-primaria: #13283E;
+    --cor-secundaria: #026395;
+    --cor-terciaria: #1B9AE0;
+    --cor-fundo: #f3f8f8;
+    --cor-fundo-branco: #FFFF;
+    --cor-texto-claro: #9B99A4;
+    --cor-texto-base: #747070;
+    --cor-texto-base_escuro: #504d4d;
+    --cor-texto-base_clara: #FFFF;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins';
+  }
+
+  /* Menu */
+  
+  .navbar {
+    width: 100%;
+    background-color: var(--cor-primaria);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
+  
+  .navbar-links {
+    display: flex;
+  }
+  
+  .navbar-links a {
+    font-size: 16px;
+    color: var(--cor-texto-base_clara);
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar-links a:hover {
+    color: #ffffffc9;
+  }
+  
+  .dropdown-user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    cursor: pointer;
+  }
+
+  .dropdown-user i {
+    font-size: 26px;
+    color: var(--cor-texto-base_clara);
+    padding: 0 16px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1001;
+  }
+  
+  .dropdown-content a {
+    color: var(--cor-texto-base_escuro);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+  }
+  
+  .dropdown-content a:hover {
+    color: #535252c9;
+  }
+  
+  .dropdown-user:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-user:hover .user-icon {
+    color: #ffffffc9;
+  }
+
+  /* Texto e slide */
+
+  .container {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 95px 5px 30px;
+    /* gap: 40px; */
+    max-width: 1500px; 
+    margin: 0 auto;
+  }
+
+  .containertext {
+    color: var(--cor-texto-base_escuro);
+    flex: 1;
+    text-align: left;
+    margin-right: 20px; /* Ajusta o espaço à direita do texto */
+  }
+
+  .containerimage {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .containerimage img {
+    max-width: 500px;
+    height: auto; /* Ajuste para manter a proporção da imagem */
+    border-radius: 2px;
+  }
+
+  /* Texto principal */
+  .maincontent {
+    display: flex;
+    max-width: 1500px; 
+    margin: 40px auto;
+  }
+
+  .maincontent  p{
+    text-align: start;
+    color: var(--cor-texto-base_escuro);
+  }
+
+  /* Carrossel */
+
+  .carousel {
+    width: 55%;
+    height: 500px;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    background: #000;
+  }
+  
+  .slides {
+    display: flex;
+    width: 300%; 
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 500px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slide iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* Esconde os botões de rádio */
+  input[type="radio"] {
+    display: none;
+  }
+  
+  /* Navegação manual com bolinhas */
+  .navigation-manual {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    text-align: center;
+  }
+  
+  .navigation-manual label {
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 5px;
+    display: inline-block;
+    /* transition: background 0.3s; */
+  }
+  
+  .navigation-manual label:hover {
+    background: #ccc;
+  }
+  
+  /* Controla o slide visível */
+  #radio1:checked ~ .slides {
+    transform: translateX(0%);
+  }
+  
+  #radio2:checked ~ .slides {
+    transform: translateX(-100%);
+  }
+  
+  #radio3:checked ~ .slides {
+    transform: translateX(-200%);
+  }
+
+  /* Feedback */
+
+  .feedback-container {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background-color: var(--cor-fundo);
+    margin-top: 40px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .feedback-title {
+    color: var(--cor-texto-base_escuro);
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  textarea {
+    width: 510px;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    resize: none;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  textarea:focus {
+    outline: none;
+    border-color: #1ea7fd;
+    box-shadow: 0 0 5px rgba(30, 168, 253, 0.171);
+  }
+  
+  button {
+    padding: 7px 55px;
+    background-color: #1ea7fd;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #0f8cd8;
+  }
+
+  /* Rodapé */
+
+  .footer {
+    background-color: #0a2540;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    font-size: 14px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+  }
+  
+  .footer-logo h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .footer-social img {
+    width: 25px;
+    height: 25px;
+    filter: brightness(0) invert(1); 
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+    font-size: 12px;
+  }
+  
