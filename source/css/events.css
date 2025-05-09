@@ -20,7 +20,7 @@ body {
   color: var(--cor-primaria);
 }
 
-header, footer {
+header {
   background-color: var(--cor-primaria);
   color: var(--cor-texto-base_clara);
 }
@@ -114,24 +114,102 @@ label {
 .paginacao {
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .paginacao button {
-background-color: transparent;
-border: none;
-margin: 0 0.25rem;
-color: var(--cor-secundaria);
-cursor: pointer;
-font-weight: 500;
+  background-color: transparent;
+  border: none;
+  margin: 0 0.25rem;
+  color: var(--cor-terciaria);
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .paginacao .ativo {
-font-weight: bold;
-text-decoration: underline;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-footer {
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
+.container-organizacao-eventos-custom {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
+
+.organizacao-botoes {
+  display: flex;
+  gap: 1rem;
+}
+
+ /* Rodapé */
+
+.footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-base_clara);
+  padding: 2.5rem 1.25rem 1.25rem; /* 40px 20px 20px */
+  font-size: 0.875rem; /* 14px */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75rem; /* 1200px */
+  margin: auto;
+  gap: 1.25rem; /* 20px */
+}
+
+.footer-logo h2 {
+  margin: 0;
+  font-size: 1.25rem; /* 20px */
+}
+
+.footer-social img {
+  width: 1.5625rem; /* 25px */
+  height: 1.5625rem; /* 25px */
+  filter: brightness(0) invert(1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.25rem; /* 20px */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 0.625rem; /* 10px */
+  font-size: 0.75rem; /* 12px */
+}
+
+ /* Responsividade */
+
+@media (max-width: 540px) {
+  .row {
+    justify-content: center !important;
+  }
+
+  .event-card {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
+  .container-organizacao-eventos-custom {
+    justify-content: center;
+  }
+
+  .organizacao-botoes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 383px) {
+  .container-organizacao-eventos.d-flex{
+    justify-content: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
+}
+
+
