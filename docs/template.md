@@ -6,20 +6,20 @@ Este guia tem como objetivo garantir a consistência visual e a acessibilidade d
 ## Design
 
 O layout é responsivo e projetado com foco em clareza, acessibilidade e navegação simplificada. As principais áreas são:
-- **Cabeçalho fixo:** com fundo azul escuro e ícone de menu lateral.
-- **Rodapé padrão:** com links para Poliítica de Privacidade, Denúncias e Meu Perfil.
-- **Área de conteúdo central:** com cartões e modais bem definidos, com bordas arredondadas e fundo branco para destaque das informações.
-- **Logo do sistema:** posicionado no cabeçalho lateral.
-- **Menus padrão:** localizados no cabeçalho superior (ícone de menu hamburguer) ou rodapé para dispositivos móveis.
+- **Cabeçalho fixo:** com fundo Azul Primário (#13283E).
+- **Rodapé padrão:** com logo e redes sociais.
+- **Área de conteúdo central:** com cartões e modais bem definidos, com bordas arredondadas e fundo claro (#F3F8F8) para destaque das informações.
 
 ## Cores
-A paleta foi selecionada para refletir a conexão com o mar, vida marinha e sustentabilidade.
-- Azul Oceano (#005D7F): Cor principal para destaques e cabeçalho.
-- Azul Céu (#007ACC): Botões ativos e destaques secundários.
-- Azul (#026395): Navegação e botões em páginas internas.
-- Cinza (#F3F4F6): Fundo de formulários e seções neutras.
-- Branco (#FFFFFF): Texto sobre fundo escuro, contraste geral.
-- Cinza Médio (#B2B2B2): Botões desativados (off).
+A paleta é inspirada nos tons oceânicos, com foco em contraste acessível e coerência ambiental:
+- **Azul Primário (#13283E):** cabeçalhos, textos principais, botões primários.
+- **Azul Secundário (#026395):** botões ativos e destaques.
+- **Azul Terciário (#1B9AE0):** links e interações.
+- **Fundo Claro (#F3F8F8):** fundo das páginas.
+- **Texto Claro (#9B99A4):** detalhes e descrições.
+- **Texto Escuro (#747070):** textos principais.
+- **Branco (#FFFFFF):** cartões e formulários.
+- **Botão Desativado (#B2B2B2):** estados inativos.
 
 ## Tipografia
 A fonte principal utilizada no projeto é Poppins, por ser uma tipografia moderna, legível e versátil.
@@ -32,11 +32,21 @@ A fonte principal utilizada no projeto é Poppins, por ser uma tipografia modern
 | Corpo do texto         | Poppins | Regular  | 14–16px    
 
 ### Padronização de Botões
-- Botões maiores (ações principais como "Salvar", "Confirmar participação") usam Azul (#026395).
-- Botões menores (filtros, navegação secundária) usam Azul (#026395).
-- Todos os botões possuem bordas arredondadas e espaçamento interno padronizado para manter uniformidade visual.
-- Botões desativados seguem com Cinza Médio (#B2B2B2) com contraste reduzido.
-
+- **Primários:** fundo Azul Primário, texto branco, cantos arredondados.
+- **Secundários:** fundo Azul Secundário ou tom neutro (#9B99A4).
+- **Desativados:** cor #B2B2B2, texto branco.
+- **Padding:** entre 0.4rem e 1rem.
+  
+Exemplo de classe CSS:
+  ```css
+    .btn-primario {
+    background-color: #13283E;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    }
+  ```
 ## Iconografia
 
 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -50,6 +60,23 @@ A fonte principal utilizada no projeto é Poppins, por ser uma tipografia modern
 
 ## Componentes
 - **Cards de Espécies:** imagem, nome comum, status de conservação, botão de detalhes.
-- **Cards de Evento:** título, local, data, botão para participar e feedback.
-- **Filtros laterais:** checkboxes por tipo de espécie, região e nível de ameaça.
-- **Formulários responsivos:** inputs com bordas arredondadas, labels flutuantes e validação visual.
+- **Cards de Evento:** título, local, data, descrição, tags e botões de participação.
+- **Filtros laterais:** com checkboxes por tipo, região e ameaça.
+- **Formulários responsivos:** com labels flutuantes e validação de campos.
+- **Botões de ação:** com hierarquia visual clara.
+- **Modais:** sobreposição com fundo opaco e animação suave.
+- **Rodapé:** com layout flexível e links úteis.
+
+## Responsividade
+- O site é otimizado para telas pequenas (até 768px), médias (768–1024px) e grandes (acima de 1024px).
+- Menus se adaptam ao rodapé em dispositivos móveis.
+- Cards se reorganizam em colunas ou blocos.
+Exemplo de centralização:
+  ```css
+  main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+  ````
