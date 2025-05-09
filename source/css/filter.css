@@ -1,24 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 :root {
-  --color-ocean: #13283E;
-  --color-sky: #1B9AE0;
-  --color-blue: #026395;
-  --color-light: #F8FAFA;
-  --color-white: #FFFFFF;
-  --color-neutral: #A3A3A3;
+  --cor-primaria: #13283E;
+  --cor-secundaria: #026395;
+  --cor-terciaria: #1B9AE0;
+  --cor-fundo: #f3f8f8;
+  --cor-texto-claro: #9B99A4;
+  --cor-texto-base_escuro: #747070;
+  --cor-texto-base_clara: #FFFF;
   --font-main: 'Poppins', sans-serif;
 }
 
 body {
   font-family: var(--font-main);
-  background-color: var(--color-light);
+  background-color: var(--cor-fundo);
   margin: 0;
   padding: 0;
-  color: var(--color-ocean);
+  color: var(--cor-primaria);
 }
 
-header, footer {
-  background-color: var(--color-ocean);
-  color: var(--color-white);
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-base_clara);
   padding: 0.5rem;
   text-align: center;
 }
@@ -27,7 +30,7 @@ header, footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-ocean);
+  background-color: var(--cor-primaria);
   padding: 0.5rem 1rem;
 }
 
@@ -38,7 +41,7 @@ header, footer {
 }
 
 .bg-ocean {
-    background-color: #13283E;
+    background-color: var(--cor-primaria);
 }
 
 main {
@@ -61,7 +64,7 @@ h1 {
 
 .filtros input, .filtros select {
   padding: 0.5rem;
-  border: 1px solid var(--color-neutral);
+  border: 1px solid var(--cor-texto-base_escuro);
   border-radius: 0.5rem;
   font-size: 0.8rem;
   font-family: var(--font-main);
@@ -69,7 +72,7 @@ h1 {
 
 .custom-input {
   padding: 0.5rem;
-  border: 1px solid var(--color-neutral);
+  border: 1px solid var(--cor-texto-base_escuro);
   border-radius: 1.25rem;
   font-size: 1rem;
   font-family: var(--font-main);
@@ -91,15 +94,15 @@ button {
 }
 
 .btn-primario {
-  background-color: var(--color-sky);
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-base_clara);
   border-radius: 1.25rem;
-  color: var(--color-white);
 }
 
 .btn-secundario {
-  background-color: var(--color-neutral);
+  background-color: var(--cor-secundaria);
   border-radius: 1.25rem;
-  color: #000;
+  color: var(--cor-texto-base_clara);
 }
 
 .card-img-top {
@@ -116,7 +119,7 @@ button {
   background-color: transparent;
   border: none;
   margin: 0 0.25rem;
-  color: var(--color-blue);
+  color: var(--cor-terciaria);
   cursor: pointer;
   font-weight: 500;
 }
@@ -124,4 +127,55 @@ button {
 .paginacao .ativo {
   font-weight: bold;
   text-decoration: underline;
+}
+/* Rodapé */
+
+.footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-base_clara);
+  padding: 2.5rem 1.25rem 1.25rem; /* 40px 20px 20px */
+  font-size: 0.875rem; /* 14px */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75rem; /* 1200px */
+  margin: auto;
+  gap: 1.25rem; /* 20px */
+}
+
+.footer-logo h2 {
+  margin: 0;
+  font-size: 1.25rem; /* 20px */
+}
+
+.footer-social img {
+  width: 1.5625rem; /* 25px */
+  height: 1.5625rem; /* 25px */
+  filter: brightness(0) invert(1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.25rem; /* 20px */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 0.625rem; /* 10px */
+  font-size: 0.75rem; /* 12px */
+}
+
+ /* Responsividade */
+
+ @media (max-width: 540px) {
+  .row {
+    justify-content: center !important;
+  }
+
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
 }
