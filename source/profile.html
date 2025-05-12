@@ -4,57 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Perfil - Blue Guardians</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/lottie-web@5.7.6/build/player/lottie.min.js"></script>
   <link rel="stylesheet" href="./css/profile.css"/>
 </head>
 <body>
-  <header class="top-bar">
-    <div class="menu-icon">☰</div>
-    <h1>Perfil</h1>
-    <div class="user-icon">👤</div>
-  </header>
-
-  <main class="profile-container">
-    <form class="profile-form">
-      <div class="left-side">
-        <label>Login*:
-          <input type="email" value="blueocean@hotmail.com" disabled />
-        </label>
-
-        <label>Nome*:
-          <input type="text" value="Marina" />
-        </label>
-
-        <label>Telefone:
-          <input type="tel" value="(87) 99845-7854" />
-        </label>
-
-        <label>Tipo de usuário:
-          <select>
-            <option selected>Professor</option>
-            <option>Aluno</option>
-            <option>Administrador</option>
-          </select>
-        </label>
+  <!-- Menu -->
+  <div class="navbar">
+    <div class="navbar-links">
+      <a href="complaints.html">Denúncias</a>
+      <a href="events.html">Eventos</a>
+      <a href="politics.html">Política de Privacidade</a>
+    </div>
+  
+    <div class="dropdown-user">
+      <i class="fa-solid fa-circle-user"></i>
+      <div class="dropdown-content">
+        <a href="profile.html">Meu Perfil</a>
+        <a href="login.html">Entrar</a>
+        <a href="register.html">Cadastrar-se</a>
       </div>
+    </div>
+  </div>
 
-      <div class="right-side">
-        <button type="button" class="alterar-senha">Alterar senha</button>
+  <!-- Perfil do usuário -->
+  <main class="container">
+    <h2>Perfil</h2>
+    <p>É assim que as pessoas o verão no site.</p>
+    <hr>
 
-        <label>Data de nascimento:
-          <input type="date" value="1987-10-08" />
-        </label>
-      </div>
+    <form>
+      <label for="username">Usuário</label>
+      <input type="text" id="username">
 
-      <div class="btn-salvar-container">
-        <button type="submit" class="btn-salvar">Salvar</button>
-      </div>
+      <small>Esse é o seu nome de exibição pública. Pode ser seu nome real ou um pseudônimo. Você só pode alterá-lo uma vez a cada 30 dias.</small>
+
+      <label for="email">Email</label>
+      <input type="text" id="email">
+      
+      <small>Esse email permite enviar confirmações por código.</small>
+
+      <label for="type">Tipo</label>
+      <select id="type">
+        <option>Explorador Aprendiz (ou Estudante)</option>
+        <option>Cidadão Consciente (ou Denunciante)</option>
+        <option>Administrador da Plataforma</option>
+      </select>
+      <small>Os tipos de usuário permitem que você inclua eventos, denúncias...</small>
+
+      <label for="username">Senha</label>
+      <input type="password" id="password">
+
+      <label for="bio">Bio</label>
+      <textarea id="bio" rows="3"></textarea>
+      <small>Você pode @mencionar outros usuários e organizações para criar um link para eles.</small>
+
+      <label>URLs</label>
+      <input type="text" placeholder="https://perfil.com">
+      <br>
+      <input type="text" placeholder="https://x.com/">
+      <button type="button" class="add-url">Add URL</button>
+
+      <button type="submit" class="update-button">Alterar Usuário</button>
     </form>
   </main>
 
+  <!-- Rodapé -->
   <footer class="footer">
-    <a href="#">Sobre</a>
-    <a href="#">Ajuda</a>
-    <a href="#">Termos</a>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>Blue Guardians</h2>
+      </div>
+      <div class="footer-links">
+        <!-- <a href="#home">Meu Perfil</a>
+        <a href="#news">Denúncias</a>
+        <a href="#news">Política de Privacidade</a> -->
+      </div>
+      <div class="footer-social">
+        <a href="#"><img src="assets/images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/images/twitter.png" alt="Twitter"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Blue Guardians. Todos os direitos reservados.</p>
+    </div>
   </footer>
 </body>
 </html>

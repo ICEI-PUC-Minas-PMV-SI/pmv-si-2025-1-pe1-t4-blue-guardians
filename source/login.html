@@ -7,18 +7,35 @@
   <link rel="stylesheet" href="./css/login.css"/>
 </head>
 <body>
-  <div class="container">
+  <div class="background"></div>
+
+  <div class="login-wrapper">
     <div class="login-box">
-      <form class="login-form">
-        <input type="email" placeholder="E-mail" required>
-        <input type="password" placeholder="Senha" required>
-        <a href="#" class="forgot">Esqueceu a senha?</a>
-        <button type="submit">Login</button>
-        <p class="register">Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
-      </form>
-    </div>
-    <div class="logo-box">
-      <img src="./assets/images/Blue guardians logo.png" alt="Blue Guardians Logo" />
+      <div class="image-side">
+        <img src="assets/images/Blue guardians logo.png" alt="Login illustration" />
+      </div>
+      <div class="form-side">
+        <h2>Bem-vindo de volta</h2>
+        <p>Protegendo os ecossistemas marinhos com informação, conscientização e ação. Junte-se a nós nessa jornada pelo futuro dos oceanos!</p>
+        <br>
+        <form>
+          <input type="text" placeholder="Email" />
+          <input type="password" placeholder="Senha" />
+
+          <div class="form-options">
+            <label>
+              <input type="checkbox" /> Lembrar-me
+            </label>
+            <a href="#">Esqueceu sua senha?</a>
+          </div>
+
+          <button type="submit">Entrar</button>
+
+          <div class="register-link">
+            <span>Não tem uma conta? <a href="register.html">Cadastre-se</a></span>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </body>

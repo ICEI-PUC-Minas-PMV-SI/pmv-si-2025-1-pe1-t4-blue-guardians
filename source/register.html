@@ -7,17 +7,31 @@
   <link rel="stylesheet" href="./css/register.css"/>
 </head>
 <body>
-  <div class="container">
+  <div class="background"></div>
+
+  <div class="login-wrapper">
     <div class="login-box">
-      <form class="login-form">
-        <input type="password" placeholder="Senha" required>
-        <input type="email" placeholder="E-mail" required>
-        <input type="password" placeholder="Senha" required>
-        <button type="submit">Cadastrar</button>
-      </form>
-    </div>
-    <div class="logo-box">
-      <img src="./assets/images/Blue guardians logo.png" alt="Blue Guardians Logo" />
+      <div class="image-side">
+        <img src="assets/images/Blue guardians logo.png" alt="Login illustration" />
+      </div>
+      <div class="form-side">
+        <h2>Bem-vindo ao Blue Guardians</h2>
+        <p>Nossa missão é preservar os ecossistemas marinhos por meio da educação, conscientização e ação. Explore, aprenda e faça parte da mudança. </p>
+        <br>
+        <form>
+          <input type="text" placeholder="Email" />
+          <!-- <input type="password" placeholder="Tipo" /> -->
+          <select id="type">
+            <option>Explorador Aprendiz (ou Estudante)</option>
+            <option>Cidadão Consciente (ou Denunciante)</option>
+            <option>Administrador da Plataforma</option>
+          </select>
+          <input type="password" placeholder="Senha" />
+          <input type="password" placeholder="Confirme a Senha" />
+
+          <button type="submit">Salvar</button>
+        </form>
+      </div>
     </div>
   </div>
 </body>

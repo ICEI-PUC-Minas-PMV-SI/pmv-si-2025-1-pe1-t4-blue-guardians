@@ -131,6 +131,42 @@
     border-radius: 2px;
   }
 
+  /* Seção de Filtro */
+  .search-section {
+    background-color: var(--cor-fundo);
+    text-align: center;
+    padding: 1.875rem 1.25rem;
+  }
+
+  .search-section h3 {
+    color: var(--cor-texto-base_escuro);
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .search-section p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 5px;
+    margin-bottom: 16px;
+  }
+  
+  .btn_filter {
+    background-color: var(--cor-terciaria);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 7px 50px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+  }  
+
+  .btn_filter:hover {
+    background-color: #1b9be0da
+  }
+
   /* Cards de conteúdo */
 
   .cards {
@@ -259,18 +295,4 @@
     padding-top: 10px;
     font-size: 12px;
   }
-
-  .search-section {
-    background-color: var(--cor-fundo);
-    text-align: center;
-    padding: 1.875rem 1.25rem;
-  }
-  
-  .search-section-button {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto-base_clara);
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-  }  
   

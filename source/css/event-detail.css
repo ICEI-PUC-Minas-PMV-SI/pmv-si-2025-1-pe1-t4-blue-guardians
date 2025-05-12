@@ -1,23 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-  --cor-primaria: #13283E;
-  --cor-secundaria: #026395;
-  --cor-terciaria: #1B9AE0;
-  --cor-fundo: #f3f8f8;
-  --cor-texto-claro: #9B99A4;
-  --cor-texto-base_escuro: #747070;
-  --cor-texto-base_clara: #FFFF;
-  --font-main: 'Poppins', sans-serif;
+    --cor-primaria: #13283E;
+    --cor-secundaria: #026395;
+    --cor-terciaria: #1B9AE0;
+    --cor-fundo: #f3f8f8;
+    --cor-texto-claro: #9B99A4;
+    --cor-texto-base_escuro: #747070;
+    --cor-texto-base_clara: #FFFF;
+    --font-main: 'Poppins';
 }
 
-body {
-  font-family: var(--font-main);
-  background-color: var(--cor-fundo);
-  margin: 0;
-  padding: 0;
-  color: var(--cor-primaria);
-}
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+  html, body {
+   height: 100%;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   font-family: var(--font-main);
+   background-color: var(--cor-fundo);
+   color: var(--cor-texto-base_escuro);
+  }
+
+  main {
+   flex: 1;
+  }
 
 /* Menu */
 
@@ -205,7 +217,7 @@ main {
   cursor: pointer;
 }
 
-  /* Rodapé */
+/* Rodapé */
 
 .footer {
   background-color: var(--cor-primaria);
