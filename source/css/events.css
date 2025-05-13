@@ -186,6 +186,7 @@
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    flex-wrap: wrap; /* Permite que os botões quebrem linha em telas menores */
   }
 
   .btn-primario {
@@ -203,10 +204,6 @@
   .event-card {
     width: 15rem;
     height: 24rem;
-    margin: 0.5rem;
-  }
-
-  .btn-volta {
     margin: 0.5rem;
   }
 
@@ -283,10 +280,10 @@
     gap: 24px;
     margin: 140px auto 0;
     max-width: 1000px;
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
+    justify-content: center;
+    align-items: center;
   }
+
   
   .card {
     background-color: #fff;
@@ -409,18 +406,15 @@
 /* Responsividade */
 
 @media (max-width: 768px) {
-  .container-organizacao-eventos-custom {
-    margin-top: 0.8rem;
-  }
   .menu-toggle {
-    margin-top: 1.2rem;
+    margin: 1.2rem;
     padding: 0rem;
     display: block;
   }
 
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .navbar-links {
@@ -431,6 +425,7 @@
     position: absolute;
     top: 3.5rem;
     left: 0;
+    align-items: flex-start;
   }
 
   .navbar-links.show {
@@ -443,46 +438,94 @@
   }
 }
 
-@media (max-width: 540px) {
-  .row {
-    justify-content: center !important;
-  }
-  .event-card {
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
-  }
-  .container-organizacao-eventos-custom {
-    margin-top: 0.5rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center !important;
-    gap: 1rem;
-  }
-
-  .navbar-pesquisa,
-  .organizacao-botoes {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .organizacao-botoes {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 @media (max-width: 430px) {
   .menu-toggle {
     margin-top: 0.8rem;
     padding: 0rem;
     display: block;
   }
-  .container-organizacao-eventos.d-flex {
-    justify-content: center !important;
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
+}
+
+@media (max-width: 768px) {
+  /* Ajustes gerais para telas menores */
+  .input-pesquisa {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-pesquisa {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .bnt-criar-evento {
+    padding: 6px 20px;
+    font-size: 12px;
+  }
+
+  .botoes {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Ajustes nos botões */
+  .btn-primario, .btn-secundario {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .btn-primario {
+    background-color: var(--cor-secundaria);
+  }
+
+  .btn-secundario {
+    background-color: var(--cor-texto-claro);
+  }
+
+  /* Cards Eventos */
+  .cards {
+    padding: 15px;
+    height: auto;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr; /* Coloca um card por linha em telas pequenas */
+  }
+
+  .card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .card-content {
+    padding: 12px;
+  }
+
+  /* Paginação */
+  .paginacao {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .paginacao button {
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Organização de Eventos */
+  .container-organizacao-eventos-custom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .organizacao-botoes {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
