@@ -22,9 +22,7 @@ Destaques:
 
 * Claire Hausman de Morais 
 * Elisangela Maria da Silva
-* Gabriel Souza Batista
 * Wesley Azevedo Gomes
-* Paolla Souza Arantes de Medeiros
 
 
 ## Orientador
