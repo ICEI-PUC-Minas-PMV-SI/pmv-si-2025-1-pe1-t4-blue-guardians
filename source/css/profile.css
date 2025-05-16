@@ -30,38 +30,7 @@
   main {
     flex: 1;
   }
-    button {
-    padding: 0.4rem 0.8rem;
-    border: none;
-    border-radius: 1.25rem;
-    cursor: pointer;
-    font-family: var(--font-main);
-  }
-  .btn-primario {
-    background-color: var(--cor-secundaria);
-    border-radius: 1.25rem;
-    color: var(--cor-texto-base_clara);
-  }
 
-  .btn-secundario {
-    background-color: var(--cor-texto-claro);
-    border-radius: 1.25rem;
-    color: var(--cor-texto-base_clara);
-  }
-  .btn-pequeno {
-    margin-top: 1rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    width: 16rem !important;
-    display: inline-block;
-  }
-    .btn:hover {
-    background-color: var(--cor-texto-base_escuro);
-    color: var(--cor-texto-base_clara);
-  }
-  .btn-danger{
-    margin-top: 1rem;
-  }
   /* Menu */
 
   .navbar {

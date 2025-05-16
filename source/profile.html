@@ -37,124 +37,42 @@
     
     <form>
       <label for="username">Usuário</label>
-      <input type="text" id="username" class="form-control mb-2">
+      <input type="text" id="username">
 
       <small>Esse é o seu nome de exibição pública. Pode ser seu nome real ou um pseudônimo. Você só pode alterá-lo uma vez a cada 30 dias.</small>
 
-      <label for="email" class="mt-3">Email</label>
-      <input type="text" id="email" class="form-control mb-2">
+      <label for="email">Email</label>
+      <input type="text" id="email">
       
       <small>Esse email permite enviar confirmações por código.</small>
 
-      <label for="type" class="mt-3">Tipo</label>
-      <select id="type" class="form-select mb-2">
+      <label for="type">Tipo</label>
+      <select id="type">
         <option>Explorador Aprendiz (ou Estudante)</option>
         <option>Cidadão Consciente (ou Denunciante)</option>
         <option>Administrador da Plataforma</option>
       </select>
       <small>Os tipos de usuário permitem que você inclua eventos, denúncias...</small>
 
-      <!-- Botão para abrir o modal de troca de senha -->
-      <button type="button" class="btn btn-pequeno btn-primario" data-bs-toggle="modal" data-bs-target="#modalSenha">
-        Trocar Senha
-      </button>
+      <label for="username">Senha</label>
+      <input type="password" id="password">
 
-      <!-- Modal: Trocar Senha -->
-      <div class="modal fade" id="modalSenha" tabindex="-1" aria-labelledby="modalSenhaLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <form class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalSenhaLabel">Trocar Senha</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="novaSenha" class="form-label">Nova Senha</label>
-                <input type="password" class="form-control" id="novaSenha">
-              </div>
-              <div class="mb-3">
-                <label for="confirmaSenha" class="form-label">Confirmar Nova Senha</label>
-                <input type="password" class="form-control" id="confirmaSenha">
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn-secundario" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn-primario">Salvar Senha</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <label for="bio" class="mt-3">Bio</label>
-      <textarea id="bio" rows="3" class="form-control"></textarea>
+      <label for="bio">Bio</label>
+      <textarea id="bio" rows="3"></textarea>
       <small>Você pode @mencionar outros usuários e organizações para criar um link para eles.</small>
 
-      <label class="mt-3">URLs</label>
-      <input type="text" placeholder="https://perfil.com" class="form-control mb-2">
-      <input type="text" placeholder="https://x.com/" class="form-control mb-2">
-      <button type="button" class="btn btn-secundario">Adicionar URL</button>
+      <label>URLs</label>
+      <input type="text" placeholder="https://perfil.com">
+      <br>
+      <input type="text" placeholder="https://x.com/">
+      <button type="button" class="add-url">Add URL</button>
 
-      <button type="submit" class="btn btn-primario">Alterar Usuário</button>
+      <button type="submit" class="update-button">Alterar Usuário</button>
     </form>
-
-    <!-- Estatísticas do usuário -->
-    <section class="user-stats mt-5">
-      <h3>Estatísticas da Conta</h3>
-      <ul class="list-group mb-3">
-        <li class="list-group-item">Denúncias realizadas: <strong>5</strong></li>
-        <li class="list-group-item">Eventos cadastrados: <strong>2</strong></li>
-        <li class="list-group-item">Tipo de usuário: <strong>Explorador Aprendiz</strong></li>
-      </ul>
-    </section>
-
-    <!-- Denúncias relacionadas -->
-    <section class="user-complaints mt-5">
-      <h3>Minhas Denúncias</h3>
-      <ul id="user-complaints-list" class="list-group">
-        <li class="list-group-item">Praia de Itacimirim - Lixo acumulado (10/05/2025)</li>
-        <li class="list-group-item">Rio Joanes - Vazamento de esgoto (02/04/2025)</li>
-        <!-- Preencher via backend -->
-      </ul>
-    </section>
-
-    <!-- Eventos relacionados -->
-    <section class="user-events mt-5">
-      <h3>Meus Eventos</h3>
-      <ul id="user-events-list" class="list-group">
-        <li class="list-group-item">Mutirão de Limpeza - 22/05/2025</li>
-        <li class="list-group-item">Oficina de Educação Ambiental - 05/06/2025</li>
-        <!-- Preencher via backend -->
-      </ul>
-    </section>
-
-        <!-- Botão para abrir o modal de exclusão -->
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluirConta">
-      Excluir Conta
-    </button>
-
-    <!-- Modal de confirmação de exclusão -->
-    <div class="modal fade" id="modalExcluirConta" tabindex="-1" aria-labelledby="modalExcluirContaLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title text-danger" id="modalExcluirContaLabel">Confirmar Exclusão</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-          </div>
-          <div class="modal-body">
-            <p>Tem certeza de que deseja <strong>excluir sua conta</strong>? Essa ação não poderá ser desfeita.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger">Excluir Conta</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </main>
 
   <!-- Rodapé -->
-  <footer class="footer mt-5">
+  <footer class="footer">
     <div class="footer-container">
       <div class="footer-logo">
         <h2>Blue Guardians</h2>
@@ -179,12 +97,10 @@
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const links = document.querySelector('.navbar-links');
-
+  
     toggle.addEventListener('click', () => {
       links.classList.toggle('show');
     });
-
-    // Aqui você pode usar fetch() para carregar denúncias e eventos do usuário via backend
   </script> 
 </body>
 </html>
