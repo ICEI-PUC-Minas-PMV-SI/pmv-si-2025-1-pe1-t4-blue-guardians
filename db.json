@@ -1,0 +1,22 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Mutirão de Limpeza da Praia",
+      "date": "2025-06-10",
+      "organizer": "Guardas do Mar",
+      "location": "Praia de Itacimirim, Camaçari - BA",
+      "image": "assets/images/mockups/oficina-artes.png",
+      "description": "Evento para limpeza e educação ambiental."
+    },
+    {
+      "id": 2,
+      "title": "Palestra sobre Biomas Costeiros",
+      "date": "2025-06-15",
+      "organizer": "Instituto Verde",
+      "location": "IFBA - Campus Camaçari",
+      "image": "assets/images/mockups/oficina-artes.png",
+      "description": "Palestra com especialistas em ecossistemas marinhos."
+    }
+  ]
+}
