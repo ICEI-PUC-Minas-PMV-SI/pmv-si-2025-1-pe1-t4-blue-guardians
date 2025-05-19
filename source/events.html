@@ -12,15 +12,13 @@
 <body>
 
   <!-- Menu -->
-  <div class="navbar">
+  <nav class="navbar">
     <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
-    
     <div class="navbar-links">
       <a href="complaints.html">Denúncias</a>
-      <a href="events.html">Eventos</a>
+      <a href="events.html" class="active">Eventos</a>
       <a href="politics.html">Política de Privacidade</a>
     </div>
-    
     <div class="dropdown-user">
       <i class="fa-solid fa-circle-user"></i>
       <div class="dropdown-content">
@@ -29,150 +27,120 @@
         <a href="register.html">Cadastrar-se</a>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <main class="container mt-5 pt-5" style="margin-top: 2rem !important;">
+  <main class="container mt-5 pt-5">
     <div class="container-organizacao-eventos-custom d-flex flex-wrap gap-3 justify-content-between align-items-center">
+      <!-- Barra de pesquisa -->
       <div class="navbar-pesquisa">
         <div class="d-flex gap-3 align-items-center">
-          <input type="text" class="form-control input-pesquisa" placeholder="Buscar eventos...">
-          <button class="btn btn-pesquisa">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-            </svg>
+          <input type="text" class="form-control input-pesquisa" placeholder="Buscar eventos..." aria-label="Buscar eventos">
+          <button class="btn btn-pesquisa" aria-label="Buscar">
+            <i class="fa fa-search"></i>
           </button>
         </div>
-      </div>      
+      </div>
+
+      <!-- Botões de ação -->
       <div class="organizacao-botoes d-flex gap-2">
         <div class="dropdown">
-          <button class="ordenar-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
-            </svg>
-            Ordenar por
+          <button class="ordenar-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-arrow-down-up"></i> Ordenar por
           </button>
+          <ul class="dropdown-menu">
+          </ul>
         </div>
         <button type="button" class="bnt-criar-evento" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Organize uma iniciativa</button>
       </div>
     </div>
-    
-    <!-- Modal -->
+
+    <!-- Modal de criação de evento -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header" style="background-color: #026395; color: #FFF;">
             <h5 class="modal-title" id="staticBackdropLabel">Novo Evento</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
           </div>
           <div class="modal-body">
-                <div class="mb-2">
-                  <label for="Input" class="form-label">Título</label>
-                  <input type="text" class="form-control" id="inputTitle" placeholder="">
+            <form>
+              <div class="mb-2">
+                <label for="inputTitle" class="form-label">Título</label>
+                <input type="text" class="form-control" id="inputTitle" required>
+              </div>
+              <div class="mb-2">
+                <label for="textareaDescricao" class="form-label">Descrição</label>
+                <textarea class="form-control" id="textareaDescricao" rows="3" required></textarea>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="inputDate" class="form-label">Data</label>
+                  <input id="inputDate" class="form-control" type="date" required>
                 </div>
-                <div class="mb-2">
-                  <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-                  <textarea class="form-control" id="textareaDescricao" rows="3"></textarea>
+                <div class="col">
+                  <label for="inputTime" class="form-label">Horário</label>
+                  <input type="time" id="inputTime" class="form-control" required>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <label for="" class="form-label">Data</label>
-                    <input id="inputDate" class="form-control" type="date" />
-                  </div>
-                  <div class="col">
-                    <label for="" class="form-label">Horário</label>
-                    <input type="time" id="inputTime" class="form-control" name="appt" min="" max="" required />
-                  </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-sm-4">
+                  <label for="cep" class="form-label">CEP</label>
+                  <input type="text" class="form-control" id="cep">
                 </div>
-                <!--Endereço-->
-                <div class="row">
-                  <div class="col-sm-4">
-                    <label for="" class="form-label">CEP</label>
-                    <input type="text" class="form-control" placeholder="" aria-label="CEP">
-                  </div>
-                  <div class="col-sm">
-                    <label for="" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" placeholder="" aria-label="Cidade">
-                  </div>
-                  <div class="col-sm">
-                    <label for="" class="form-label">Estado</label>
-                    <input type="text" class="form-control" placeholder="" aria-label="Estado">
-                  </div>
-                  <div class="col-sm-8">
-                    <label for="Input" class="form-label">Rua</label>
-                    <input type="text" class="form-control" id="inputRua" placeholder="">
-                  </div>
-                  <div class="col-sm-3">
-                    <label for="Input" class="form-label">Número</label>
-                    <input type="number" class="form-control" id="inputNumero" placeholder="">
-                  </div>
-                  <div class="mb-2">
-                    <label for="Input" class="form-label">Ponto de Referência</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                  </div>
+                <div class="col-sm">
+                  <label for="cidade" class="form-label">Cidade</label>
+                  <input type="text" class="form-control" id="cidade">
                 </div>
-                <!--Imagem-->
-                <form action="">
-                  <label for="img">Imagem:</label>
-                  <input type="file" id="img" name="img" accept="image/*">
-                  <input type="submit">
-                </form>
+                <div class="col-sm">
+                  <label for="estado" class="form-label">Estado</label>
+                  <input type="text" class="form-control" id="estado">
+                </div>
+                <div class="col-sm-8 mt-2">
+                  <label for="inputRua" class="form-label">Rua</label>
+                  <input type="text" class="form-control" id="inputRua">
+                </div>
+                <div class="col-sm-3 mt-2">
+                  <label for="inputNumero" class="form-label">Número</label>
+                  <input type="number" class="form-control" id="inputNumero">
+                </div>
+                <div class="mb-2 mt-2">
+                  <label for="referencia" class="form-label">Ponto de Referência</label>
+                  <input type="text" class="form-control" id="referencia">
+                </div>
+              </div>
 
-                <!--Categorias-->
-                <div class="categoria">
-                  <label for="">Categorias:</label><br>
-                  <button type="button" class="btn-categoria">Limpreza de Praia</button>
-                  <button type="button" class="btn-categoria">Educação ambiental</button>
-                  <button type="button" class="btn-categoria">Caminhada</button>
-                  <button type="button" class="btn-categoria">Corrida</button>
-                  <button type="button" class="btn-categoria">Conscientização</button>
-                  <button type="button" class="btn-categoria">Outros</button>
-                </div>
+              <!-- Upload de imagem -->
+              <div class="mb-3">
+                <label for="img" class="form-label">Imagem</label>
+                <input type="file" id="img" name="img" accept="image/*" class="form-control">
+              </div>
 
+              <!-- Categorias -->
+              <div class="categoria mb-3">
+                <label class="form-label">Categorias:</label><br>
+                <button type="button" class="btn-categoria">Limpeza de Praia</button>
+                <button type="button" class="btn-categoria">Educação ambiental</button>
+                <button type="button" class="btn-categoria">Caminhada</button>
+                <button type="button" class="btn-categoria">Corrida</button>
+                <button type="button" class="btn-categoria">Conscientização</button>
+                <button type="button" class="btn-categoria">Outros</button>
+              </div>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn-secundario" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn-primario">Salvar</button>
+            <button type="submit" class="btn-primario">Salvar</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Cards Eventos -->
-    <div class="card-grid">
-      <div class="card">
-        <img src="assets/images/mockups/oficina-artes.png" alt="Ecossistemas Marinhos">
-        <div class="card-content">
-          <h3>Oficina de Arte com Lixo Marinho</h3>
-          <p>Data: 05/06/2025</p>
-          <p>Organização: EcoArt Bahia</p>
-          <p>Local: Museu de Arte Moderna (MAM), Salvador, Bahia, Brasil</p>
-          <a href="event-detail.html" class="btn">Saber mais</a>
-        </div>
-      </div>
+    <!-- Cards de Eventos -->
+    <section class="card-grid">
+      <!-- Cards serão carregados via JavaScript -->
+    </section>
 
-      <div class="card">
-        <img src="assets/images/mockups/oficina-artes.png" alt="Espécies Marinhas">
-        <div class="card-content">
-          <h3>Oficina de Arte com Lixo Marinho</h3>
-          <p>Data: 05/06/2025</p>
-          <p>Organização: EcoArt Bahia</p>
-          <p>Local: Museu de Arte Moderna (MAM), Salvador, Bahia, Brasil</p>
-          <a href="event-detail.html" class="btn">Saber mais</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/mockups/oficina-artes.png" alt="Impactos da Poluição">
-        <div class="card-content">
-          <h3>Oficina de Arte com Lixo Marinho</h3>
-          <p>Data: 05/06/2025</p>
-          <p>Organização: EcoArt Bahia</p>
-          <p>Local: Museu de Arte Moderna (MAM), Salvador, Bahia, Brasil</p>
-          <a href="event-detail.html" class="btn">Saber mais</a>
-        </div>
-      </div>
-    </div>
-    
+    <!-- Paginação -->
     <div class="paginacao">
       <button class="ativo">1</button>
       <button>2</button>
@@ -184,15 +152,12 @@
   </main>
 
   <!-- Rodapé -->
-  <footer class="footer">
+  <footer class="footer mt-5">
     <div class="footer-container">
       <div class="footer-logo">
         <h2>Blue Guardians</h2>
       </div>
       <div class="footer-links">
-        <!-- <a href="#home">Meu Perfil</a>
-        <a href="#news">Denúncias</a>
-        <a href="#news">Política de Privacidade</a> -->
       </div>
       <div class="footer-social">
         <a href="#"><img src="assets/images/facebook.png" alt="Facebook"></a>
@@ -205,14 +170,45 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const links = document.querySelector('.navbar-links');
-  
     toggle.addEventListener('click', () => {
       links.classList.toggle('show');
     });
-  </script>  
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cardGrid = document.querySelector(".card-grid");
+
+      fetch("../db.json")
+        .then(response => response.json())
+        .then(data => {
+          cardGrid.innerHTML = "";
+          data.events.forEach(event => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            card.innerHTML = `
+              <img src="${event.image}" alt="${event.title}">
+              <div class="card-content">
+                <h3>${event.title}</h3>
+                <p>Data: ${event.date}</p>
+                <p>Organização: ${event.organizer}</p>
+                <p>Local: ${event.location}</p>
+                <a href="event-detail.html?id=${event.id}" class="btn">Saber mais</a>
+              </div>
+            `;
+            cardGrid.appendChild(card);
+          });
+        })
+        .catch(error => {
+          console.error("Erro ao carregar eventos:", error);
+          cardGrid.innerHTML = "<p>Não foi possível carregar os eventos no momento.</p>";
+        });
+    });
+  </script>
 </body>
 </html>
