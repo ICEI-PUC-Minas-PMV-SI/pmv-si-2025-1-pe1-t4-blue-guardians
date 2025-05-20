@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "João da Costa",
       "email": "joao@email.com",
       "password": "123456"
@@ -9,7 +9,7 @@
   ],
   "events": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Mutirão de Limpeza da Praia",
       "date": "2025-06-10T07:30:00",
       "organizer": "Guardas do Mar",
@@ -19,7 +19,7 @@
       "userId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Palestra sobre Biomas Costeiros",
       "date": "2025-06-15T00:00:00",
       "organizer": "Instituto Verde",
@@ -29,7 +29,7 @@
       "userId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Festa sobre Biomas Costeiros",
       "date": "2025-06-01T00:00:00",
       "organizer": "Instituto Verde",
@@ -39,7 +39,7 @@
       "userId": 1
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Aula Aberta de Ecologia Marinha",
       "date": "2025-06-20T00:00:00",
       "organizer": "UFBA",
@@ -49,7 +49,7 @@
       "userId": 1
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Zelando pelos Recifes",
       "date": "2025-06-05T00:00:00",
       "organizer": "ONG Oceano Vivo",
@@ -59,7 +59,7 @@
       "userId": 1
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Corrida Azul pela Natureza",
       "date": "2025-05-01T00:00:00",
       "organizer": "Corredores Verdes",
@@ -69,7 +69,7 @@
       "userId": 1
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Oficina de Reciclagem Criativa",
       "date": "2025-07-01T00:00:00",
       "organizer": "EcoCriar",

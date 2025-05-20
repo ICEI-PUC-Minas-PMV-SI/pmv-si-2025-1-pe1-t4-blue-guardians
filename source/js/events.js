@@ -1,19 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cardGrid = document.querySelector(".card-grid");
-  let todosEventos = [];
+    const cardGrid = document.querySelector(".card-grid");
+    let todosEventos = [];
+
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+    if (!usuarioLogado) {
+      const desejaLogar = confirm("Você precisa estar logado para acessar esta funcionalidade.\nDeseja ir para a página de login?");
+      if (desejaLogar) {
+        window.location.href = "login.html";
+      } else {
+        alert("Ação cancelada. Você permanecerá nesta página.");
+      }
+      return; // Interrompe a execução do script
+    }
+
+
+    const userName = usuarioLogado.nome;
+    const userId = usuarioLogado.id;
 
   // Carregar eventos
-  fetch("../db.json")
-    .then(response => response.json())
-    .then(data => {
-      todosEventos = data.events;
-      renderizarEventos(todosEventos);
-    })
-    .catch(error => {
-      console.error("Erro ao carregar eventos:", error);
-      cardGrid.innerHTML = "<p>Não foi possível carregar os eventos no momento.</p>";
-    });
-
+fetch("http://localhost:3000/events")
+  .then(response => response.json())
+  .then(data => {
+    todosEventos = data; // Agora está correto
+    renderizarEventos(todosEventos);
+  })
+  .catch(error => {
+    console.error("Erro ao carregar eventos:", error);
+    cardGrid.innerHTML = "<p>Não foi possível carregar os eventos no momento.</p>";
+  });
     function renderizarEventos(lista) {
     cardGrid.innerHTML = "";
     lista.forEach(event => {
@@ -53,63 +67,51 @@ document.addEventListener("DOMContentLoaded", () => {
     renderizarEventos(proximos);
   });
 
-  // Verifica se usuário está logado
-  // const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-    localStorage.setItem("userId", "1");
-    localStorage.setItem("userName", "João da Costa");
-    const userName = "João da Costa";
-    const userId = "1";
-
-    /*
-    const botaoCriarEvento = document.querySelector(".bnt-criar-evento");
-    botaoCriarEvento.addEventListener("click", (e) => {
-        if (!usuarioLogado) {
-        e.preventDefault();
-        alert("Você precisa estar logado para criar um evento.");
-        window.location.href = "login.html";
-        }
-    });
-    */
-
     // Adiciona evento (simulado)
     const botaoSalvar = document.querySelector(".btn-primario");
     botaoSalvar.addEventListener("click", (e) => {
-    e.preventDefault();
+      e.preventDefault();
 
-        const novoEvento = {
+      if (!userId) {
+        alert("Usuário não identificado. Faça login novamente.");
+        window.location.href = "login.html";
+        return;
+      }
+
+      const novoEvento = {
         id: todosEventos.length + 1,
         title: document.getElementById("inputTitle").value,
         description: document.getElementById("textareaDescricao").value,
         date: `${document.getElementById("inputDate").value}T${document.getElementById("inputTime").value}`,
-        organizer: userName || "Usuário",
+        organizer: userName,
         location: `${document.getElementById("inputRua").value}, ${document.getElementById("inputNumero").value} - ${document.getElementById("cidade").value} - ${document.getElementById("estado").value}`,
         image: "assets/images/mockups/oficina-artes.png",
         userId: parseInt(userId)
-        };
+      };
 
-
-        fetch("http://localhost:3000/events", {
+      fetch("http://localhost:3000/events", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(novoEvento)
-        })
-        .then(response => {
+      })
+      .then(response => {
         if (!response.ok) {
-            throw new Error("Erro ao salvar o evento.");
+          throw new Error("Erro ao salvar o evento.");
         }
         return response.json();
-        })
-        .then(eventoCriado => {
+      })
+      .then(eventoCriado => {
         todosEventos.push(eventoCriado);
         renderizarEventos(todosEventos);
         alert("Evento criado com sucesso e salvo no banco de dados!");
         document.querySelector(".btn-close").click();
-        })
-        .catch(error => {
+      })
+      .catch(error => {
         console.error("Erro ao salvar evento:", error);
         alert("Houve um erro ao salvar o evento. Tente novamente.");
-        });
+      });
     });
+
 });
