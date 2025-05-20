@@ -48,9 +48,14 @@
             <i class="bi bi-arrow-down-up"></i> Ordenar por
           </button>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" id="ordenar-alfabetica">Ordem Alfabética (A-Z)</a></li>
+            <li><a class="dropdown-item" href="#" id="ordenar-proximos">Próximos Eventos</a></li>
           </ul>
         </div>
-        <button type="button" class="bnt-criar-evento" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Organize uma iniciativa</button>
+
+        <button type="button" class="bnt-criar-evento" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Organize uma iniciativa
+        </button>
       </div>
     </div>
 
@@ -178,36 +183,56 @@
     toggle.addEventListener('click', () => {
       links.classList.toggle('show');
     });
-  </script>
-  <script>
     document.addEventListener("DOMContentLoaded", () => {
       const cardGrid = document.querySelector(".card-grid");
+      let todosEventos = [];
 
+      // Carregar eventos
       fetch("../db.json")
         .then(response => response.json())
         .then(data => {
-          cardGrid.innerHTML = "";
-          data.events.forEach(event => {
-            const card = document.createElement("div");
-            card.classList.add("card");
-
-            card.innerHTML = `
-              <img src="${event.image}" alt="${event.title}">
-              <div class="card-content">
-                <h3>${event.title}</h3>
-                <p>Data: ${event.date}</p>
-                <p>Organização: ${event.organizer}</p>
-                <p>Local: ${event.location}</p>
-                <a href="event-detail.html?id=${event.id}" class="btn">Saber mais</a>
-              </div>
-            `;
-            cardGrid.appendChild(card);
-          });
+          todosEventos = data.events; // <- Salvar os eventos aqui
+          renderizarEventos(todosEventos);
         })
         .catch(error => {
           console.error("Erro ao carregar eventos:", error);
           cardGrid.innerHTML = "<p>Não foi possível carregar os eventos no momento.</p>";
         });
+
+      // Função para renderizar os cards
+      function renderizarEventos(lista) {
+        cardGrid.innerHTML = "";
+        lista.forEach(event => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.innerHTML = `
+            <img src="${event.image}" alt="${event.title}">
+            <div class="card-content">
+              <h3>${event.title}</h3>
+              <p>Data: ${event.date}</p>
+              <p>Organização: ${event.organizer}</p>
+              <p>Local: ${event.location}</p>
+              <a href="event-detail.html?id=${event.id}" class="btn">Saber mais</a>
+            </div>
+          `;
+          cardGrid.appendChild(card);
+        });
+      }
+
+      // Botão: Ordem Alfabética
+      document.getElementById("ordenar-alfabetica").addEventListener("click", () => {
+        const ordenado = [...todosEventos].sort((a, b) => a.title.localeCompare(b.title));
+        renderizarEventos(ordenado);
+      });
+
+      // Botão: Próximos eventos
+      document.getElementById("ordenar-proximos").addEventListener("click", () => {
+        const hoje = new Date();
+        const proximos = [...todosEventos]
+          .filter(event => new Date(event.date) >= hoje)
+          .sort((a, b) => new Date(a.date) - new Date(b.date));
+        renderizarEventos(proximos);
+      });
     });
   </script>
 </body>
