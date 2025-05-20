@@ -2,21 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardGrid = document.querySelector(".card-grid");
     let todosEventos = [];
 
-    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-    if (!usuarioLogado) {
-      const desejaLogar = confirm("Você precisa estar logado para acessar esta funcionalidade.\nDeseja ir para a página de login?");
-      if (desejaLogar) {
-        window.location.href = "login.html";
-      } else {
-        alert("Ação cancelada. Você permanecerá nesta página.");
-      }
-      return; // Interrompe a execução do script
-    }
-
-
-    const userName = usuarioLogado.nome;
-    const userId = usuarioLogado.id;
-
   // Carregar eventos
 fetch("http://localhost:3000/events")
   .then(response => response.json())
@@ -71,12 +56,19 @@ fetch("http://localhost:3000/events")
     const botaoSalvar = document.querySelector(".btn-primario");
     botaoSalvar.addEventListener("click", (e) => {
       e.preventDefault();
-
-      if (!userId) {
-        alert("Usuário não identificado. Faça login novamente.");
-        window.location.href = "login.html";
-        return;
+      const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+      if (!usuarioLogado) {
+        const desejaLogar = confirm("Você precisa estar logado para acessar esta funcionalidade.\nDeseja ir para a página de login?");
+        if (desejaLogar) {
+          window.location.href = "login.html";
+        } else {
+          alert("Ação cancelada. Você permanecerá nesta página.");
+        }
+        return; // Interrompe a execução do script
       }
+
+    const userName = usuarioLogado.nome;
+    const userId = usuarioLogado.id;
 
       const novoEvento = {
         id: todosEventos.length + 1,

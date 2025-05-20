@@ -178,27 +178,20 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/events.js"></script>
+  
   <!--Adicionando um usuário falso para teste -->
-    <script>
+  <script>
+  localStorage.removeItem("usuarioLogado");
+  </script>
+  <!--
+  <script>
     localStorage.setItem("usuarioLogado", JSON.stringify({
       id: 1,
       nome: "João da Costa"
     }));
   </script>
+  -->
   <script>
-      const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-      const botaoCriarEvento = document.querySelector(".bnt-criar-evento");
-      botaoCriarEvento.addEventListener("click", (e) => {
-        if (!usuarioLogado) {
-          const desejaLogar = confirm("Você precisa estar logado para acessar esta funcionalidade.\nDeseja ir para a página de login?");
-          if (desejaLogar) {
-            window.location.href = "login.html";
-          } else {
-            alert("Ação cancelada. Você permanecerá nesta página.");
-          }
-          return;
-        }
-      });
       const toggle = document.querySelector('.menu-toggle');
       const links = document.querySelector('.navbar-links');
       toggle.addEventListener('click', () => {
