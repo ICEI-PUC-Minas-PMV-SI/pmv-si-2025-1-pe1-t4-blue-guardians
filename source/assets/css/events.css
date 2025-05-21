@@ -161,7 +161,20 @@
     cursor: pointer;
     font-family: var(--font-main);
   }
+  .btn-categoria {
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin: 2px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
 
+  .btn-categoria.ativo {
+    background-color: #026395;
+    color: white;
+    border-color: #026395;
+  }
   .bnt-pesquisa-padrao {
     color: var(--cor-texto-base_escuro);
   }

@@ -16,6 +16,10 @@
       "location": "Praia de Itacimirim, Camaçari - BA",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Evento para limpeza e educação ambiental.",
+      "categories": [
+        "Limpeza",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -26,6 +30,10 @@
       "location": "IFBA - Campus Camaçari",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Palestra com especialistas em ecossistemas marinhos.",
+      "categories": [
+        "Limpeza",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -36,6 +44,10 @@
       "location": "IFBA - Campus Camaçari",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Celebração com foco em cultura e meio ambiente.",
+      "categories": [
+        "Limpeza",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -46,6 +58,10 @@
       "location": "Orla de Arembepe",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Introdução à vida marinha para a comunidade.",
+      "categories": [
+        "Limpeza",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -56,6 +72,10 @@
       "location": "Praia do Forte",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Campanha de conscientização e mergulho educativo.",
+      "categories": [
+        "Limpeza",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -66,6 +86,10 @@
       "location": "Centro de Camaçari",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Corrida temática com foco ambiental.",
+      "categories": [
+        "Limpeza",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -76,6 +100,25 @@
       "location": "Escola Municipal de Itacimirim",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Aprenda a transformar resíduos em arte!",
+      "categories": [
+        "Limpeza",
+        "Educação Ambiental"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 8,
+      "title": "Teste 2",
+      "description": "dfsadfasdf",
+      "date": "2025-05-23T02:01",
+      "organizer": "João da Costa",
+      "location": "dfsd, 10 - df - dfs",
+      "image": "assets/images/mockups/oficina-artes.png",
+      "categories": [
+        "Conscientização",
+        "Corrida",
+        "Limpeza de Praia"
+      ],
       "userId": 1
     }
   ]

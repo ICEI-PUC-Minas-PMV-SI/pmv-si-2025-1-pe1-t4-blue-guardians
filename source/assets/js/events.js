@@ -2,6 +2,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardGrid = document.querySelector(".card-grid");
     let todosEventos = [];
 
+    // Controle de seleção de categorias
+    const botoesCategoria = document.querySelectorAll(".btn-categoria");
+    let categoriasSelecionadas = [];
+
+    botoesCategoria.forEach(botao => {
+      botao.addEventListener("click", () => {
+        const categoria = botao.textContent.trim();
+        botao.classList.toggle("ativo");
+
+        if (categoriasSelecionadas.includes(categoria)) {
+          categoriasSelecionadas = categoriasSelecionadas.filter(cat => cat !== categoria);
+        } else {
+          categoriasSelecionadas.push(categoria);
+        }
+      });
+    });
   // Carregar eventos
 fetch("http://localhost:3000/events")
   .then(response => response.json())
@@ -27,14 +43,15 @@ fetch("http://localhost:3000/events")
         });
 
         card.innerHTML = `
-        <img src="${event.image}" alt="${event.title}">
-        <div class="card-content">
+          <img src="${event.image}" alt="${event.title}">
+          <div class="card-content">
             <h3>${event.title}</h3>
             <p>Data: ${dataFormatada} às ${horaFormatada}</p>
             <p>Organização: ${event.organizer}</p>
             <p>Local: ${event.location}</p>
+            <p class="categorias">Categorias: ${event.categories?.join(", ") || "Sem categoria"}</p>
             <a href="event-detail.html?id=${event.id}" class="btn">Saber mais</a>
-        </div>
+          </div>
         `;
         cardGrid.appendChild(card);
     });
@@ -70,16 +87,18 @@ fetch("http://localhost:3000/events")
     const userName = usuarioLogado.nome;
     const userId = usuarioLogado.id;
 
-      const novoEvento = {
-        id: todosEventos.length + 1,
-        title: document.getElementById("inputTitle").value,
-        description: document.getElementById("textareaDescricao").value,
-        date: `${document.getElementById("inputDate").value}T${document.getElementById("inputTime").value}`,
-        organizer: userName,
-        location: `${document.getElementById("inputRua").value}, ${document.getElementById("inputNumero").value} - ${document.getElementById("cidade").value} - ${document.getElementById("estado").value}`,
-        image: "assets/images/mockups/oficina-artes.png",
-        userId: parseInt(userId)
-      };
+    const novoEvento = {
+      id: todosEventos.length + 1,
+      title: document.getElementById("inputTitle").value,
+      description: document.getElementById("textareaDescricao").value,
+      date: `${document.getElementById("inputDate").value}T${document.getElementById("inputTime").value}`,
+      organizer: userName,
+      location: `${document.getElementById("inputRua").value}, ${document.getElementById("inputNumero").value} - ${document.getElementById("cidade").value} - ${document.getElementById("estado").value}`,
+      image: "assets/images/mockups/oficina-artes.png",
+      categories: categoriasSelecionadas,
+      userId: parseInt(userId)
+    };
+
 
       fetch("http://localhost:3000/events", {
         method: "POST",
