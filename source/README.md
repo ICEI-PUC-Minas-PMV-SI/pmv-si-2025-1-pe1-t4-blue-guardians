@@ -34,7 +34,7 @@ npm install json-server --save-dev
 No terminal, dentro da pasta do projeto, execute:
 
 ```bash
-json-server --watch db.json --port 3001
+json-server --watch db.json --port 3000
 ```
 Isso vai iniciar uma API REST simulada que escuta a porta 3001.
 
