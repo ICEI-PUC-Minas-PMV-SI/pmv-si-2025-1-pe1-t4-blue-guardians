@@ -17,25 +17,46 @@ form.addEventListener('submit', function (event) {
   const senha = form.senhaLogin.value;
 
   // função para verificarmos se o usuario digitou o e-mail e senha
-  function funcitionVerificaDados(email, senha) {
+  function verificaDados(email, senha) {
+    erroEmail.textContent = ''
+    erroSenha.textContent = ''
     if (email.trim() === '') {
       erroEmail.textContent = 'Por favor, preencha o e-mail.';
-      temErro = true;
-    }
+    } 
     if (senha.trim() === '') {
       erroSenha.textContent = 'Por favor, preencha a senha.';
-      temErro = true;
-    }
+    } 
   }
 
   async function verificaSeUsuarioExiste(){
-    const data = await carregarDados()
-    console.log(data.users)
+    try {
+    const data = await carregarDados();
+    const users = data.users;
+    const user = users.find(u => u.email === email);
+    if (!user) {
+      if(senha != ''){
+        erroSenha.textContent = 'Usuário não encontrado.';
+      }
+      
+      return;
+    }
+    if (user.password === senha) {
+      erroSenha.textContent = '';
+      console.log('Usuário encontrado');
+      // Armazena o nome do usuário e redireciona (exemplo com localStorage)
+      localStorage.setItem('nomeUsuario', user.name); 
+      window.location.href = 'index.html';
+    } else {
+      erroSenha.textContent = 'Senha incorreta.';
+    }
+  } catch (error) {
+    console.error('Erro ao verificar usuário:', error);
+  }
   }
   
   // execução das funções:
   carregarDados();
-  funcitionVerificaDados(email, senha)
+  verificaDados(email, senha)
   verificaSeUsuarioExiste()
-  console.log(`Email: ${email}, senha: ${senha}`);
+  console.log(localStorage)
 });

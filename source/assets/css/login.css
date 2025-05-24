@@ -123,6 +123,13 @@
   .form-options a:hover {
     text-decoration: underline;
   }
+  
+  .erro {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: block;
+}
 
   form button {
     margin: 30px auto 0 auto; /* centraliza horizontalmente */

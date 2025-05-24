@@ -20,8 +20,11 @@
         <p>Protegendo os ecossistemas marinhos com informação, conscientização e ação. Junte-se a nós nessa jornada pelo futuro dos oceanos!</p>
         <br>
         <form id="formLogin">
-          <input type="text" placeholder="Email" name="email_login"/>
-          <input type="password" placeholder="Senha" name="senha_login" />
+          <input type="email" placeholder="Email" name="emailLogin"/>
+          <small class="erro" id="erroEmail"></small>
+
+          <input type="password" placeholder="Senha" name="senhaLogin" />
+          <small class="erro" id="erroSenha"></small>
 
           <div class="form-options">
             <label>

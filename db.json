@@ -5,6 +5,18 @@
       "name": "João da Costa",
       "email": "joao@email.com",
       "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Guilherme Soares",
+      "email": "guilhermesoares@email.com",
+      "password": "456767"
+    }, 
+    {
+      "id": "3",
+      "name": "Lucas Prates Comedia",
+      "email": "lucasprates@email.com",
+      "password": "999999"
     }
   ],
   "events": [
