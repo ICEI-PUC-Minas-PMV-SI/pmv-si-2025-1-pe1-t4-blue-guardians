@@ -17,6 +17,12 @@
       "name": "Lucas Prates Comedia",
       "email": "lucasprates@email.com",
       "password": "999999"
+    },
+    {
+      "id": "4",
+      "name": "Joana",
+      "email": "Joana@email.com",
+      "password": "12345"
     }
   ],
   "events": [
