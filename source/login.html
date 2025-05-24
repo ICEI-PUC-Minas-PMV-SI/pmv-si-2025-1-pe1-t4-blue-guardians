@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blue Guardians - Login</title>
   <link rel="stylesheet" href="assets/css/login.css"/>
+
 </head>
 <body>
   <div class="background"></div>
@@ -18,9 +19,9 @@
         <h2>Bem-vindo de volta</h2>
         <p>Protegendo os ecossistemas marinhos com informação, conscientização e ação. Junte-se a nós nessa jornada pelo futuro dos oceanos!</p>
         <br>
-        <form>
-          <input type="text" placeholder="Email" />
-          <input type="password" placeholder="Senha" />
+        <form id="formLogin">
+          <input type="text" placeholder="Email" name="email_login"/>
+          <input type="password" placeholder="Senha" name="senha_login" />
 
           <div class="form-options">
             <label>
@@ -40,3 +41,5 @@
   </div>
 </body>
 </html>
+
+<script src="assets/js/login.js"></script>
