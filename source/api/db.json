@@ -126,19 +126,37 @@
       "id": "2",
       "name": "Guilherme Soares",
       "email": "guilhermesoares@email.com",
-      "password": "456767"
+      "password": "456767",
+      "type": "Explorador Aprendiz (ou Estudante)",
+      "bio": "Amo o oceano e suas criaturas.",
+      "urls": [
+        "https://perfil.com",
+        "https://x.com"
+      ]
     },
     {
       "id": "3",
       "name": "Lucas Prates Comedia",
       "email": "lucasprates@email.com",
-      "password": "999999"
+      "password": "999999",
+      "type": "Explorador Aprendiz (ou Estudante)",
+      "bio": "Amo o oceano e suas criaturas.",
+      "urls": [
+        "https://perfil.com",
+        "https://x.com"
+      ]
     },
     {
       "id": "4",
       "name": "Joana",
       "email": "Joana@email.com",
-      "password": "12345"
+      "password": "12345",
+      "type": "Explorador Aprendiz (ou Estudante)",
+      "bio": "Amo o oceano e suas criaturas.",
+      "urls": [
+        "https://perfil.com",
+        "https://x.com"
+      ]
     }
   ],
   "events": [
