@@ -1,4 +1,42 @@
 {
+  "conteudos": [
+    {
+      "id": 1,
+      "titulo": "Introdução aos Ecossistemas Marinhos",
+      "imagem": "assets/images/card_1.jpg",
+      "texto": "Conheça a diversidade dos oceanos e sua importância na regulação do clima.."
+    },
+    {
+      "id": 2,
+      "titulo": "A Importância dos Recifes de Corais",
+      "imagem": "assets/images/card_2.jpg",
+      "texto": "Recifes são habitats ricos em biodiversidade e barreiras naturais contra a erosão..."
+    },
+    {
+      "id": 3,
+      "titulo": "Espécies Ameaçadas dos Oceanos",
+      "imagem": "assets/images/card_3.jpg",
+      "texto": "Tartarugas, baleias e tubarões enfrentam riscos causados por pesca predatória..."
+    },
+    {
+      "id": 4,
+      "titulo": "Impactos da Poluição Marinha",
+      "imagem": "assets/images/card_4.jpg",
+      "texto": "Plásticos, produtos químicos e esgoto afetam diretamente os seres marinhos..."
+    },
+    {
+      "id": 5,
+      "titulo": "Mudanças Climáticas e os Oceanos",
+      "imagem": "assets/images/card_5.jpg",
+      "texto": "O aumento da temperatura global afeta a acidez dos oceanos, altera habitats..."
+    },
+    {
+      "id": 6,
+      "titulo": "Soluções para a Conservação Marinha",
+      "imagem": "assets/images/card_6.jpg",
+      "texto": "Áreas de proteção, educação ambiental e consumo consciente..."
+    }
+  ],
   "users": [
     {
       "id": "1",
