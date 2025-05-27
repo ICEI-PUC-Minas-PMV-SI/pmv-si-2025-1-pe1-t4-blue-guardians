@@ -95,24 +95,29 @@ fetch(`http://localhost:3000/contents/${id}`)
     const container = document.getElementById("detail-container");
     const container_slides = document.getElementById("slides");
     container.innerHTML = `
-        <h2 style="text-align: center;">${data.titulo}</h2>
-        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-            <img src="${data.imagem}" alt="${data.titulo}" style="max-width: 100%; height: 300px; border-radius: 2px; object-fit: cover;">
+        <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center; margin: 20px 0;">
+          <div style="flex: 1; min-width: 250px;">
+            <h2 style="text-align: left; font-size: 28px;">${data.titulo}</h2>
+            <p style="text-align: left; font-size: 16px; margin: 20px 0;">
+              Bem-vindo ao nosso espaço de conhecimento! Aqui você vai <br>explorar os fascinantes ecossistemas marinhos, aprender sobre <br>espécies incríveis e entender a importância da conservação dos <br>oceanos. Vamos juntos proteger a vida marinha!
+            </p>
+          </div>
+          <img src="${data.imagem}" alt="${data.titulo}" style="flex: 1; max-width: 500px; height: 300px; border-radius: 2px; object-fit: cover;">
         </div>
         <p>${data.descricao}</p>
     `;
     container_slides.innerHTML = `
     <div class="slide">
-      <iframe src="${data.video1}?autoplay=1" title="ECOSSISTEMAS AQUÁTICOS" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <iframe src="${data.video1}" title="ECOSSISTEMAS AQUÁTICOS" allowfullscreen></iframe>
+      <iframe src="${data.video1}?autoplay=1" title="${data.titulo}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe src="${data.video1}" title="${data.titulo}" allowfullscreen></iframe>
     </div>
     <div class="slide">
-        <iframe src="${data.video2}?autoplay=1" title="ECOSSISTEMAS AQUÁTICOS" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <iframe src="${data.video2}" title="ECOSSISTEMAS AQUÁTICOS" allowfullscreen></iframe>
+        <iframe src="${data.video2}?autoplay=1" title="${data.titulo}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe src="${data.video2}" title="${data.titulo}" allowfullscreen></iframe>
     </div>
     <div class="slide">
-        <iframe src="${data.video3}?autoplay=1" title="ECOSSISTEMAS AQUÁTICOS" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <iframe src="${data.video3}" title="ECOSSISTEMAS AQUÁTICOS" allowfullscreen></iframe>
+        <iframe src="${data.video3}?autoplay=1" title="${data.titulo}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe src="${data.video3}" title="${data.titulo}" allowfullscreen></iframe>
     </div>
     `;
     })
