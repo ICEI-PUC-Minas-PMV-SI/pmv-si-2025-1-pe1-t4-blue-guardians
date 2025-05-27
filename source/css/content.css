@@ -113,38 +113,31 @@
 
   /* Texto e slide */
 
-  .container {
+  /* .container {
     display: flex;
     align-items: center;
     padding: 95px 5px 30px;
     max-width: 1500px; 
     margin: 0 auto;
-    flex-wrap: wrap; /* permite que os elementos quebrem linha */
+    flex-wrap: wrap; 
   }
 
-  .containertext {
-    color: var(--cor-texto-base_escuro);
-    flex: 1;
-    text-align: left;
-    margin-right: 20px;
-    min-width: 300px;
+  .detail-container {
+    text-align: center; 
   }
 
-  .containerimage {
-    flex: 1;
+  .detail-container .image-wrapper {
     display: flex;
-    justify-content: flex-end;
-    min-width: 300px;
-    margin-top: 20px;
+    justify-content: center;
+    margin: 20px 0;
   }
 
-  .containerimage img {
-    max-width: 100%;
+  .detail-container .image-wrapper img {
+    max-width: 80%;
     height: auto;
     border-radius: 2px;
   }
 
-  /* Texto principal */
   .maincontent {
     display: flex;
     max-width: 1500px; 
@@ -154,7 +147,7 @@
   .maincontent  p{
     text-align: start;
     color: var(--cor-texto-base_escuro);
-  }
+  } */
 
   /* Carrossel */
 

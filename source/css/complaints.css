@@ -344,6 +344,7 @@
   
   .btn:hover {
     background-color: #115094de;
+    color: white;
   }
 
   .center-btn {

@@ -4,37 +4,61 @@
       "id": 1,
       "titulo": "Introdução aos Ecossistemas Marinhos",
       "imagem": "assets/images/card_1.jpg",
-      "texto": "Conheça a diversidade dos oceanos e sua importância na regulação do clima.."
+      "texto": "Conheça a diversidade dos oceanos e sua importância na regulação do clima..",
+      "descricao": "Os ecossistemas marinhos são ambientes naturais formados por organismos vivos (como peixes, corais, algas, moluscos, etc.) e elementos não vivos (como água salgada, luz solar e nutrientes), que interagem entre si nos oceanos e mares. Eles cobrem cerca de 70% da superfície da Terra e são essenciais para a vida no planeta, pois regulam o clima, produzem oxigênio e fornecem alimentos e recursos para milhões de espécies, incluindo os seres humanos. Os ecossistemas marinhos são complexos ambientes aquáticos que abrigam uma enorme diversidade de vida, desde pequenos organismos microscópicos até grandes mamíferos marinhos. Eles desempenham um papel fundamental na manutenção do equilíbrio climático global, regulando a temperatura e absorvendo dióxido de carbono. Esses ecossistemas também sustentam inúmeras comunidades humanas, fornecendo alimento, empregos e proteção costeira.",
+      "video1": "https://www.youtube.com/embed/8H1F-uN8EcE",
+      "video2": "https://www.youtube.com/embed/FVP4FCATMjk",
+      "video3": "https://www.youtube.com/embed/FVP4FCATMjk"
     },
     {
       "id": 2,
       "titulo": "A Importância dos Recifes de Corais",
       "imagem": "assets/images/card_2.jpg",
-      "texto": "Recifes são habitats ricos em biodiversidade e barreiras naturais contra a erosão..."
+      "texto": "Recifes são habitats ricos em biodiversidade e barreiras naturais contra a erosão...",
+      "descricao": "",
+      "video1": "https://www.youtube.com/embed/lb65_bzYWKw",
+      "video2": "https://www.youtube.com/embed/NgqWoiMuwj8",
+      "video3": "https://www.youtube.com/embed/TaTgUaJRRfQ"
     },
     {
       "id": 3,
       "titulo": "Espécies Ameaçadas dos Oceanos",
       "imagem": "assets/images/card_3.jpg",
-      "texto": "Tartarugas, baleias e tubarões enfrentam riscos causados por pesca predatória..."
+      "texto": "Tartarugas, baleias e tubarões enfrentam riscos causados por pesca predatória...",
+      "descricao": "",
+      "video1": "https://www.youtube.com/embed/WkI6brDz5UU",
+      "video2": "https://www.youtube.com/embed/yN4OcSL8qqA",
+      "video3": "https://www.youtube.com/embed/ueUHjhEXil0"
     },
     {
       "id": 4,
       "titulo": "Impactos da Poluição Marinha",
       "imagem": "assets/images/card_4.jpg",
-      "texto": "Plásticos, produtos químicos e esgoto afetam diretamente os seres marinhos..."
+      "texto": "Plásticos, produtos químicos e esgoto afetam diretamente os seres marinhos...",
+      "descricao": "",
+      "video1": "https://www.youtube.com/embed/08RcT3eiuhw",
+      "video2": "https://www.youtube.com/embed/n8KAFTJne4A",
+      "video3": "https://www.youtube.com/embed/HI4xaXuzXAw"
     },
     {
       "id": 5,
       "titulo": "Mudanças Climáticas e os Oceanos",
       "imagem": "assets/images/card_5.jpg",
-      "texto": "O aumento da temperatura global afeta a acidez dos oceanos, altera habitats..."
+      "texto": "O aumento da temperatura global afeta a acidez dos oceanos, altera habitats...",
+      "descricao": "",
+      "video1": "https://www.youtube.com/embed/8VA9fIRQnDg",
+      "video2": "https://www.youtube.com/embed/VgVXWaYEEkk",
+      "video3": "https://www.youtube.com/embed/-49S5T1hZWE"
     },
     {
       "id": 6,
       "titulo": "Soluções para a Conservação Marinha",
       "imagem": "assets/images/card_6.jpg",
-      "texto": "Áreas de proteção, educação ambiental e consumo consciente..."
+      "texto": "Áreas de proteção, educação ambiental e consumo consciente...",
+      "descricao": "",
+      "video1": "https://www.youtube.com/embed/5p_fyYCew7A",
+      "video2": "https://www.youtube.com/embed/OiJYjkmtIns",
+      "video3": "https://www.youtube.com/embed/QoAAbL0ubX0"
     }
   ],
   "tabData": [
@@ -272,8 +296,7 @@
       "image": "assets/images/mockups/oficina-artes.png",
       "categories": [
         "Educação ambiental",
-        "Arte e Cultura",
-        "Sustentabilidade"
+        "Arte e Cultura"
       ],
       "userId": 1
     }
