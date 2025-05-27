@@ -154,6 +154,10 @@
     color: var(--cor-texto-base_escuro);
   }
 
+  .inputRua, .inputCidade, .inputEstado {
+    color: #111;
+  }
+
   button {
     padding: 0.4rem 0.8rem;
     border: none;

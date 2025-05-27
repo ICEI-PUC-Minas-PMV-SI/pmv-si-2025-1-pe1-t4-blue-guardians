@@ -11,7 +11,7 @@
       "name": "Guilherme Soares",
       "email": "guilhermesoares@email.com",
       "password": "456767"
-    }, 
+    },
     {
       "id": "3",
       "name": "Lucas Prates Comedia",
@@ -31,6 +31,14 @@
       "title": "Mutirão de Limpeza da Praia",
       "date": "2025-06-10T07:30:00",
       "organizer": "Guardas do Mar",
+      "address": {
+        "cep": "42810-000",
+        "street": "Praia de Itacimirim",
+        "number": "s/n",
+        "district": "",
+        "city": "Camaçari",
+        "state": "BA"
+      },
       "location": "Praia de Itacimirim, Camaçari - BA",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Evento para limpeza e educação ambiental.",
@@ -45,6 +53,14 @@
       "title": "Palestra sobre Biomas Costeiros",
       "date": "2025-06-15T00:00:00",
       "organizer": "Instituto Verde",
+      "address": {
+        "cep": "",
+        "street": "IFBA - Campus Camaçari",
+        "number": "s/n",
+        "district": "",
+        "city": "Camaçari",
+        "state": "BA"
+      },
       "location": "IFBA - Campus Camaçari",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Palestra com especialistas em ecossistemas marinhos.",
@@ -59,6 +75,14 @@
       "title": "Festa sobre Biomas Costeiros",
       "date": "2025-06-01T00:00:00",
       "organizer": "Instituto Verde",
+      "address": {
+        "cep": "",
+        "street": "IFBA - Campus Camaçari",
+        "number": "s/n",
+        "district": "",
+        "city": "Camaçari",
+        "state": "BA"
+      },
       "location": "IFBA - Campus Camaçari",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Celebração com foco em cultura e meio ambiente.",
@@ -73,6 +97,14 @@
       "title": "Aula Aberta de Ecologia Marinha",
       "date": "2025-06-20T00:00:00",
       "organizer": "UFBA",
+      "address": {
+        "cep": "",
+        "street": "Orla de Arembepe",
+        "number": "s/n",
+        "district": "",
+        "city": "Camaçari",
+        "state": "BA"
+      },
       "location": "Orla de Arembepe",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Introdução à vida marinha para a comunidade.",
@@ -87,6 +119,14 @@
       "title": "Zelando pelos Recifes",
       "date": "2025-06-05T00:00:00",
       "organizer": "ONG Oceano Vivo",
+      "address": {
+        "cep": "",
+        "street": "Praia do Forte",
+        "number": "s/n",
+        "district": "",
+        "city": "Mata de São João",
+        "state": "BA"
+      },
       "location": "Praia do Forte",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Campanha de conscientização e mergulho educativo.",
@@ -101,6 +141,14 @@
       "title": "Corrida Azul pela Natureza",
       "date": "2025-05-01T00:00:00",
       "organizer": "Corredores Verdes",
+      "address": {
+        "cep": "",
+        "street": "Centro de Camaçari",
+        "number": "s/n",
+        "district": "",
+        "city": "Camaçari",
+        "state": "BA"
+      },
       "location": "Centro de Camaçari",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Corrida temática com foco ambiental.",
@@ -115,6 +163,14 @@
       "title": "Oficina de Reciclagem Criativa",
       "date": "2025-07-01T00:00:00",
       "organizer": "EcoCriar",
+      "address": {
+        "cep": "",
+        "street": "Escola Municipal de Itacimirim",
+        "number": "s/n",
+        "district": "",
+        "city": "Camaçari",
+        "state": "BA"
+      },
       "location": "Escola Municipal de Itacimirim",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Aprenda a transformar resíduos em arte!",
@@ -125,17 +181,26 @@
       "userId": 1
     },
     {
-      "id": 8,
-      "title": "Teste 2",
-      "description": "dfsadfasdf",
-      "date": "2025-05-23T02:01",
-      "organizer": "João da Costa",
-      "location": "dfsd, 10 - df - dfs",
+      "id": "8",
+      "title": "Oficina de Arte Sustentável",
+      "description": "Participe de uma oficina prática onde arte e sustentabilidade se encontram. Vamos criar peças reutilizando materiais recicláveis, promovendo a conscientização ambiental de forma criativa e colaborativa.",
+      "date": "2025-06-15T14:00",
+      "organizer": "Instituto VerdeVivo",
+      "address": {
+        "cep": "57045045",
+        "street": "Rua Doutor George Arroxelas",
+        "number": "120",
+        "district": "Barro Duro",
+        "city": "Maceió",
+        "state": "AL",
+        "referencia": "Próximo ao Parque Municipal"
+      },
+      "location": "Rua Doutor George Arroxelas, 120 - Barro Duro (Próximo ao Parque Municipal) - Maceió - Alagoas",
       "image": "assets/images/mockups/oficina-artes.png",
       "categories": [
-        "Conscientização",
-        "Corrida",
-        "Limpeza de Praia"
+        "Educação ambiental",
+        "Arte e Cultura",
+        "Sustentabilidade"
       ],
       "userId": 1
     }

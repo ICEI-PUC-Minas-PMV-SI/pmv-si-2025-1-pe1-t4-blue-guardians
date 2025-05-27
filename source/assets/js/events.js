@@ -1,128 +1,176 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cardGrid = document.querySelector(".card-grid");
-    let todosEventos = [];
+  const cardGrid = document.querySelector(".card-grid");
+  let todosEventos = [];
+  let categoriasSelecionadas = [];
 
-    // Controle de seleção de categorias
-    const botoesCategoria = document.querySelectorAll(".btn-categoria");
-    let categoriasSelecionadas = [];
+  // Controle de seleção de categorias
+  const botoesCategoria = document.querySelectorAll(".btn-categoria");
+  botoesCategoria.forEach(botao => {
+    botao.addEventListener("click", () => {
+      const categoria = botao.textContent.trim();
+      botao.classList.toggle("ativo");
 
-    botoesCategoria.forEach(botao => {
-      botao.addEventListener("click", () => {
-        const categoria = botao.textContent.trim();
-        botao.classList.toggle("ativo");
-
-        if (categoriasSelecionadas.includes(categoria)) {
-          categoriasSelecionadas = categoriasSelecionadas.filter(cat => cat !== categoria);
-        } else {
-          categoriasSelecionadas.push(categoria);
-        }
-      });
+      if (categoriasSelecionadas.includes(categoria)) {
+        categoriasSelecionadas = categoriasSelecionadas.filter(cat => cat !== categoria);
+      } else {
+        categoriasSelecionadas.push(categoria);
+      }
     });
-  // Carregar eventos
-fetch("http://localhost:3000/events")
-  .then(response => response.json())
-  .then(data => {
-    todosEventos = data; // Agora está correto
-    renderizarEventos(todosEventos);
-  })
-  .catch(error => {
-    console.error("Erro ao carregar eventos:", error);
-    cardGrid.innerHTML = "<p>Não foi possível carregar os eventos no momento.</p>";
   });
-    function renderizarEventos(lista) {
+
+  // Carregar eventos do backend
+  fetch("http://localhost:3000/events")
+    .then(response => response.json())
+    .then(data => {
+      todosEventos = data;
+      renderizarEventos(todosEventos);
+    })
+    .catch(error => {
+      console.error("Erro ao carregar eventos:", error);
+      if (cardGrid) {
+        cardGrid.innerHTML = "<p>Não foi possível carregar os eventos no momento.</p>";
+      }
+    });
+
+  // Função para renderizar eventos
+  function renderizarEventos(lista) {
+    if (!cardGrid) return;
     cardGrid.innerHTML = "";
     lista.forEach(event => {
-        const card = document.createElement("div");
-        card.classList.add("card");
+      const card = document.createElement("div");
+      card.classList.add("card");
 
-        const dataEvento = new Date(event.date);
-        const dataFormatada = dataEvento.toLocaleDateString("pt-BR");
-        const horaFormatada = dataEvento.toLocaleTimeString("pt-BR", {
+      const dataEvento = new Date(event.date);
+      const dataFormatada = dataEvento.toLocaleDateString("pt-BR");
+      const horaFormatada = dataEvento.toLocaleTimeString("pt-BR", {
         hour: '2-digit',
         minute: '2-digit'
-        });
+      });
 
-        card.innerHTML = `
-          <img src="${event.image}" alt="${event.title}">
-          <div class="card-content">
-            <h3>${event.title}</h3>
-            <p>Data: ${dataFormatada} às ${horaFormatada}</p>
-            <p>Organização: ${event.organizer}</p>
-            <p>Local: ${event.location}</p>
-            <p class="categorias">Categorias: ${event.categories?.join(", ") || "Sem categoria"}</p>
-            <a href="event-detail.html?id=${event.id}" class="btn">Saber mais</a>
-          </div>
-        `;
-        cardGrid.appendChild(card);
+      card.innerHTML = `
+        <img src="${event.image}" alt="${event.title}">
+        <div class="card-content">
+          <h3>${event.title}</h3>
+          <p>Data: ${dataFormatada} às ${horaFormatada}</p>
+          <p>Organização: ${event.organizer}</p>
+          <p>Local: ${event.location}</p>
+          <p class="categorias">Categorias: ${event.categories?.join(", ") || "Sem categoria"}</p>
+          <a href="event-detail.html?id=${event.id}" class="btn">Saber mais</a>
+        </div>
+      `;
+      cardGrid.appendChild(card);
     });
-    }
-  document.getElementById("ordenar-alfabetica").addEventListener("click", () => {
-    const ordenado = [...todosEventos].sort((a, b) => a.title.localeCompare(b.title));
-    renderizarEventos(ordenado);
-  });
+  }
 
-  document.getElementById("ordenar-proximos").addEventListener("click", () => {
-    const hoje = new Date();
-    const proximos = [...todosEventos]
-      .filter(event => new Date(event.date) >= hoje)
-      .sort((a, b) => new Date(a.date) - new Date(b.date));
-    renderizarEventos(proximos);
-  });
-
-    // Adiciona evento (simulado)
-    const botaoSalvar = document.querySelector(".btn-primario");
-    botaoSalvar.addEventListener("click", (e) => {
+  // Adicionar evento
+  const botaoSalvar = document.querySelector("#btnSalvarEvento");
+  if (botaoSalvar) {
+    botaoSalvar.addEventListener("click", async (e) => {
       e.preventDefault();
+
+      // Verificar usuário logado
       const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
       if (!usuarioLogado) {
-        const desejaLogar = confirm("Você precisa estar logado para acessar esta funcionalidade.\nDeseja ir para a página de login?");
-        if (desejaLogar) {
+        if (confirm("Você precisa estar logado para criar eventos. Deseja ir para a página de login?")) {
           window.location.href = "login.html";
-        } else {
-          alert("Ação cancelada. Você permanecerá nesta página.");
         }
-        return; // Interrompe a execução do script
+        return;
       }
 
-    const userName = usuarioLogado.nome;
-    const userId = usuarioLogado.id;
+      // Coletar dados do formulário
+      const titulo = document.getElementById("inputTitle")?.value.trim();
+      const descricao = document.getElementById("textareaDescricao")?.value.trim();
+      const data = document.getElementById("inputDate")?.value;
+      const hora = document.getElementById("inputTime")?.value;
+      const cep = document.getElementById("inputCep")?.value;
+      const rua = document.getElementById("inputRua")?.value;
+      const bairro = document.getElementById("inputBairro")?.value;
+      const numero = document.getElementById("inputNumero")?.value;
+      const cidade = document.getElementById("inputCidade")?.value;
+      const estado = document.getElementById("inputEstado")?.value;
+      const referencia = document.getElementById("referencia")?.value.trim();
 
-    const novoEvento = {
-      id: todosEventos.length + 1,
-      title: document.getElementById("inputTitle").value,
-      description: document.getElementById("textareaDescricao").value,
-      date: `${document.getElementById("inputDate").value}T${document.getElementById("inputTime").value}`,
-      organizer: userName,
-      location: `${document.getElementById("inputRua").value}, ${document.getElementById("inputNumero").value} - ${document.getElementById("cidade").value} - ${document.getElementById("estado").value}`,
-      image: "assets/images/mockups/oficina-artes.png",
-      categories: categoriasSelecionadas,
-      userId: parseInt(userId)
-    };
+      // Validar campos obrigatórios
+      if (!titulo || !descricao || !data || !hora || !cep || !rua || !numero || !cidade || !estado) {
+        alert("Por favor, preencha todos os campos obrigatórios!");
+        return;
+      }
 
+      try {
+        // Criar objeto do evento
+        const novoEvento = {
+          title: titulo,
+          description: descricao,
+          date: `${data}T${hora}`,
+          organizer: usuarioLogado.nome,
+          address: {
+            cep: cep,
+            street: rua,
+            number: numero,
+            district: bairro,
+            city: cidade,
+            state: estado,
+            referencia: referencia
+          },
+          location: `${rua} - ${bairro}, ${numero}${referencia ? " (" + referencia + ")" : ""} - ${cidade} - ${estado}`,
+          image: "assets/images/mockups/oficina-artes.png",
+          categories: categoriasSelecionadas,
+          userId: parseInt(usuarioLogado.id)
+        };
 
-      fetch("http://localhost:3000/events", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(novoEvento)
-      })
-      .then(response => {
+        // Enviar para a API
+        const response = await fetch("http://localhost:3000/events", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(novoEvento)
+        });
+
         if (!response.ok) {
-          throw new Error("Erro ao salvar o evento.");
+          throw new Error("Erro ao salvar o evento");
         }
-        return response.json();
-      })
-      .then(eventoCriado => {
+
+        const eventoCriado = await response.json();
         todosEventos.push(eventoCriado);
         renderizarEventos(todosEventos);
-        alert("Evento criado com sucesso e salvo no banco de dados!");
-        document.querySelector(".btn-close").click();
-      })
-      .catch(error => {
-        console.error("Erro ao salvar evento:", error);
-        alert("Houve um erro ao salvar o evento. Tente novamente.");
-      });
+        
+        // Fechar modal corretamente usando Bootstrap
+        const modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+        modal.hide();
+        
+        // Feedback ao usuário
+        alert("Evento criado com sucesso!");
+        
+        // Resetar formulário
+        document.querySelector("#staticBackdrop form").reset();
+        categoriasSelecionadas = [];
+        botoesCategoria.forEach(botao => botao.classList.remove("ativo"));
+        
+      } catch (error) {
+        console.error("Erro:", error);
+        alert(`Falha ao criar evento: ${error.message}`);
+      }
     });
+  }
 
+  // Ordenações (mantido igual)
+  const ordenarAlfabeticaBtn = document.getElementById("ordenar-alfabetica");
+  if (ordenarAlfabeticaBtn) {
+    ordenarAlfabeticaBtn.addEventListener("click", () => {
+      const ordenado = [...todosEventos].sort((a, b) => a.title.localeCompare(b.title));
+      renderizarEventos(ordenado);
+    });
+  }
+
+  const ordenarProximosBtn = document.getElementById("ordenar-proximos");
+  if (ordenarProximosBtn) {
+    ordenarProximosBtn.addEventListener("click", () => {
+      const hoje = new Date();
+      const proximos = [...todosEventos]
+        .filter(event => new Date(event.date) >= hoje)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+      renderizarEventos(proximos);
+    });
+  }
 });
