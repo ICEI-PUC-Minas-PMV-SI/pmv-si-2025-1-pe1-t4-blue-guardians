@@ -41,7 +41,24 @@
     </section>
 
     <section class="containerimage">
-      <img src="assets/images/banner_1.jpg" alt="Imagem dos oceanos">
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="carousel">
+          <div class="carousel-images">
+            <img src="assets/images/banner_1.jpg" alt="Imagem 1">
+            <img src="assets/images/banner_2.jpeg" alt="Imagem 2">
+            <img src="assets/images/banner_3.jpg" alt="Imagem 3">
+            <img src="assets/images/banner_4.jpg" alt="Imagem 4">
+            <img src="assets/images/banner_6.jpg" alt="Imagem 6">
+            <img src="assets/images/banner_7.jpg" alt="Imagem 7">
+            <img src="assets/images/banner_8.jpg" alt="Imagem 8"> 
+          </div>
+        </div>
+
+        <!-- <button class="carousel-btn prev">&#10094;</button> -->
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
     </section>
   </main>
 
@@ -137,6 +154,36 @@
       links.classList.toggle('show');
     });
   </script>  
+
+  <script>
+    const imagesContainer = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    let index = 0;
+
+    function showImage(idx) {
+      const offset = -idx * 100;
+      imagesContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + images.length) % images.length;
+      showImage(index);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % images.length;
+      showImage(index);
+    });
+
+     // Autoplay automático a cada 4 segundos
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      showImage(index);
+    }, 3000); //
+  </script>
 
   <script src="js/home.js"></script>
 </body>
