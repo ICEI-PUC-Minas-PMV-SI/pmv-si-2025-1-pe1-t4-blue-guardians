@@ -52,8 +52,7 @@ Por questões de segurança, os navegadores bloqueiam requisições fetch() para
 ### Solução: rodar um servidor local
 Se você tem o Python instalado, navegue até a pasta do projeto no terminal e execute:
 ```bash
-# Para Python 3
-python3 -m http.server 8000
+python -m http.server 8000
 ```
 Isso inicia um servidor local na porta 8000.
 
