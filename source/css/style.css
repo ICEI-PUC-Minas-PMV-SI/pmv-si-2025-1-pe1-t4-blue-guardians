@@ -392,9 +392,9 @@
   }
   
   .cardsimages img {
-    width: 250px;
-    height: auto;
-    object-fit: cover;
+    width: 250px;       /* largura fixa */
+    height: 200px;      /* altura fixa, pode ajustar */
+    object-fit: fill;  /* mantém o aspecto, recortando se necessário */
     border-radius: 2px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;

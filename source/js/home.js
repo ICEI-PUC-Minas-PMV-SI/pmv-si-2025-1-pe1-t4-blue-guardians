@@ -28,9 +28,10 @@ let tabData = []; // será preenchido com o JSON
 
 function renderTabs() {
   tabsContainer.innerHTML = "";
-  tabData.forEach((tab, index) => {
+  tabData.forEach((tab) => {
     const div = document.createElement('div');
-    div.className = 'tab' + (index === 0 ? ' active' : '');
+    // marca active na aba 'teacher'
+    div.className = 'tab' + (tab.id === 'teacher' ? ' active' : '');
     div.dataset.id = tab.id;
     div.innerHTML = `
       <img src="${tab.icon}" alt="${tab.label}">
@@ -71,6 +72,12 @@ fetch("http://localhost:3000/tabData")
     tabData = data;
     renderTabs();
     setupTabClicks();
-    renderCards(tabData[0].cards); // Mostra os cards da primeira aba
+
+    // Renderiza os cards da aba 'teacher' na inicialização
+    const teacherTab = tabData.find(t => t.id === 'teacher');
+    if (teacherTab) {
+      renderCards(teacherTab.cards);
+    }
   })
   .catch(err => console.error("Erro ao carregar tabData:", err));
+

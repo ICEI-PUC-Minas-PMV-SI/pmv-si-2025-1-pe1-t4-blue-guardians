@@ -43,8 +43,9 @@
       "label": "Estudante",
       "icon": "assets/images/student.png",
       "cards": [
-        "assets/images/class_1.png",
-        "assets/images/class_2.png"
+        "assets/images/class_student_1.png",
+        "assets/images/class_student_2.png",
+        "assets/images/class_student_3.jpg"
       ]
     },
     {
@@ -57,13 +58,14 @@
         "assets/images/class_3.png"
       ]
     },
-    {
+     {
       "id": "parent",
       "label": "Pai ou Mãe",
       "icon": "assets/images/father.png",
       "cards": [
-        "assets/images/class_2.png",
-        "assets/images/class_3.png"
+        "assets/images/class_father_1.jpg",
+        "assets/images/class_father_2.png",
+        "assets/images/class_father_3.jpg"
       ]
     }
   ],
