@@ -5,7 +5,7 @@ form.addEventListener('submit', function (event) {
    // consumindo a API para identificar os usuarios da aplicação
   async function carregarDados() {
     try {
-      const response = await fetch('/db.json');
+      const response = await fetch('http://localhost:3000/users');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -43,8 +43,10 @@ form.addEventListener('submit', function (event) {
     if (user.password === senha) {
       erroSenha.textContent = '';
       console.log('Usuário encontrado');
-      // Armazena o nome do usuário e redireciona (exemplo com localStorage)
-      localStorage.setItem('nomeUsuario', user.name); 
+      
+      // Armazena todo o usuário
+      localStorage.setItem('usuarioLogado', JSON.stringify(user));
+      
       window.location.href = 'index.html';
     } else {
       erroSenha.textContent = 'Senha incorreta.';

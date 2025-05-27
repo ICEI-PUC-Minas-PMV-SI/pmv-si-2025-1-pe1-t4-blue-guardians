@@ -62,7 +62,6 @@
       <label class="mt-3">URLs</label>
       <input type="text" placeholder="https://perfil.com" class="form-control mb-2">
       <input type="text" placeholder="https://x.com/" class="form-control mb-2">
-      <button type="button" class="btn btn-secundario">Adicionar URL</button>
 
       <button type="submit" class="btn btn-primario">Alterar Usuário</button>
     </form>
@@ -126,5 +125,44 @@
 
     // Aqui você pode usar fetch() para carregar denúncias e eventos do usuário via backend
   </script> 
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const userJSON = localStorage.getItem('usuarioLogado');
+
+      if (!userJSON) {
+        alert("Você não está logado.");
+        window.location.href = "login.html";
+        return;
+      }
+
+      const user = JSON.parse(userJSON);
+
+      // Preencher os campos
+      document.getElementById("username").value = user.name || '';
+      document.getElementById("email").value = user.email || '';
+      
+      // Caso você tenha adicionado tipo e bio no JSON futuramente
+      document.getElementById("type").value = user.type || 'Explorador Aprendiz (ou Estudante)';
+      document.getElementById("bio").value = user.bio || '';
+    });
+  </script>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const user = {
+        ...JSON.parse(localStorage.getItem("usuarioLogado")),
+        name: document.getElementById("username").value,
+        email: document.getElementById("email").value,
+        type: document.getElementById("type").value,
+        bio: document.getElementById("bio").value,
+      };
+
+      localStorage.setItem("usuarioLogado", JSON.stringify(user));
+      alert("Dados atualizados com sucesso!");
+    });
+  </script>
 </body>
 </html>

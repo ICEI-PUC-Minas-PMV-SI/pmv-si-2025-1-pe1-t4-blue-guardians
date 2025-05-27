@@ -1,5 +1,5 @@
 {
-  "conteudos": [
+  "contents": [
     {
       "id": 1,
       "titulo": "Introdução aos Ecossistemas Marinhos",
@@ -42,7 +42,10 @@
       "id": "1",
       "name": "João da Costa",
       "email": "joao@email.com",
-      "password": "123456"
+      "password": "123456",
+      "type": "Explorador Aprendiz (ou Estudante)",
+      "bio": "Amo o oceano e suas criaturas.",
+      "urls": ["https://perfil.com", "https://x.com"]
     },
     {
       "id": "2",

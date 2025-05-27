@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/conteudos")
+fetch("http://localhost:3000/contents")
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById("conteudo-cards");
