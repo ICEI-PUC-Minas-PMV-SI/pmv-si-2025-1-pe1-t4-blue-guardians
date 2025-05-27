@@ -1,11 +1,10 @@
 const form = document.getElementById('formLogin')
-
 form.addEventListener('submit', function (event) {
   event.preventDefault();
    // consumindo a API para identificar os usuarios da aplicação
   async function carregarDados() {
     try {
-      const response = await fetch('/db.json');
+      const response = await fetch('./api/db.json');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -43,7 +42,6 @@ form.addEventListener('submit', function (event) {
     if (user.password === senha) {
       erroSenha.textContent = '';
       console.log('Usuário encontrado');
-      // Armazena o nome do usuário e redireciona (exemplo com localStorage)
       localStorage.setItem('nomeUsuario', user.name); 
       window.location.href = 'index.html';
     } else {
