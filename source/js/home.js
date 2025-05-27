@@ -129,3 +129,46 @@ fetch(`http://localhost:3000/contents/${id}`)
 document.getElementById("detail-container").innerHTML = "<p>Conteúdo não especificado.</p>";
 }
 
+// Envia Feedback
+document.getElementById("btn-send-feedback").addEventListener("click", () => {
+  const feedbackText = document.getElementById("feedback-text").value.trim();
+  const usuario = "Anônimo"; // você pode permitir que o usuário informe o nome, se quiser
+  const contentId = id; // o 'id' do conteúdo já foi capturado via URLSearchParams
+
+  if (!feedbackText) {
+    alert("Por favor, digite um comentário antes de enviar.");
+    return;
+  }
+
+  const novoFeedback = {
+    contentId: parseInt(contentId),
+    usuario: usuario,
+    texto: feedbackText,
+    data: new Date().toISOString()
+  };
+
+  fetch("http://localhost:3000/feedbacks", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(novoFeedback)
+  })
+  .then(response => {
+    if (!response.ok) throw new Error("Erro ao enviar feedback");
+    return response.json();
+  })
+  .then(data => {
+    alert("Feedback enviado com sucesso!");
+    document.getElementById("feedback-text").value = "";
+    carregarFeedbacks(contentId); // recarrega comentários se quiser mostrar na tela
+  })
+  .catch(err => {
+    console.error("Erro ao enviar feedback:", err);
+    alert("Erro ao enviar feedback. Tente novamente.");
+  });
+});
+
+
+
+

@@ -1,7 +1,7 @@
 {
   "contents": [
     {
-      "id": 1,
+      "id": "1",
       "titulo": "Introdução aos Ecossistemas Marinhos",
       "imagem": "assets/images/card_1.jpg",
       "texto": "Conheça a diversidade dos oceanos e sua importância na regulação do clima..",
@@ -11,7 +11,7 @@
       "video3": "https://www.youtube.com/embed/FVP4FCATMjk"
     },
     {
-      "id": 2,
+      "id": "2",
       "titulo": "A Importância dos Recifes de Corais",
       "imagem": "assets/images/card_2.jpg",
       "texto": "Recifes são habitats ricos em biodiversidade e barreiras naturais contra a erosão...",
@@ -21,7 +21,7 @@
       "video3": "https://www.youtube.com/embed/TaTgUaJRRfQ"
     },
     {
-      "id": 3,
+      "id": "3",
       "titulo": "Espécies Ameaçadas dos Oceanos",
       "imagem": "assets/images/card_3.jpg",
       "texto": "Tartarugas, baleias e tubarões enfrentam riscos causados por pesca predatória...",
@@ -31,7 +31,7 @@
       "video3": "https://www.youtube.com/embed/ueUHjhEXil0"
     },
     {
-      "id": 4,
+      "id": "4",
       "titulo": "Impactos da Poluição Marinha",
       "imagem": "assets/images/card_4.jpg",
       "texto": "Plásticos, produtos químicos e esgoto afetam diretamente os seres marinhos...",
@@ -41,7 +41,7 @@
       "video3": "https://www.youtube.com/embed/HI4xaXuzXAw"
     },
     {
-      "id": 5,
+      "id": "5",
       "titulo": "Mudanças Climáticas e os Oceanos",
       "imagem": "assets/images/card_5.jpg",
       "texto": "O aumento da temperatura global afeta a acidez dos oceanos, altera habitats...",
@@ -51,7 +51,7 @@
       "video3": "https://www.youtube.com/embed/-49S5T1hZWE"
     },
     {
-      "id": 6,
+      "id": "6",
       "titulo": "Soluções para a Conservação Marinha",
       "imagem": "assets/images/card_6.jpg",
       "texto": "Áreas de proteção, educação ambiental e consumo consciente...",
@@ -82,7 +82,7 @@
         "assets/images/class_3.png"
       ]
     },
-     {
+    {
       "id": "parent",
       "label": "Pai ou Mãe",
       "icon": "assets/images/father.png",
@@ -93,6 +93,22 @@
       ]
     }
   ],
+  "feedbacks": [
+    {
+      "id": "5157",
+      "contentId": 1,
+      "usuario": "Anônimo",
+      "texto": "achei muito legal esse conteúdo",
+      "data": "2025-05-27T21:31:52.198Z"
+    },
+    {
+      "id": "0d5a",
+      "contentId": 3,
+      "usuario": "Anônimo",
+      "texto": "gostei muito disso aqui",
+      "data": "2025-05-27T21:32:47.392Z"
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -101,7 +117,10 @@
       "password": "123456",
       "type": "Explorador Aprendiz (ou Estudante)",
       "bio": "Amo o oceano e suas criaturas.",
-      "urls": ["https://perfil.com", "https://x.com"]
+      "urls": [
+        "https://perfil.com",
+        "https://x.com"
+      ]
     },
     {
       "id": "2",
