@@ -37,6 +37,36 @@
       "texto": "Áreas de proteção, educação ambiental e consumo consciente..."
     }
   ],
+  "tabData": [
+    {
+      "id": "student",
+      "label": "Estudante",
+      "icon": "assets/images/student.png",
+      "cards": [
+        "assets/images/class_1.png",
+        "assets/images/class_2.png"
+      ]
+    },
+    {
+      "id": "teacher",
+      "label": "Professor(a)",
+      "icon": "assets/images/teacher.png",
+      "cards": [
+        "assets/images/class_1.png",
+        "assets/images/class_2.png",
+        "assets/images/class_3.png"
+      ]
+    },
+    {
+      "id": "parent",
+      "label": "Pai ou Mãe",
+      "icon": "assets/images/father.png",
+      "cards": [
+        "assets/images/class_2.png",
+        "assets/images/class_3.png"
+      ]
+    }
+  ],
   "users": [
     {
       "id": "1",
