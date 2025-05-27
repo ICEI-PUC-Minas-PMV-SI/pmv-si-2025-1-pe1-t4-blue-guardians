@@ -228,6 +228,25 @@
     background-color: #1b9be0da
   }
 
+  /* .cancel-button {
+    margin-top: 30px;
+    padding: 8px 40px;
+    background-color: #1ea7fd;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.3s ease;
+    min-width: 200px;
+  }
+
+  .cancel-button:hover {
+    background-color: #1b9be0da
+  } */
+
   input[type="text"]:focus,
   input[type="password"]:focus,
   select:focus,
