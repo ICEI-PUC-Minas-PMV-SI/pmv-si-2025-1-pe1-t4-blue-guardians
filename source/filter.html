@@ -35,7 +35,10 @@
     <div class="filtros">
       <div class="row g-2 align-items-center mb-3">
         <div class="col-md-4">
-          <input type="text" class="form-control custom-input" placeholder="Localização">
+            <input type="text" id="localidadeInput" class="form-control custom-input" placeholder="Digite uma cidade" list="localidades">
+            <datalist id="localidades"></datalist>
+          <input type="hidden" id="latitude">
+          <input type="hidden" id="longitude">
         </div>
         <div class="col-md-4">
           <input type="text" class="form-control custom-input" placeholder="Espécies">
@@ -142,6 +145,7 @@
       <p>&copy; 2025 Blue Guardians. Todos os direitos reservados.</p>
     </div>
   </footer>
+  <script src="api/api-nominatim-localidade.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const toggle = document.querySelector('.menu-toggle');
@@ -150,6 +154,6 @@
     toggle.addEventListener('click', () => {
       links.classList.toggle('show');
     });
-  </script>  
+  </script>
 </body>
 </html>
