@@ -317,8 +317,34 @@
    border-top: 1px solid rgba(255, 255, 255, 0.2);
    padding-top: 0.625rem; 
    font-size: 0.75rem; 
-  } 
+  }
+  .autocomplete-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 .25rem .25rem;
+  z-index: 1000;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
 
+.autocomplete-dropdown li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.autocomplete-dropdown li.active,
+.autocomplete-dropdown li:hover {
+  background-color: #007bff;
+  color: white;
+}
  /* Responsividade */
 
 @media (max-width: 768px) {
