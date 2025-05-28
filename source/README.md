@@ -45,8 +45,14 @@ http://localhost:3001/usuarios
 http://localhost:3001/denuncias
 ```
 ---
+## 3. Rodar o JSON Server com o arquivo especies_marinhas.json
+```bash
+json-server --watch source/api/especies_marinhas.json --port 3000
+```
+Isso vai iniciar um servidor API local na porta 3000, que vai disponibilizar os dados do JSON para o seu projeto.
+*Importante:* certifique-se de que a porta 3000 esteja disponível e não esteja sendo usada por outro programa, para que tudo funcione direitinho.
 
-## 3.Por que não funciona abrir o arquivo direto no navegador?
+## 4.Por que não funciona abrir o arquivo direto no navegador?
 Por questões de segurança, os navegadores bloqueiam requisições fetch() para arquivos locais (file://). Por isso, abrir o arquivo HTML diretamente (ex: duplo clique no arquivo) pode não carregar os dados do JSON.
 
 ### Solução: rodar um servidor local
