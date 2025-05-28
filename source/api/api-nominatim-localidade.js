@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const localInput = document.getElementById("localidadeInput");
   const latitudeInput = document.getElementById("latitude");
   const longitudeInput = document.getElementById("longitude");
+  const errorElement = document.getElementById("localidadeError");
 
   // Cria container do dropdown para sugestões
   const dropdown = document.createElement("ul");
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   localInput.addEventListener("input", () => {
+    errorElement.style.display = "none";
     const search = localInput.value.trim();
     latitudeInput.value = "";
     longitudeInput.value = "";
@@ -109,11 +111,21 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => {
           console.error("Erro ao buscar localidade no Nominatim:", err);
-          clearDropdown();
+        clearDropdown();
+          const errorItem = document.createElement("li");
+          errorItem.classList.add("list-group-item", "text-danger", "py-2");
+          errorItem.innerHTML = `<small>⚠️ Serviço temporariamente indisponível</small>`;
+          dropdown.appendChild(errorItem);
+          dropdown.style.display = "block";
+          
+          errorElement.textContent = "Ops! Estamos com dificuldades para buscar localidades. Tente novamente.";
+          errorElement.style.display = "block";
+          
+          setTimeout(() => errorElement.style.display = "none", 5000);
         });
     }, 300);
   });
-
+  
   localInput.addEventListener("keydown", (e) => {
     const items = dropdown.querySelectorAll("li");
     if (dropdown.style.display === "none") return;
