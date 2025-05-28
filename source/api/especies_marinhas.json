@@ -1,0 +1,152 @@
+[
+  {
+    "vernacularName": "Tartaruga-verde",
+    "scientificName": "Chelonia mydas",
+    "key": 10001
+  },
+  {
+    "vernacularName": "Cavalo-marinho",
+    "scientificName": "Hippocampus reidi",
+    "key": 10002
+  },
+  {
+    "vernacularName": "Estrela-do-mar",
+    "scientificName": "Asterias rubens",
+    "key": 10003
+  },
+  {
+    "vernacularName": "Baleia-jubarte",
+    "scientificName": "Megaptera novaeangliae",
+    "key": 10004
+  },
+  {
+    "vernacularName": "Peixe-boi-marinho",
+    "scientificName": "Trichechus manatus",
+    "key": 10005
+  },
+  {
+    "vernacularName": "Golfinho-nariz-de-garrafa",
+    "scientificName": "Tursiops truncatus",
+    "key": 10006
+  },
+  {
+    "vernacularName": "Arraia-jamanta",
+    "scientificName": "Manta birostris",
+    "key": 10007
+  },
+  {
+    "vernacularName": "Polvo-comum",
+    "scientificName": "Octopus vulgaris",
+    "key": 10008
+  },
+  {
+    "vernacularName": "Búzio",
+    "scientificName": "Strombus gigas",
+    "key": 10009
+  },
+  {
+    "vernacularName": "Moreia",
+    "scientificName": "Muraena helena",
+    "key": 10010
+  },
+  {
+    "vernacularName": "Garça-branca",
+    "scientificName": "Ardea alba",
+    "key": 10011
+  },
+  {
+    "vernacularName": "Atobá",
+    "scientificName": "Sula leucogaster",
+    "key": 10012
+  },
+  {
+    "vernacularName": "Peixe-papagaio",
+    "scientificName": "Scarus trispinosus",
+    "key": 10013
+  },
+  {
+    "vernacularName": "Tubarão-martelo",
+    "scientificName": "Sphyrna lewini",
+    "key": 10014
+  },
+  {
+    "vernacularName": "Manta-preta",
+    "scientificName": "Mobula tarapacana",
+    "key": 10015
+  },
+  {
+    "vernacularName": "Caranguejo-azul",
+    "scientificName": "Callinectes sapidus",
+    "key": 10016
+  },
+  {
+    "vernacularName": "Lula-gigante",
+    "scientificName": "Architeuthis dux",
+    "key": 10017
+  },
+  {
+    "vernacularName": "Peixe-leão",
+    "scientificName": "Pterois volitans",
+    "key": 10018
+  },
+  {
+    "vernacularName": "Moreia-verde",
+    "scientificName": "Gymnothorax funebris",
+    "key": 10019
+  },
+  {
+    "vernacularName": "Garoupa",
+    "scientificName": "Epinephelus itajara",
+    "key": 10020
+  },
+  {
+    "vernacularName": "Anêmona-do-mar",
+    "scientificName": "Actiniaria",
+    "key": 10021
+  },
+  {
+    "vernacularName": "Peixe-palhaço",
+    "scientificName": "Amphiprion ocellaris",
+    "key": 10022
+  },
+  {
+    "vernacularName": "Camarão-sete-barbas",
+    "scientificName": "Rhynchocinetes durbanensis",
+    "key": 10023
+  },
+  {
+    "vernacularName": "Caracol-do-mar",
+    "scientificName": "Nerita tessellata",
+    "key": 10024
+  },
+  {
+    "vernacularName": "Peixe-cirurgião",
+    "scientificName": "Acanthurus coeruleus",
+    "key": 10025
+  },
+  {
+    "vernacularName": "Moreia-malhada",
+    "scientificName": "Muraena helena",
+    "key": 10026
+  },
+  {
+    "vernacularName": "Baiacu",
+    "scientificName": "Tetraodontidae",
+    "key": 10027
+  },
+  {
+    "vernacularName": "Polvo-de-anéis-azuis",
+    "scientificName": "Hapalochlaena lunulata",
+    "key": 10028
+  },
+  {
+    "vernacularName": "Estrela-do-mar-laranja",
+    "scientificName": "Echinaster sepositus",
+    "key": 10029
+  },
+  {
+    "vernacularName": "Baleia-azul",
+    "scientificName": "Balaenoptera musculus",
+    "key": 10030
+  }
+]

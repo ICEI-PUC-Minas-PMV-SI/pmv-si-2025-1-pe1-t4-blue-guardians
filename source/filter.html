@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/filter.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vida Marinha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/filter.css" />
 </head>
 <body>
   <!-- Menu -->
@@ -35,92 +35,67 @@
     <div class="filtros">
       <div class="row g-2 align-items-center mb-3">
         <div class="col-md-4">
-          <input type="text" id="localidadeInput" class="form-control custom-input" placeholder="Digite uma cidade">
-          <input type="hidden" id="latitude">
-          <input type="hidden" id="longitude">
+          <input type="text" id="localidadeInput" class="form-control custom-input" placeholder="Digite uma cidade" />
+          <input type="hidden" id="latitude" />
+          <input type="hidden" id="longitude" />
           <div id="localidadeError" class="text-danger small mt-1" style="display: none;"></div>
         </div>
         <div class="col-md-4">
-          <input type="text" class="form-control custom-input" placeholder="Espécies">
+          <input type="text" id="especieInput" class="form-control custom-input" placeholder="Espécie marinha" />
+          <div id="especieError" class="text-danger small mt-1" style="display: none;"></div>
         </div>
         <div class="col-md-4 d-flex gap-2">
-          <button class="btn-primario flex-fill">Pesquisar</button>
+          <button id="bnt-pesquisar" class="btn-primario flex-fill">Pesquisar</button>
           <button class="btn-secundario flex-fill">Limpar Filtro</button>          
         </div>
       </div>      
       
-        <div class="accordion" id="filtrosAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOpcional">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpcional" aria-expanded="false" aria-controls="collapseOpcional">
-                Filtros Opcionais
-              </button>
-            </h2>
-            <div id="collapseOpcional" class="accordion-collapse collapse" aria-labelledby="headingOpcional" data-bs-parent="#filtrosAccordion">
-              <div class="accordion-body">
-                Ocorrências registradas no ano:
-                <select><option>aaaa</option></select><br>
-                Eventos sazonais:
-                <select><option>mês</option></select><br>
-                <label><input type="checkbox"> Mostrar apenas espécies ameaçadas</label>
-              </div>
-            </div>
-          </div>
-        
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingAvancado">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvancado" aria-expanded="false" aria-controls="collapseAvancado">
-                Filtros Avançados
-              </button>
-            </h2>
-            <div id="collapseAvancado" class="accordion-collapse collapse" aria-labelledby="headingAvancado" data-bs-parent="#filtrosAccordion">
-              <div class="accordion-body">
-                Faixa de profundidade em metros:
-                <select><option>de</option></select> <select><option>até</option></select><br>
-                Instituição que forneceu os dados:
-                <select><option>Ex. IBAMA</option></select>
-              </div>
+      <div class="accordion" id="filtrosAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOpcional">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpcional" aria-expanded="false" aria-controls="collapseOpcional">
+              Filtros Opcionais
+            </button>
+          </h2>
+          <div id="collapseOpcional" class="accordion-collapse collapse" aria-labelledby="headingOpcional" data-bs-parent="#filtrosAccordion">
+            <div class="accordion-body">
+              Ocorrências registradas no ano:
+              <select><option>aaaa</option></select><br/>
+              Eventos sazonais:
+              <select><option>mês</option></select><br/>
+              <label><input type="checkbox" /> Mostrar apenas espécies ameaçadas</label>
             </div>
           </div>
         </div>
+      
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAvancado">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvancado" aria-expanded="false" aria-controls="collapseAvancado">
+              Filtros Avançados
+            </button>
+          </h2>
+          <div id="collapseAvancado" class="accordion-collapse collapse" aria-labelledby="headingAvancado" data-bs-parent="#filtrosAccordion">
+            <div class="accordion-body">
+              Faixa de profundidade em metros:
+              <select><option>de</option></select> <select><option>até</option></select><br/>
+              Instituição que forneceu os dados:
+              <select><option>Ex. IBAMA</option></select>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Cards Filtros de Busca -->  
-      <div class="card-grid">
-        <div class="card">
-          <img src="assets/images/mockups/tartaruga-prego.png" alt="Ecossistemas Marinhos">
-          <div class="card-content">
-            <h3>Tartaruga-Verde (Chelonia mydas)</h3>
-            <p>A tartaruga-verde, tartaruga-aruanã ou só aruanã é uma tartaruga marinha da família dos queloniídeos.</p>
-            <a href="content.html" class="btn">Saber mais</a>
-          </div>
-        </div>
+      <div id="resultadosCards" class="card-grid mt-4"></div>
 
-        <div class="card">
-          <img src="assets/images/mockups/tartaruga-prego.png" alt="Ecossistemas Marinhos">
-          <div class="card-content">
-            <h3>Tartaruga-Verde (Chelonia mydas)</h3>
-            <p>A tartaruga-verde, tartaruga-aruanã ou só aruanã é uma tartaruga marinha da família dos queloniídeos.</p>
-            <a href="content.html" class="btn">Saber mais</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="assets/images/mockups/tartaruga-prego.png" alt="Ecossistemas Marinhos">
-          <div class="card-content">
-            <h3>Tartaruga-Verde (Chelonia mydas)</h3>
-            <p>A tartaruga-verde, tartaruga-aruanã ou só aruanã é uma tartaruga marinha da família dos queloniídeos.</p>
-            <a href="content.html" class="btn">Saber mais</a>
-          </div>
-        </div>
-    </div>
-
-    <div class="paginacao">
-      <button class="ativo">1</button>
-      <button>2</button>
-      <button>3</button>
-      <span>...</span>
-      <button>67</button>
-      <button>68</button>
+      <div class="paginacao">
+        <button class="ativo">1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>67</button>
+        <button>68</button>
+      </div>
     </div>
   </main>
 
@@ -131,26 +106,28 @@
         <h2>Blue Guardians</h2>
       </div>
       <div class="footer-links">
-        <!-- <a href="#home">Meu Perfil</a>
-        <a href="#news">Denúncias</a>
-        <a href="#news">Política de Privacidade</a> -->
+        <!-- Links do rodapé comentados -->
       </div>
       <div class="footer-social">
-        <a href="#"><img src="assets/images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="assets/images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="assets/images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="assets/images/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="assets/images/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="assets/images/twitter.png" alt="Twitter" /></a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Blue Guardians. Todos os direitos reservados.</p>
     </div>
   </footer>
+
   <script src="api/api-nominatim-localidade.js"></script>
+  <script src="api/gbifAutocompleteEspeciesMarinhas.js"></script>
+  <script src="api/especies_marinhas.json"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const links = document.querySelector('.navbar-links');
-  
+
     toggle.addEventListener('click', () => {
       links.classList.toggle('show');
     });
