@@ -148,5 +148,85 @@
     "vernacularName": "Baleia-azul",
     "scientificName": "Balaenoptera musculus",
     "key": 10030
+  },
+  {
+  "vernacularName": "Jacaré-açu",
+  "scientificName": "Melanosuchus niger",
+  "key": 10031
+  },
+  {
+    "vernacularName": "Jacaré-do-papo-amarelo",
+    "scientificName": "Caiman latirostris",
+    "key": 10032
+  },
+  {
+    "vernacularName": "Jacaré-de-pantanal",
+    "scientificName": "Caiman yacare",
+    "key": 10033
+  },
+  {
+    "vernacularName": "Pirarucu",
+    "scientificName": "Arapaima gigas",
+    "key": 10034
+  },
+  {
+    "vernacularName": "Dourado",
+    "scientificName": "Salminus brasiliensis",
+    "key": 10035
+  },
+  {
+    "vernacularName": "Piranha-vermelha",
+    "scientificName": "Pygocentrus nattereri",
+    "key": 10036
+  },
+  {
+    "vernacularName": "Peixe-elétrico",
+    "scientificName": "Electrophorus electricus",
+    "key": 10037
+  },
+  {
+    "vernacularName": "Tainha",
+    "scientificName": "Mugil liza",
+    "key": 10038
+  },
+  {
+  "vernacularName": "Cágado-de-barbicha",
+  "scientificName": "Phrynops geoffroanus",
+  "key": 10039
+  },
+  {
+    "vernacularName": "Tartaruga-da-amazônia",
+    "scientificName": "Podocnemis expansa",
+    "key": 10040
+  },
+  {
+    "vernacularName": "Lagosta-vermelha",
+    "scientificName": "Panulirus argus",
+    "key": 10041
+  },
+  {
+    "vernacularName": "Caranguejo-uçá",
+    "scientificName": "Ucides cordatus",
+    "key": 10042
+  },
+  {
+    "vernacularName": "Boto-cor-de-rosa",
+    "scientificName": "Inia geoffrensis",
+    "key": 10043
+  },
+  {
+    "vernacularName": "Boto cor de rosa",
+    "scientificName": "Inia geoffrensis",
+    "key": 10044
+  },
+  {
+    "vernacularName": "Boto-cinza",
+    "scientificName": "Sotalia guianensis",
+    "key": 10045
+  },
+  {
+    "vernacularName": "Tartaruga-de-pente",
+    "scientificName": "Eretmochelys imbricata",
+    "key": 10046
   }
 ]
