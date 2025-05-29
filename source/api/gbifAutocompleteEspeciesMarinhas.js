@@ -1,72 +1,86 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Script carregado");
+
   const especieInput = document.getElementById("especieInput");
   const errorElement = document.getElementById("especieError");
   const btnPesquisar = document.getElementById("bnt-pesquisar");
+  const resultadosDiv = document.getElementById("resultadosCards");
 
   let especies = [];
   let selectedScientificName = "";
 
-  // Cria o dropdown de sugestões
+  // Cria o dropdown
   const dropdown = document.createElement("ul");
   dropdown.classList.add("autocomplete-dropdown", "list-group", "position-absolute");
-  dropdown.style.width = especieInput.offsetWidth + "px";
-  dropdown.style.zIndex = 1000;
-  dropdown.style.maxHeight = "200px";
-  dropdown.style.overflowY = "auto";
-  dropdown.style.cursor = "pointer";
-  dropdown.style.backgroundColor = "#fff";
-  dropdown.style.border = "1px solid #ccc";
-  dropdown.style.borderRadius = "0 0 .25rem .25rem";
-  dropdown.style.paddingLeft = "0";
-  dropdown.style.marginTop = "0";
-  dropdown.style.display = "none";
-  dropdown.style.listStyleType = "none";
+  Object.assign(dropdown.style, {
+    zIndex: 1000,
+    maxHeight: "200px",
+    overflowY: "auto",
+    cursor: "pointer",
+    backgroundColor: "#fff",
+    border: "1px solid #ccc",
+    borderRadius: "0 0 .25rem .25rem",
+    paddingLeft: "0",
+    marginTop: "0",
+    display: "none",
+    listStyleType: "none"
+  });
 
+  const updateDropdownWidth = () => {
+    dropdown.style.width = especieInput.offsetWidth + "px";
+  };
+
+  window.addEventListener("resize", updateDropdownWidth);
   especieInput.parentNode.style.position = "relative";
   especieInput.parentNode.appendChild(dropdown);
+  updateDropdownWidth();
 
-  // Carrega o JSON local com as espécies
+  // Carrega espécies
   fetch("api/especies_marinhas.json")
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
       especies = data;
-    })
-    .catch(() => {
-      errorElement.textContent = "Não foi possível carregar os dados das espécies.";
-      errorElement.style.display = "block";
+      console.log("Espécies carregadas:", especies.length);
     });
 
-  // Função para filtrar e mostrar sugestões pelo nome popular
   especieInput.addEventListener("input", () => {
-    const query = especieInput.value.trim().toLowerCase();
-    if (query.length < 2) {
-      dropdown.style.display = "none";
-      return;
-    }
-
-    const resultados = especies.filter(e => e.vernacularName.toLowerCase().includes(query));
-
-    if (resultados.length === 0) {
-      dropdown.style.display = "none";
-      return;
-    }
-
+    const valor = especieInput.value.trim().toLowerCase();
     dropdown.innerHTML = "";
-    resultados.forEach(specie => {
-      const li = document.createElement("li");
-      li.classList.add("list-group-item", "list-group-item-action");
-      li.textContent = specie.vernacularName;
-      li.dataset.scientificName = specie.scientificName;
-      li.dataset.vernacularName = specie.vernacularName;
-      li.addEventListener("click", () => {
-        especieInput.value = li.dataset.vernacularName;  // mostra o nome popular no input
-        selectedScientificName = li.dataset.scientificName; // guarda o nome científico para pesquisa
+
+    if (!valor) {
+      dropdown.style.display = "none";
+      return;
+    }
+
+    const sugestoes = especies.filter(e =>
+      e.vernacularName && e.vernacularName.toLowerCase().includes(valor)
+    ).slice(0, 5);
+
+    if (sugestoes.length === 0) {
+      dropdown.style.display = "none";
+      return;
+    }
+
+    sugestoes.forEach(especie => {
+      const item = document.createElement("li");
+      item.classList.add("list-group-item");
+      item.textContent = especie.vernacularName;
+      item.addEventListener("click", () => {
+        especieInput.value = especie.vernacularName;
+        selectedScientificName = especie.scientificName;
         dropdown.style.display = "none";
-        errorElement.style.display = "none";
       });
-      dropdown.appendChild(li);
+      dropdown.appendChild(item);
     });
+
     dropdown.style.display = "block";
+  });
+
+  especieInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && dropdown.firstChild) {
+      e.preventDefault();
+      dropdown.firstChild.click();
+    }
   });
 
   document.addEventListener("click", (e) => {
@@ -75,13 +89,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Quando clicar no botão Pesquisar, use o nome científico salvo e exiba os cards
+  // Gera um card de resultado
+  const criarCard = (item) => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    let imgSrc = "assets/images/mockups/tartaruga-prego.png";
+    if (item.media && item.media.length > 0) {
+      const mediaItem = item.media.find(m => m.identifier && m.identifier.match(/\.(jpg|jpeg|png|gif)$/i));
+      if (mediaItem) {
+        imgSrc = mediaItem.identifier;
+      }
+    }
+
+    const scientificName = item.scientificName || "Nome científico indisponível";
+    const locality = item.locality || "Localidade desconhecida";
+    const eventDate = item.eventDate || "Data não informada";
+
+    card.innerHTML = `
+      <img src="${imgSrc}" alt="${scientificName}" />
+      <div class="card-content">
+        <h3>${scientificName}</h3>
+        <p><strong>Local:</strong> ${locality}</p>
+        <p><strong>Data do evento:</strong> ${eventDate}</p>
+        <a href="https://www.gbif.org/occurrence/${item.key}" target="_blank" class="btn">Detalhes</a>
+      </div>
+    `;
+
+    return card;
+  };
+
   btnPesquisar.addEventListener("click", () => {
-    if (!selectedScientificName) {
-      errorElement.textContent = "Por favor, selecione uma espécie da lista.";
+    const especieNome = especieInput.value.trim().toLowerCase();
+    const especieEncontrada = especies.find(e => e.vernacularName.toLowerCase() === especieNome);
+
+    if (!especieEncontrada) {
+      errorElement.textContent = "Por favor, selecione uma espécie válida da lista.";
       errorElement.style.display = "block";
       return;
     }
+
+    selectedScientificName = especieEncontrada.scientificName;
     errorElement.style.display = "none";
 
     const urlGBIF = `https://api.gbif.org/v1/occurrence/search?scientificName=${encodeURIComponent(selectedScientificName)}&limit=10`;
@@ -90,45 +138,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.json())
       .then(data => {
         console.log("Dados retornados do GBIF:", data);
-
-        const resultadosDiv = document.getElementById("resultadosCards");
-        resultadosDiv.innerHTML = ""; // Limpa resultados anteriores
+        resultadosDiv.innerHTML = "";
 
         if (!data.results || data.results.length === 0) {
           resultadosDiv.innerHTML = "<p>Nenhum resultado encontrado.</p>";
           return;
         }
 
-        data.results.forEach(item => {
-          const card = document.createElement("div");
-          card.className = "card";
-
-          // Tenta pegar a primeira imagem disponível no campo media
-          let imgSrc = "assets/images/mockups/tartaruga-prego.png"; // imagem padrão
-
-          if (item.media && item.media.length > 0) {
-            const mediaItem = item.media.find(m => m.identifier && m.identifier.match(/\.(jpg|jpeg|png|gif)$/i));
-            if (mediaItem) {
-              imgSrc = mediaItem.identifier;
-            }
-          }
-
-          const scientificName = item.scientificName || "Nome científico indisponível";
-          const locality = item.locality || "Localidade desconhecida";
-          const eventDate = item.eventDate || "Data não informada";
-
-          card.innerHTML = `
-            <img src="${imgSrc}" alt="${scientificName}" />
-            <div class="card-content">
-              <h3>${scientificName}</h3>
-              <p><strong>Local:</strong> ${locality}</p>
-              <p><strong>Data do evento:</strong> ${eventDate}</p>
-              <a href="https://www.gbif.org/occurrence/${item.key}" target="_blank" class="btn">Detalhes</a>
-            </div>
-          `;
-
-          resultadosDiv.appendChild(card);
-        });
+        data.results.forEach(item => resultadosDiv.appendChild(criarCard(item)));
       })
       .catch(err => {
         errorElement.textContent = "Erro ao buscar dados na API GBIF.";
