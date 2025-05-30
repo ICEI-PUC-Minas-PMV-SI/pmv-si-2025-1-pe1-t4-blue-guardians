@@ -38,6 +38,7 @@
           <input type="text" id="localidadeInput" class="form-control custom-input" placeholder="Digite uma cidade" />
           <input type="hidden" id="latitude" />
           <input type="hidden" id="longitude" />
+          <input type="hidden" id="isTextSearch" value="false" />
           <div id="localidadeError" class="text-danger small mt-1" style="display: none;"></div>
         </div>
         <div class="col-md-4">
@@ -48,43 +49,11 @@
           <button id="bnt-pesquisar" class="btn-primario flex-fill">Pesquisar</button>
           <button class="btn-secundario flex-fill">Limpar Filtro</button>          
         </div>
-      </div>      
-      
-      <div class="accordion" id="filtrosAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOpcional">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpcional" aria-expanded="false" aria-controls="collapseOpcional">
-              Filtros Opcionais
-            </button>
-          </h2>
-          <div id="collapseOpcional" class="accordion-collapse collapse" aria-labelledby="headingOpcional" data-bs-parent="#filtrosAccordion">
-            <div class="accordion-body">
-              Ocorrências registradas no ano:
-              <select><option>aaaa</option></select><br/>
-              Eventos sazonais:
-              <select><option>mês</option></select><br/>
-              <label><input type="checkbox" /> Mostrar apenas espécies ameaçadas</label>
-            </div>
-          </div>
-        </div>
-      
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingAvancado">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvancado" aria-expanded="false" aria-controls="collapseAvancado">
-              Filtros Avançados
-            </button>
-          </h2>
-          <div id="collapseAvancado" class="accordion-collapse collapse" aria-labelledby="headingAvancado" data-bs-parent="#filtrosAccordion">
-            <div class="accordion-body">
-              Faixa de profundidade em metros:
-              <select><option>de</option></select> <select><option>até</option></select><br/>
-              Instituição que forneceu os dados:
-              <select><option>Ex. IBAMA</option></select>
-            </div>
-          </div>
-        </div>
+          <small>Você pode buscar por nome de espécie, localidade ou ambos</small>
       </div>
+    </div>
 
+      <div id="loadingSpinner" style="display: none;"></div>
       <!-- Cards Filtros de Busca -->  
       <div id="resultadosCards" class="card-grid mt-4"></div>
 

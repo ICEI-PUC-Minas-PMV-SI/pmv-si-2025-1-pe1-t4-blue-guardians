@@ -1,18 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script carregado");
 
+  // Elementos do DOM
   const especieInput = document.getElementById("especieInput");
+  const localidadeInput = document.getElementById("localidadeInput");
   const errorElement = document.getElementById("especieError");
+  const localErrorElement = document.getElementById("localidadeError");
   const btnPesquisar = document.getElementById("bnt-pesquisar");
   const resultadosDiv = document.getElementById("resultadosCards");
+  const loadingSpinner = document.getElementById("loadingSpinner");
 
   let especies = [];
   let selectedScientificName = "";
 
-  // Cria o dropdown
-  const dropdown = document.createElement("ul");
-  dropdown.classList.add("autocomplete-dropdown", "list-group", "position-absolute");
-  Object.assign(dropdown.style, {
+  // ==================== AUTCOMPLETE PARA ESPÉCIES ====================
+  const especieDropdown = document.createElement("ul");
+  especieDropdown.classList.add("autocomplete-dropdown", "list-group", "position-absolute");
+  Object.assign(especieDropdown.style, {
     zIndex: 1000,
     maxHeight: "200px",
     overflowY: "auto",
@@ -27,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const updateDropdownWidth = () => {
-    dropdown.style.width = especieInput.offsetWidth + "px";
+    especieDropdown.style.width = especieInput.offsetWidth + "px";
   };
 
   window.addEventListener("resize", updateDropdownWidth);
   especieInput.parentNode.style.position = "relative";
-  especieInput.parentNode.appendChild(dropdown);
+  especieInput.parentNode.appendChild(especieDropdown);
   updateDropdownWidth();
 
   // Carrega espécies
@@ -41,14 +45,19 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       especies = data;
       console.log("Espécies carregadas:", especies.length);
+    })
+    .catch(err => {
+      console.error("Erro ao carregar espécies:", err);
+      errorElement.textContent = "Erro ao carregar lista de espécies. Tente recarregar a página.";
+      errorElement.style.display = "block";
     });
 
   especieInput.addEventListener("input", () => {
     const valor = especieInput.value.trim().toLowerCase();
-    dropdown.innerHTML = "";
+    especieDropdown.innerHTML = "";
 
     if (!valor) {
-      dropdown.style.display = "none";
+      especieDropdown.style.display = "none";
       return;
     }
 
@@ -57,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ).slice(0, 5);
 
     if (sugestoes.length === 0) {
-      dropdown.style.display = "none";
+      especieDropdown.style.display = "none";
       return;
     }
 
@@ -68,26 +77,43 @@ document.addEventListener("DOMContentLoaded", () => {
       item.addEventListener("click", () => {
         especieInput.value = especie.vernacularName;
         selectedScientificName = especie.scientificName;
-        dropdown.style.display = "none";
+        especieDropdown.style.display = "none";
+        errorElement.style.display = "none";
       });
-      dropdown.appendChild(item);
+      especieDropdown.appendChild(item);
     });
 
-    dropdown.style.display = "block";
+    especieDropdown.style.display = "block";
   });
 
   especieInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && dropdown.firstChild) {
+    if (e.key === "Enter" && especieDropdown.firstChild) {
       e.preventDefault();
-      dropdown.firstChild.click();
+      especieDropdown.firstChild.click();
     }
   });
 
   document.addEventListener("click", (e) => {
     if (!especieInput.parentNode.contains(e.target)) {
-      dropdown.style.display = "none";
+      especieDropdown.style.display = "none";
     }
   });
+
+  // ==================== FUNÇÕES AUXILIARES ====================
+  const mostrarLoading = (mostrar) => {
+    loadingSpinner.style.display = mostrar ? "block" : "none";
+    btnPesquisar.disabled = mostrar;
+  };
+
+  const mostrarErro = (elemento, mensagem) => {
+    elemento.textContent = mensagem;
+    elemento.style.display = "block";
+  };
+
+  const limparErros = () => {
+    errorElement.style.display = "none";
+    localErrorElement.style.display = "none";
+  };
 
   // Gera um card de resultado
   const criarCard = (item) => {
@@ -104,53 +130,207 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const scientificName = item.scientificName || "Nome científico indisponível";
     const locality = item.locality || "Localidade desconhecida";
-    const eventDate = item.eventDate || "Data não informada";
+    
+    // Formatação simples da data - mostra como vem da API
+    const eventDate = item.eventDate ? item.eventDate.split('T')[0] : "Data não informada";
+
+    // Função para traduzir tipos de registro
+    const traduzirTipoRegistro = (tipo) => {
+      const traducoes = {
+        'HUMAN_OBSERVATION': 'Observação humana',
+        'PRESERVED_SPECIMEN': 'Espécime preservado',
+        'FOSSIL_SPECIMEN': 'Fóssil',
+        'LIVING_SPECIMEN': 'Espécime vivo',
+        'OBSERVATION': 'Observação',
+        'MACHINE_OBSERVATION': 'Observação automática'
+      };
+      return traducoes[tipo] || tipo;
+    };
 
     card.innerHTML = `
-      <img src="${imgSrc}" alt="${scientificName}" />
-      <div class="card-content">
-        <h3>${scientificName}</h3>
-        <p><strong>Local:</strong> ${locality}</p>
-        <p><strong>Data do evento:</strong> ${eventDate}</p>
-        <a href="https://www.gbif.org/occurrence/${item.key}" target="_blank" class="btn">Detalhes</a>
+      <img src="${imgSrc}" alt="${scientificName}" class="card-img-top" />
+      <div class="card-body">
+        <h3 class="card-title">${scientificName}</h3>
+        
+        ${item.vernacularName ? `<p class="card-text"><strong>Nome comum:</strong> ${item.vernacularName}</p>` : ''}
+        
+        <div class="location-info">
+          ${item.municipality ? `<p><strong>Município:</strong> ${item.municipality}</p>` : ''}
+          ${item.stateProvince ? `<p><strong>Estado:</strong> ${item.stateProvince}</p>` : ''}
+          ${item.country ? `<p><strong>País:</strong> ${item.country}</p>` : ''}
+        </div>
+        
+        <p><strong>Data do registro:</strong> ${eventDate}</p>
+        
+        ${item.basisOfRecord ? `<p><strong>Tipo de registro:</strong> ${traduzirTipoRegistro(item.basisOfRecord)}</p>` : ''}
+        
+        ${item.recordedBy ? `<p><strong>Registrado por:</strong> ${item.recordedBy}</p>` : ''}
+        
+        ${item.institutionCode ? `<p><strong>Instituição:</strong> ${item.institutionCode}</p>` : ''}
+        
+        <div class="card-actions">
+          <a href="https://www.gbif.org/occurrence/${item.key}" target="_blank" class="btn btn-primary">
+            <i class="fas fa-info-circle"></i> Detalhes no GBIF
+          </a>
+          ${item.decimalLatitude && item.decimalLongitude ? `
+            <a href="https://www.openstreetmap.org/?mlat=${item.decimalLatitude}&mlon=${item.decimalLongitude}#map=15/${item.decimalLatitude}/${item.decimalLongitude}" 
+              target="_blank" class="btn btn-outline-secondary">
+              <i class="fas fa-map-marker-alt"></i> Ver no mapa
+            </a>` : ''}
+        </div>
       </div>
     `;
 
     return card;
   };
 
-  btnPesquisar.addEventListener("click", () => {
-    const especieNome = especieInput.value.trim().toLowerCase();
-    const especieEncontrada = especies.find(e => e.vernacularName.toLowerCase() === especieNome);
+  const exibirResultados = (resultados) => {
+    resultadosDiv.innerHTML = "";
 
-    if (!especieEncontrada) {
-      errorElement.textContent = "Por favor, selecione uma espécie válida da lista.";
-      errorElement.style.display = "block";
+    if (!resultados || resultados.length === 0) {
+      resultadosDiv.innerHTML = "<p class='text-center'>Nenhum resultado encontrado para os critérios de busca.</p>";
       return;
     }
 
-    selectedScientificName = especieEncontrada.scientificName;
-    errorElement.style.display = "none";
+    resultados.forEach(item => resultadosDiv.appendChild(criarCard(item)));
+  };
 
-    const urlGBIF = `https://api.gbif.org/v1/occurrence/search?scientificName=${encodeURIComponent(selectedScientificName)}&limit=10`;
+  // ==================== LÓGICA DE BUSCA ====================
+  const buscarGBIF = async (filtros) => {
+    const params = new URLSearchParams();
+    Object.entries(filtros).forEach(([key, value]) => {
+      if (value) params.append(key, value);
+    });
+    params.append('limit', '10');
 
-    fetch(urlGBIF)
-      .then(res => res.json())
-      .then(data => {
-        console.log("Dados retornados do GBIF:", data);
-        resultadosDiv.innerHTML = "";
+    try {
+      const response = await fetch(`https://api.gbif.org/v1/occurrence/search?${params}`);
+      if (!response.ok) throw new Error("Falha na requisição");
+      const data = await response.json();
+      return data.results || [];
+    } catch (error) {
+      console.error("Erro na busca GBIF:", error);
+      throw error;
+    }
+  };
 
-        if (!data.results || data.results.length === 0) {
-          resultadosDiv.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+  const buscarPorLocalizacao = async (localizacao) => {
+    // Extrair componentes da localização (cidade, estado)
+    const partes = localizacao.split(',').map(p => p.trim());
+    let cidade, estado;
+    
+    if (partes.length >= 2) {
+      [cidade, estado] = partes;
+    } else {
+      [estado] = partes;
+    }
+
+    // Normalizar nomes (remover acentos, espaços extras)
+    const normalizar = (str) => {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+    };
+
+    // Tentar buscar por município (se existir)
+    if (cidade) {
+      const resultados = await buscarGBIF({ 
+        municipality: normalizar(cidade), 
+        country: "BR" // Usar código ISO sempre
+      });
+      if (resultados.length > 0) return resultados;
+    }
+
+    // Se não encontrar, tentar por estado
+    if (estado) {
+      // Mapear nomes de estados para siglas quando possível
+      const estadosBR = {
+        'acre': 'AC', 'alagoas': 'AL', 'amapa': 'AP', 'amazonas': 'AM',
+        'bahia': 'BA', 'ceara': 'CE', 'distrito federal': 'DF', 
+        'espirito santo': 'ES', 'goias': 'GO', 'maranhao': 'MA',
+        'mato grosso': 'MT', 'mato grosso do sul': 'MS', 'minas gerais': 'MG',
+        'para': 'PA', 'paraiba': 'PB', 'parana': 'PR', 'pernambuco': 'PE',
+        'piaui': 'PI', 'rio de janeiro': 'RJ', 'rio grande do norte': 'RN',
+        'rio grande do sul': 'RS', 'rondonia': 'RO', 'roraima': 'RR',
+        'santa catarina': 'SC', 'sao paulo': 'SP', 'sergipe': 'SE',
+        'tocantins': 'TO'
+      };
+
+      const estadoNormalizado = normalizar(estado);
+      const siglaEstado = estadosBR[estadoNormalizado] || estadoNormalizado;
+
+      const resultados = await buscarGBIF({ 
+        stateProvince: siglaEstado, 
+        country: "BR" 
+      });
+      if (resultados.length > 0) return resultados;
+    }
+
+    // Último recurso: buscar pelo país (Brasil)
+    return await buscarGBIF({ country: "BR" });
+  };
+
+  // ==================== EVENTO DE PESQUISA ====================
+  btnPesquisar.addEventListener("click", async () => {
+    const especieNome = especieInput.value.trim().toLowerCase();
+    const localizacao = localidadeInput.value.trim();
+    
+    limparErros();
+    mostrarLoading(true);
+
+    try {
+      // Caso 1: Busca por espécie apenas
+      if (especieNome && !localizacao) {
+        const especieEncontrada = especies.find(e => e.vernacularName.toLowerCase() === especieNome);
+        if (!especieEncontrada) {
+          mostrarErro(errorElement, "Por favor, selecione uma espécie válida da lista.");
           return;
         }
 
-        data.results.forEach(item => resultadosDiv.appendChild(criarCard(item)));
-      })
-      .catch(err => {
-        errorElement.textContent = "Erro ao buscar dados na API GBIF.";
-        errorElement.style.display = "block";
-        console.error(err);
-      });
+        const resultados = await buscarGBIF({ scientificName: especieEncontrada.scientificName });
+        exibirResultados(resultados);
+        return;
+      }
+      
+      // Caso 2: Busca por localização apenas
+      if (localizacao && !especieNome) {
+        if (localizacao.length < 3) {
+          mostrarErro(localErrorElement, "Digite pelo menos 3 caracteres para buscar por localização.");
+          return;
+        }
+
+        const resultados = await buscarPorLocalizacao(localizacao);
+        exibirResultados(resultados);
+        return;
+      }
+      
+      // Caso 3: Busca combinada (espécie + localização)
+      if (especieNome && localizacao) {
+        const especieEncontrada = especies.find(e => e.vernacularName.toLowerCase() === especieNome);
+        if (!especieEncontrada) {
+          mostrarErro(errorElement, "Por favor, selecione uma espécie válida da lista.");
+          return;
+        }
+
+        // Extrair componentes da localização
+        const partes = localizacao.split(',').map(p => p.trim());
+        let filtros = { scientificName: especieEncontrada.scientificName, country: 'BR' };
+        
+        // Adicionar filtros hierárquicos
+        if (partes.length >= 2) {
+          filtros.stateProvince = partes[0];
+          if (partes.length >= 3) {
+            filtros.municipality = partes[0];
+            filtros.stateProvince = partes[1];
+          }
+        }
+
+        const resultados = await buscarGBIF(filtros);
+        exibirResultados(resultados);
+      }
+    } catch (error) {
+      console.error("Erro na pesquisa:", error);
+      mostrarErro(errorElement, "Ocorreu um erro ao buscar os dados. Tente novamente mais tarde.");
+    } finally {
+      mostrarLoading(false);
+    }
   });
 });

@@ -228,5 +228,45 @@
     "vernacularName": "Tartaruga-de-pente",
     "scientificName": "Eretmochelys imbricata",
     "key": 10046
+  },
+  {
+    "vernacularName": "Tubarão-tigre",
+    "scientificName": "Galeocerdo cuvier",
+    "key": 10047
+  },
+  {
+    "vernacularName": "Tubarão-cabeça-chata",
+    "scientificName": "Carcharhinus leucas",
+    "key": 10048
+  },
+  {
+    "vernacularName": "Tubarão-lixa",
+    "scientificName": "Ginglymostoma cirratum",
+    "key": 10049
+  },
+  {
+    "vernacularName": "Tubarão-martelo-grande",
+    "scientificName": "Sphyrna mokarran",
+    "key": 10050
+  },
+  {
+    "vernacularName": "Tubarão-azul",
+    "scientificName": "Prionace glauca",
+    "key": 10051
+  },
+  {
+    "vernacularName": "Tubarão-anjo",
+    "scientificName": "Squatina guggenheim",
+    "key": 10052
+  },
+  {
+    "vernacularName": "Tubarão-galha-preta-do-recife",
+    "scientificName": "Carcharhinus melanopterus",
+    "key": 10053
+  },
+  {
+    "vernacularName": "Tubarão-galha-branca-oceânico",
+    "scientificName": "Carcharhinus longimanus",
+    "key": 10054
   }
 ]
