@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = document.createElement("div");
     card.className = "card";
 
-    let imgSrc = "assets/images/mockups/tartaruga-prego.png";
+    let imgSrc = "assets/images/mockups/imagem-indisponivel.jpg";
     if (item.media && item.media.length > 0) {
       const mediaItem = item.media.find(m => m.identifier && m.identifier.match(/\.(jpg|jpeg|png|gif)$/i));
       if (mediaItem) {
