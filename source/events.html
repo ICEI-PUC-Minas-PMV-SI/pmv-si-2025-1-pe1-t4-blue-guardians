@@ -28,7 +28,8 @@
     </div>
   </nav>
 
-  <main class="container mt-5 pt-5">
+    <!-- Conteúdo principal -->
+    <main class="container mt-5 pt-5" style="margin-top: 2rem !important;">
     <div class="container-organizacao-eventos-custom d-flex flex-wrap gap-3 justify-content-between align-items-center">
       <!-- Barra de pesquisa -->
       <div class="navbar-pesquisa">
@@ -36,14 +37,16 @@
           <input type="text" class="form-control input-pesquisa" placeholder="Buscar eventos..." aria-label="Buscar eventos" />
           <button class="btn btn-pesquisa" aria-label="Buscar"><i class="fa fa-search"></i></button>
         </div>
-      </div>
-
+      </div>    
       <!-- Botões de ação -->
       <div class="organizacao-botoes d-flex gap-2">
         <div class="dropdown">
-          <button class="ordenar-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-arrow-down-up"></i> Ordenar por
-          </button>
+         <button class="ordenar-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
+                    </svg>
+                    Ordenar por
+                </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#" id="ordenar-alfabetica">Ordem Alfabética (A-Z)</a></li>
             <li><a class="dropdown-item" href="#" id="ordenar-proximos">Próximos Eventos</a></li>
@@ -52,115 +55,176 @@
         <button type="button" class="bnt-criar-evento" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Organize uma iniciativa</button>
       </div>
     </div>
+    
+        <!-- Modal de criação de evento -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #026395; color: #FFF;">
+                <h5 class="modal-title" id="staticBackdropLabel">Novo Evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-2">
+                    <label for="formTitle" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="inputTitle" required />
+                  </div>
+                  <div class="mb-2">
+                    <label for="formTextareaDescricao" class="form-label">Descrição</label>
+                    <textarea class="form-control" id="textareaDescricao" rows="3" required></textarea>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label for="formDate" class="form-label">Data</label>
+                      <input id="inputDate" class="form-control" type="date" required />
+                    </div>
+                    <div class="col">
+                      <label for="formTime" class="form-label">Horário</label>
+                      <input type="time" id="inputTime" class="form-control" required />
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-sm-4">
+                      <label for="formCep" class="form-label">CEP</label>
+                      <input
+                        id="inputCep"
+                        name="cep"
+                        class="form-control"
+                        required
+                        pattern="^\d{5}-?\d{3}$"
+                        title="Digite um CEP válido com 8 números. Ex: 12345-678"
+                      />
+                      <div id="cepError" class="text-danger d-none mt-1" role="alert"></div>
+                    </div>
+                    <div class="col-sm">
+                      <label for="formCidade" class="form-label">Cidade</label>
+                      <input type="text" class="form-control" id="inputCidade" readonly />
+                    </div>
+                    <div class="col-sm">
+                      <label for="formEstado" class="form-label">Estado</label>
+                      <input type="text" class="form-control" id="inputEstado" readonly />
+                    </div>
+                    <div class="col-sm-8 mt-2">
+                      <label for="formRua" class="form-label">Rua</label>
+                      <input type="text" class="form-control" id="inputRua" readonly />
+                    </div>
+                    <div class="col-sm-8 mt-2">
+                      <label for="formBairro" class="form-label">Bairro</label>
+                      <input type="text" class="form-control" id="inputBairro" readonly />
+                    </div>
+                    <div class="col-sm-3 mt-2">
+                      <label for="formNumero" class="form-label">Número</label>
+                      <input type="number" class="form-control" id="inputNumero" required />
+                    </div>
+                    <div class="mb-2 mt-2">
+                      <label for="formReferencia" class="form-label">Ponto de Referência</label>
+                      <input type="text" class="form-control" id="referencia" />
+                    </div>
+                  </div>
 
-    <!-- Modal de criação de evento -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header" style="background-color: #026395; color: #FFF;">
-            <h5 class="modal-title" id="staticBackdropLabel">Novo Evento</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-2">
-                <label for="formTitle" class="form-label">Título</label>
-                <input type="text" class="form-control" id="inputTitle" required />
-              </div>
-              <div class="mb-2">
-                <label for="formTextareaDescricao" class="form-label">Descrição</label>
-                <textarea class="form-control" id="textareaDescricao" rows="3" required></textarea>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <label for="formDate" class="form-label">Data</label>
-                  <input id="inputDate" class="form-control" type="date" required />
-                </div>
-                <div class="col">
-                  <label for="formTime" class="form-label">Horário</label>
-                  <input type="time" id="inputTime" class="form-control" required />
-                </div>
-              </div>
-              <div class="row mt-2">
-                <div class="col-sm-4">
-                  <label for="formCep" class="form-label">CEP</label>
-                  <input
-                    id="inputCep"
-                    name="cep"
-                    class="form-control"
-                    required
-                    pattern="^\d{5}-?\d{3}$"
-                    title="Digite um CEP válido com 8 números. Ex: 12345-678"
-                  />
-                  <div id="cepError" class="text-danger d-none mt-1" role="alert"></div>
-                </div>
-                <div class="col-sm">
-                  <label for="formCidade" class="form-label">Cidade</label>
-                  <input type="text" class="form-control" id="inputCidade" readonly />
-                </div>
-                <div class="col-sm">
-                  <label for="formEstado" class="form-label">Estado</label>
-                  <input type="text" class="form-control" id="inputEstado" readonly />
-                </div>
-                <div class="col-sm-8 mt-2">
-                  <label for="formRua" class="form-label">Rua</label>
-                  <input type="text" class="form-control" id="inputRua" readonly />
-                </div>
-                <div class="col-sm-8 mt-2">
-                  <label for="formBairro" class="form-label">Bairro</label>
-                  <input type="text" class="form-control" id="inputBairro" readonly />
-                </div>
-                <div class="col-sm-3 mt-2">
-                  <label for="formNumero" class="form-label">Número</label>
-                  <input type="number" class="form-control" id="inputNumero" required />
-                </div>
-                <div class="mb-2 mt-2">
-                  <label for="formReferencia" class="form-label">Ponto de Referência</label>
-                  <input type="text" class="form-control" id="referencia" />
-                </div>
-              </div>
+                  <!-- Upload de imagem -->
+                  <div class="mb-3">
+                    <label for="formImg" class="form-label">Imagem</label>
+                    <input type="file" id="img" name="img" accept="image/*" class="form-control" />
+                  </div>
 
-              <!-- Upload de imagem -->
-              <div class="mb-3">
-                <label for="formImg" class="form-label">Imagem</label>
-                <input type="file" id="img" name="img" accept="image/*" class="form-control" />
+                  <!-- Categorias -->
+                  <!-- <div class="categoria mb-3">
+                      <label for="">Categorias:</label><br>
+                      <button type="button" class="btn-categoria">Pesca Ilegal</button>
+                      <button type="button" class="btn-categoria">Poluição Sonora</button>
+                      <button type="button" class="btn-categoria">Lixo na Praia</button>
+                      <button type="button" class="btn-categoria">Animais Mortos</button>
+                      <button type="button" class="btn-categoria">Veículos na Praia</button>
+                      <button type="button" class="btn-categoria">Outros</button>
+                  </div> -->
+                  <div class="categoria mb-3">
+                    <label class="form-label">Categorias:</label><br />
+                    <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Limpeza de Praia</button>
+                    <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Educação ambiental</button>
+                    <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Caminhada</button>
+                    <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Corrida</button>
+                    <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Conscientização</button>
+                    <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Outros</button>
+                  </div>
+                </form>
               </div>
-
-              <!-- Categorias -->
-              <div class="categoria mb-3">
-                <label class="form-label">Categorias:</label><br />
-                <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Limpeza de Praia</button>
-                <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Educação ambiental</button>
-                <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Caminhada</button>
-                <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Corrida</button>
-                <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Conscientização</button>
-                <button type="button" class="btn-categoria btn btn-outline-primary me-1 mb-1">Outros</button>
+              <div class="modal-footer">
+                <button type="button" class="btn-secundario btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button id="btnSalvarEvento" type="submit" class="btn-primario btn btn-primary">Salvar</button>
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn-secundario btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button id="btnSalvarEvento" type="submit" class="btn-primario btn btn-primary">Salvar</button>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
+        <!-- Cards Eventos -->
+        <section class="cards">
+            <div class="card-grid">
+                <div class="card">
+                    <img src="assets/images/complains_header.jpg" alt="Ecossistemas Marinhos">
+                    <div class="card-content">
+                        <h3>Poluição por Plástico nas Praias</h3>
+                        <p>Denúncia sobre o crescente acúmulo de resíduos plásticos nas praias, afetando diretamente a vida marinha...</p>
+                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
+                    </div>
+                </div>
 
-    <!-- Cards de Eventos -->
-    <section class="card-grid mt-4">
-      <!-- Cards serão carregados via JavaScript -->
-    </section>
+                <div class="card">
+                    <img src="assets/images/pesca_ilegal.jpg" alt="Ecossistemas Marinhos">
+                    <div class="card-content">
+                        <h3>Pesca Ilegal em Áreas Protegidas</h3>
+                        <p>Relato de práticas de pesca ilegal em áreas protegidas, onde a captura de espécies marinhas ameaçadas é recorrente...</p>
+                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
+                    </div>
+                </div>
 
-    <!-- Paginação -->
-    <div class="paginacao mt-3">
-      <button class="ativo btn btn-outline-primary">1</button>
-      <button class="btn btn-outline-primary">2</button>
-      <button class="btn btn-outline-primary">3</button>
-      <span>...</span>
-      <button class="btn btn-outline-primary">67</button>
-      <button class="btn btn-outline-primary">68</button>
-    </div>
+                <div class="card">
+                    <img src="assets/images/destruicao-corais.jpg" alt="Ecossistemas Marinhos">
+                    <div class="card-content">
+                        <h3>Destruição de Recifes de Coral</h3>
+                        <p>Denúncia sobre a destruição de recifes de corais devido ao turismo irresponsável e práticas de mergulho não...</p>
+                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="assets/images/complains_header.jpg" alt="Ecossistemas Marinhos">
+                    <div class="card-content">
+                        <h3>Poluição por Plástico nas Praias</h3>
+                        <p>Denúncia sobre o crescente acúmulo de resíduos plásticos nas praias, afetando diretamente a vida marinha...</p>
+                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="assets/images/pesca_ilegal.jpg" alt="Ecossistemas Marinhos">
+                    <div class="card-content">
+                        <h3>Pesca Ilegal em Áreas Protegidas</h3>
+                        <p>Relato de práticas de pesca ilegal em áreas protegidas, onde a captura de espécies marinhas ameaçadas é recorrente...</p>
+                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="assets/images/destruicao-corais.jpg" alt="Ecossistemas Marinhos">
+                    <div class="card-content">
+                        <h3>Destruição de Recifes de Coral</h3>
+                        <p>Denúncia sobre a destruição de recifes de corais devido ao turismo irresponsável e práticas de mergulho não...</p>
+                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="paginacao">
+            <button class="ativo">1</button>
+            <button>2</button>
+            <button>3</button>
+            <span>...</span>
+            <button>67</button>
+            <button>68</button>
+        </div>
   </main>
 
   <!-- Rodapé -->

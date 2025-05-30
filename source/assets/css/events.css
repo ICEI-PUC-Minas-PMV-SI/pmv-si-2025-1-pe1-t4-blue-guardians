@@ -17,11 +17,23 @@
     box-sizing: border-box;
   }
 
-  html, body {
+  /* html, body {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-family: var(--font-main);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-base_escuro);
+  } */
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     font-family: var(--font-main);
     background-color: var(--cor-fundo);
     color: var(--cor-texto-base_escuro);
@@ -31,7 +43,7 @@
     flex: 1;
   }
 
-   /* Menu */
+  /* Menu */
 
   .navbar {
     width: 100%;
@@ -118,6 +130,7 @@
     color: #ffffffc9;
   }
 
+
   /* Conteúdo */
 
   .input-pesquisa {
@@ -154,10 +167,6 @@
     color: var(--cor-texto-base_escuro);
   }
 
-  .inputRua, .inputCidade, .inputEstado {
-    color: #111;
-  }
-
   button {
     padding: 0.4rem 0.8rem;
     border: none;
@@ -165,26 +174,13 @@
     cursor: pointer;
     font-family: var(--font-main);
   }
-  .btn-categoria {
-    border: 1px solid #ccc;
-    padding: 6px 12px;
-    margin: 2px;
-    border-radius: 20px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
 
-  .btn-categoria.ativo {
-    background-color: #026395;
-    color: white;
-    border-color: #026395;
-  }
   .bnt-pesquisa-padrao {
     color: var(--cor-texto-base_escuro);
   }
 
   .bnt-criar-evento {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-terciaria);
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -290,7 +286,6 @@
   .cards {
     padding: 25px;
     background-color: var(--cor-fundo);
-    height: 820px;
     width: 100%;
   }
 
@@ -361,6 +356,7 @@
   
   .btn:hover {
     background-color: #115094de;
+    color: white;
   }
 
   .center-btn {
