@@ -215,57 +215,66 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const buscarPorLocalizacao = async (localizacao) => {
-    // Extrair componentes da localização (cidade, estado)
     const partes = localizacao.split(',').map(p => p.trim());
-    let cidade, estado;
-    
-    if (partes.length >= 2) {
+    let cidade = "", estado = "";
+
+    if (partes.length === 3) {
       [cidade, estado] = partes;
-    } else {
-      [estado] = partes;
+    } else if (partes.length === 2) {
+      [cidade, estado] = partes;
+    } else if (partes.length === 1) {
+      estado = partes[0];
     }
 
-    // Normalizar nomes (remover acentos, espaços extras)
+    if (!cidade && !estado) {
+      mostrarErro(localErrorElement, "Informe ao menos o estado ou município.");
+      mostrarLoading(false);
+      return [];
+    }
+
     const normalizar = (str) => {
       return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
     };
 
-    // Tentar buscar por município (se existir)
-    if (cidade) {
-      const resultados = await buscarGBIF({ 
-        municipality: normalizar(cidade), 
-        country: "BR" // Usar código ISO sempre
-      });
-      if (resultados.length > 0) return resultados;
-    }
+    const estadosBR = {
+      'acre': 'AC', 'alagoas': 'AL', 'amapa': 'AP', 'amazonas': 'AM',
+      'bahia': 'BA', 'ceara': 'CE', 'distrito federal': 'DF',
+      'espirito santo': 'ES', 'goias': 'GO', 'maranhao': 'MA',
+      'mato grosso': 'MT', 'mato grosso do sul': 'MS', 'minas gerais': 'MG',
+      'para': 'PA', 'paraiba': 'PB', 'parana': 'PR', 'pernambuco': 'PE',
+      'piaui': 'PI', 'rio de janeiro': 'RJ', 'rio grande do norte': 'RN',
+      'rio grande do sul': 'RS', 'rondonia': 'RO', 'roraima': 'RR',
+      'santa catarina': 'SC', 'sao paulo': 'SP', 'sergipe': 'SE',
+      'tocantins': 'TO'
+    };
 
-    // Se não encontrar, tentar por estado
+    const filtrosBase = { country: "BR" };
+    if (cidade) filtrosBase.municipality = cidade;
+
+    let resultados = [];
+
     if (estado) {
-      // Mapear nomes de estados para siglas quando possível
-      const estadosBR = {
-        'acre': 'AC', 'alagoas': 'AL', 'amapa': 'AP', 'amazonas': 'AM',
-        'bahia': 'BA', 'ceara': 'CE', 'distrito federal': 'DF', 
-        'espirito santo': 'ES', 'goias': 'GO', 'maranhao': 'MA',
-        'mato grosso': 'MT', 'mato grosso do sul': 'MS', 'minas gerais': 'MG',
-        'para': 'PA', 'paraiba': 'PB', 'parana': 'PR', 'pernambuco': 'PE',
-        'piaui': 'PI', 'rio de janeiro': 'RJ', 'rio grande do norte': 'RN',
-        'rio grande do sul': 'RS', 'rondonia': 'RO', 'roraima': 'RR',
-        'santa catarina': 'SC', 'sao paulo': 'SP', 'sergipe': 'SE',
-        'tocantins': 'TO'
+      const estadoNormalizado = normalizar(estado);
+      const sigla = estadosBR[estadoNormalizado];
+
+      const filtrosComNome = {
+        ...filtrosBase,
+        stateProvince: estado
       };
 
-      const estadoNormalizado = normalizar(estado);
-      const siglaEstado = estadosBR[estadoNormalizado] || estadoNormalizado;
+      const filtrosComSigla = sigla
+        ? { ...filtrosBase, stateProvince: sigla }
+        : null;
 
-      const resultados = await buscarGBIF({ 
-        stateProvince: siglaEstado, 
-        country: "BR" 
-      });
-      if (resultados.length > 0) return resultados;
+      const resultadosNome = await buscarGBIF(filtrosComNome);
+      const resultadosSigla = filtrosComSigla ? await buscarGBIF(filtrosComSigla) : [];
+
+      const combinados = [...resultadosNome, ...resultadosSigla];
+
+      resultados = Array.from(new Map(combinados.map(item => [item.key, item])).values());
     }
 
-    // Último recurso: buscar pelo país (Brasil)
-    return await buscarGBIF({ country: "BR" });
+    return resultados;
   };
 
   // ==================== EVENTO DE PESQUISA ====================
