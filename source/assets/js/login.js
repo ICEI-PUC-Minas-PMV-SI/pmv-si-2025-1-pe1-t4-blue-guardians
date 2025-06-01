@@ -4,7 +4,7 @@ form.addEventListener('submit', function (event) {
    // consumindo a API para identificar os usuarios da aplicação
   async function carregarDados() {
     try {
-      const response = await fetch('./api/db.json');
+      const response = await fetch('./assets/api/db.json');
       const data = await response.json();
       return data;
     } catch (error) {
