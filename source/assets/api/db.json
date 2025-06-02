@@ -128,6 +128,28 @@
         "https://perfil.com",
         "https://x.com"
       ]
+    },
+    {
+      "id": "c63c",
+      "name": "Wesley Azevedo",
+      "email": "wesley@gmail.com",
+      "password": "123",
+      "type": "Cidadão Consciente (ou Denunciante)",
+      "bio": "",
+      "urls": [
+        ""
+      ]
+    },
+    {
+      "id": "d3fb",
+      "name": "wesley",
+      "email": "wesley4444@gmail.com",
+      "password": "12",
+      "type": "Explorador Aprendiz (ou Estudante)",
+      "bio": "",
+      "urls": [
+        ""
+      ]
     }
   ],
   "events": [

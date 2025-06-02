@@ -127,6 +127,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+
       const userJSON = localStorage.getItem('usuarioLogado');
 
       if (!userJSON) {
@@ -134,9 +135,8 @@
         window.location.href = "login.html";
         return;
       }
-
       const user = JSON.parse(userJSON);
-
+      console.log(user)
       // Preencher os campos
       document.getElementById("username").value = user.name || '';
       document.getElementById("email").value = user.email || '';

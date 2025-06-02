@@ -43,6 +43,8 @@ form.addEventListener('submit', function (event) {
       erroSenha.textContent = '';
       console.log('Usuário encontrado');
       localStorage.setItem('nomeUsuario', user.name); 
+      localStorage.setItem('usuarioLogado', 'userLogado')
+      
       window.location.href = 'index.html';
     } else {
       erroSenha.textContent = 'Senha incorreta.';
