@@ -20,6 +20,7 @@
         <br>
         <form id="formRegister">
           <input type="text" placeholder="Email" name="emailUsuario"/>
+          <small class="erro" id="emailDuplicado"></small>
           <input type="text" class="name" placeholder="Nome" name="nomeUsuario">
           <!-- <input type="password" placeholder="Tipo" /> -->
           <select id="type" name="tipoUsuario">
@@ -31,6 +32,7 @@
           <input type="password" placeholder="Confirme a Senha" name="senhaConfirmacao"/>
           <small class="erro" id="camposBranco"></small>
           <small class="erro" id="senhasDiferentes"></small>
+          
           
 
           <button type="submit">Salvar</button>
