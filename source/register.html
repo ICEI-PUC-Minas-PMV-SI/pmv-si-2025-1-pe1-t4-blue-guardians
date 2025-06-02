@@ -19,15 +19,19 @@
         <p>Nossa missão é preservar os ecossistemas marinhos por meio da educação, conscientização e ação. Explore, aprenda e faça parte da mudança. </p>
         <br>
         <form id="formRegister">
-          <input type="text" placeholder="Email" />
+          <input type="text" placeholder="Email" name="emailUsuario"/>
+          <input type="text" class="name" placeholder="Nome" name="nomeUsuario">
           <!-- <input type="password" placeholder="Tipo" /> -->
-          <select id="type">
+          <select id="type" name="tipoUsuario">
             <option>Explorador Aprendiz (ou Estudante)</option>
             <option>Cidadão Consciente (ou Denunciante)</option>
             <option>Administrador da Plataforma</option>
           </select>
-          <input type="password" placeholder="Senha" />
-          <input type="password" placeholder="Confirme a Senha" />
+          <input type="password" placeholder="Senha" name="senha" />
+          <input type="password" placeholder="Confirme a Senha" name="senhaConfirmacao"/>
+          <small class="erro" id="camposBranco"></small>
+          <small class="erro" id="senhasDiferentes"></small>
+          
 
           <button type="submit">Salvar</button>
         </form>
