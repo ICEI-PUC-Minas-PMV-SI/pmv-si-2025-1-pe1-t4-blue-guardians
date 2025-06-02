@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateDropdownWidth();
 
   // Carrega espécies
-  fetch("api/especies_marinhas.json")
+  fetch('./assets/api/especies_marinhas.json')
     .then(response => response.json())
     .then(data => {
       especies = data;

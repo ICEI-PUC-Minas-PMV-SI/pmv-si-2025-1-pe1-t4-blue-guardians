@@ -34,7 +34,7 @@ npm install json-server --save-dev
 No terminal, dentro da pasta do projeto, execute:
 
 ```bash
-json-server --watch source/api/db.json --port 3000
+json-server --watch source/assets/api/db.json --port 3000
 ```
 Isso vai iniciar uma API REST simulada que escuta a porta 3001.
 
@@ -47,7 +47,7 @@ http://localhost:3001/denuncias
 ---
 ## 3. Rodar o JSON Server com o arquivo especies_marinhas.json
 ```bash
-json-server --watch source/api/especies_marinhas.json --port 3000
+json-server --watch source/assets/api/especies_marinhas.json --port 3000
 ```
 Isso vai iniciar um servidor API local na porta 3000, que vai disponibilizar os dados do JSON para o seu projeto.
 *Importante:* certifique-se de que a porta 3000 esteja disponível e não esteja sendo usada por outro programa, para que tudo funcione direitinho.
