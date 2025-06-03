@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cardGrid = document.querySelector(".card-grid");
   let todosEventos = [];
+  let paginaAtual = 1;
+  const eventosPorPagina = 6;
   let categoriasSelecionadas = [];
 
   // Elementos da busca
@@ -157,32 +159,79 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderizarEventos(lista) {
     if (!cardGrid) return;
     cardGrid.innerHTML = "";
-    lista.forEach(event => {
-      const card = document.createElement("div");
-      card.classList.add("card");
 
-      const dataEvento = new Date(event.date);
-      const dataFormatada = dataEvento.toLocaleDateString("pt-BR");
-      const horaFormatada = dataEvento.toLocaleTimeString("pt-BR", {
-        hour: '2-digit',
-        minute: '2-digit'
+    const totalPaginas = Math.ceil(lista.length / eventosPorPagina);
+    if (paginaAtual > totalPaginas) paginaAtual = totalPaginas || 1;
+
+    const inicio = (paginaAtual - 1) * eventosPorPagina;
+    const fim = inicio + eventosPorPagina;
+    const eventosPagina = lista.slice(inicio, fim);
+
+      eventosPagina.forEach(event => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        const dataEvento = new Date(event.date);
+        const dataFormatada = dataEvento.toLocaleDateString("pt-BR");
+        const horaFormatada = dataEvento.toLocaleTimeString("pt-BR", {
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+
+        card.innerHTML = `
+          <img src="${event.image}" alt="${event.title}">
+          <div class="card-content">
+            <h3>${event.title}</h3>
+            <p>Data: ${dataFormatada} às ${horaFormatada}</p>
+            <p>Organização: ${event.organizer}</p>
+            <p>Local: ${event.location}</p>
+            <p class="categorias">Categorias: ${event.categories?.join(", ") || "Sem categoria"}</p>
+            <a href="event-detail.html?id=${event.id}" class="btn">Saber mais</a>
+          </div>
+        `;
+        cardGrid.appendChild(card);
       });
 
-      card.innerHTML = `
-        <img src="${event.image}" alt="${event.title}">
-        <div class="card-content">
-          <h3>${event.title}</h3>
-          <p>Data: ${dataFormatada} às ${horaFormatada}</p>
-          <p>Organização: ${event.organizer}</p>
-          <p>Local: ${event.location}</p>
-          <p class="categorias">Categorias: ${event.categories?.join(", ") || "Sem categoria"}</p>
-          <a href="event-detail.html?id=${event.id}" class="btn">Saber mais</a>
-        </div>
-      `;
-      cardGrid.appendChild(card);
+    renderizarPaginacao(lista.length);
+  }
+  function renderizarPaginacao(totalEventos) {
+    let containerPaginacao = document.getElementById("paginacao");
+    if (!containerPaginacao) {
+      containerPaginacao = document.createElement("div");
+      containerPaginacao.id = "paginacao";
+      containerPaginacao.className = "pagination text-center mt-4";
+      cardGrid.parentNode.appendChild(containerPaginacao);
+    }
+
+    const totalPaginas = Math.ceil(totalEventos / eventosPorPagina);
+    if (totalPaginas <= 1) {
+      containerPaginacao.innerHTML = "";
+      return;
+    }
+
+    let html = "";
+
+    if (paginaAtual > 1) {
+      html += `<button class="btn btn-sm btn-secondary me-1" data-pagina="${paginaAtual - 1}">Anterior</button>`;
+    }
+
+    for (let i = 1; i <= totalPaginas; i++) {
+      html += `<button class="btn btn-sm ${i === paginaAtual ? 'btn-primary' : 'btn-light'} me-1" data-pagina="${i}">${i}</button>`;
+    }
+
+    if (paginaAtual < totalPaginas) {
+      html += `<button class="btn btn-sm btn-secondary" data-pagina="${paginaAtual + 1}">Próximo</button>`;
+    }
+
+    containerPaginacao.innerHTML = html;
+
+    containerPaginacao.querySelectorAll("button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        paginaAtual = parseInt(btn.getAttribute("data-pagina"));
+        renderizarEventos(todosEventos);
+      });
     });
   }
-
   // Adicionar evento
   const botaoSalvar = document.querySelector("#btnSalvarEvento");
   if (botaoSalvar) {
