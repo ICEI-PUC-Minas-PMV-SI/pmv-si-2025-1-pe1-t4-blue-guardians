@@ -264,9 +264,85 @@
     "scientificName": "Carcharhinus melanopterus",
     "key": 10053
   },
-  {
+   {
     "vernacularName": "Tubarão-galha-branca-oceânico",
     "scientificName": "Carcharhinus longimanus",
     "key": 10054
+  },
+  {
+    "vernacularName": "Sucuri-verde",
+    "scientificName": "Eunectes murinus",
+    "key": 10055
+  },
+  {
+    "vernacularName": "Sucuri-amarela",
+    "scientificName": "Eunectes notaeus",
+    "key": 10056
+  },
+  {
+    "vernacularName": "Cobra-d'água-listrada",
+    "scientificName": "Helicops angulatus",
+    "key": 10057
+  },
+  {
+    "vernacularName": "Cobra-d'água-neotropical",
+    "scientificName": "Helicops leopardinus",
+    "key": 10058
+  },
+  {
+    "vernacularName": "Falsa-coral-d'água",
+    "scientificName": "Erythrolamprus miliaris",
+    "key": 10059
+  },
+  {
+    "vernacularName": "Jararaca-do-brejo",
+    "scientificName": "Mastigodryas bifossatus",
+    "key": 10060
+  },
+  {
+    "vernacularName": "Cobra-marinha-comum",
+    "scientificName": "Hydrophis platurus",
+    "key": 10061
+  },
+  {
+    "vernacularName": "Cobra-marinha-de-bico",
+    "scientificName": "Enhydrina schistosa",
+    "key": 10062
+  },
+  {
+    "vernacularName": "Arraia-pintada",
+    "scientificName": "Aetobatus narinari",
+    "key": 10063,
+    "habitat": "Marinho (costas brasileiras)"
+  },
+  {
+    "vernacularName": "Arraia-elétrica",
+    "scientificName": "Narcine brasiliensis",
+    "key": 10064,
+    "habitat": "Marinho (fundos arenosos)"
+  },
+  {
+    "vernacularName": "Arraia-manteiga",
+    "scientificName": "Gymnura altavela",
+    "key": 10065,
+    "habitat": "Marinho (estuários e baías)"
+  },
+  {
+    "vernacularName": "Arraia-cururu",
+    "scientificName": "Potamotrygon motoro",
+    "key": 10066,
+    "habitat": "Água doce (Amazônia, Pantanal)"
+  },
+  {
+    "vernacularName": "Arraia-branca",
+    "scientificName": "Potamotrygon leopoldi",
+    "key": 10067,
+    "habitat": "Água doce (Rio Xingu)"
+  },
+  {
+    "vernacularName": "Arraia-lixa",
+    "scientificName": "Dasyatis hypostigma",
+    "key": 10068,
+    "habitat": "Marinho (costas rochosas)"
   }
 ]
