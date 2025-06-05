@@ -360,7 +360,10 @@
       "location": "Parque Metropolitano - Salvador - BA",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Ação coletiva de reflorestamento urbano.",
-      "categories": ["Reflorestamento", "Educação Ambiental"],
+      "categories": [
+        "Reflorestamento",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -379,7 +382,10 @@
       "location": "Parque das Dunas - Salvador - BA",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Atividade educativa com trilhas e oficinas ambientais.",
-      "categories": ["Trilha", "Educação Ambiental"],
+      "categories": [
+        "Trilha",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -398,7 +404,10 @@
       "location": "Teatro Castro Alves - Salvador - BA",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Exibição de documentários ambientais com debate.",
-      "categories": ["Cinema", "Educação Ambiental"],
+      "categories": [
+        "Cinema",
+        "Educação Ambiental"
+      ],
       "userId": 1
     },
     {
@@ -417,7 +426,10 @@
       "location": "Praça Abrantes - Camaçari - BA",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Feira com produtos reciclados e oficinas de arte.",
-      "categories": ["Arte e Cultura", "Sustentabilidade"],
+      "categories": [
+        "Arte e Cultura",
+        "Sustentabilidade"
+      ],
       "userId": 1
     },
     {
@@ -436,7 +448,10 @@
       "location": "Auditório da SME - Salvador - BA",
       "image": "assets/images/mockups/oficina-artes.png",
       "description": "Discussão de políticas e metodologias educacionais.",
-      "categories": ["Educação Ambiental", "Gestão Pública"],
+      "categories": [
+        "Educação Ambiental",
+        "Gestão Pública"
+      ],
       "userId": 1
     }
   ]
