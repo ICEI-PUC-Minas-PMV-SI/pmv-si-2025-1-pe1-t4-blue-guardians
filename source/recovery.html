@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blue Guardians - Recuperação de Senha</title>
+  <link rel="stylesheet" href="./assets/css/login.css"/>
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="login-wrapper">
+    <div class="login-box">
+      <div class="form-side">
+        <h2>Recuperação de Senha</h2>
+        <form id="formRecovery">
+          <input type="text" placeholder="Email" name="emailUsuario" required />
+          <small class="erro" id="emailInvalido"></small>
+          
+          <input type="text" placeholder="Código de Verificação" name="codigoVerificacao" required disabled />
+          <small class="erro" id="codigoInvalido"></small>
+          
+          <input type="password" placeholder="Nova Senha" name="novaSenha" required disabled />
+          <small class="erro" id="senhaInvalida"></small>
+          
+          <button type="submit">Enviar Código</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/recovery.js"></script>
+</body>
+</html>
