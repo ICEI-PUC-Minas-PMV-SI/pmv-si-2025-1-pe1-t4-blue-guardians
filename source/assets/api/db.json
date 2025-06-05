@@ -343,6 +343,101 @@
         "Arte e Cultura"
       ],
       "userId": 1
+    },
+    {
+      "id": "10",
+      "title": "Plantio de Mudas Nativas",
+      "date": "2025-08-05T09:00:00",
+      "organizer": "Refloresta Brasil",
+      "address": {
+        "cep": "41745-000",
+        "street": "Parque Metropolitano",
+        "number": "s/n",
+        "district": "Imbuí",
+        "city": "Salvador",
+        "state": "BA"
+      },
+      "location": "Parque Metropolitano - Salvador - BA",
+      "image": "assets/images/mockups/oficina-artes.png",
+      "description": "Ação coletiva de reflorestamento urbano.",
+      "categories": ["Reflorestamento", "Educação Ambiental"],
+      "userId": 1
+    },
+    {
+      "id": "11",
+      "title": "Passeio Ecológico com Estudantes",
+      "date": "2025-08-12T07:30:00",
+      "organizer": "Projeto Jovem Verde",
+      "address": {
+        "cep": "41620-020",
+        "street": "Parque das Dunas",
+        "number": "100",
+        "district": "Praia do Flamengo",
+        "city": "Salvador",
+        "state": "BA"
+      },
+      "location": "Parque das Dunas - Salvador - BA",
+      "image": "assets/images/mockups/oficina-artes.png",
+      "description": "Atividade educativa com trilhas e oficinas ambientais.",
+      "categories": ["Trilha", "Educação Ambiental"],
+      "userId": 1
+    },
+    {
+      "id": "12",
+      "title": "Cine Ambiental",
+      "date": "2025-08-20T18:00:00",
+      "organizer": "CineEco Salvador",
+      "address": {
+        "cep": "40110-060",
+        "street": "Teatro Castro Alves",
+        "number": "s/n",
+        "district": "Campo Grande",
+        "city": "Salvador",
+        "state": "BA"
+      },
+      "location": "Teatro Castro Alves - Salvador - BA",
+      "image": "assets/images/mockups/oficina-artes.png",
+      "description": "Exibição de documentários ambientais com debate.",
+      "categories": ["Cinema", "Educação Ambiental"],
+      "userId": 1
+    },
+    {
+      "id": "13",
+      "title": "Feira Sustentável de Artesanato",
+      "date": "2025-08-25T09:00:00",
+      "organizer": "Rede Artesãos do Mar",
+      "address": {
+        "cep": "42800-000",
+        "street": "Praça Abrantes",
+        "number": "s/n",
+        "district": "Centro",
+        "city": "Camaçari",
+        "state": "BA"
+      },
+      "location": "Praça Abrantes - Camaçari - BA",
+      "image": "assets/images/mockups/oficina-artes.png",
+      "description": "Feira com produtos reciclados e oficinas de arte.",
+      "categories": ["Arte e Cultura", "Sustentabilidade"],
+      "userId": 1
+    },
+    {
+      "id": "14",
+      "title": "Encontro de Educadores Ambientais",
+      "date": "2025-09-01T14:00:00",
+      "organizer": "Secretaria de Meio Ambiente",
+      "address": {
+        "cep": "40020-000",
+        "street": "Auditório da SME",
+        "number": "123",
+        "district": "Barris",
+        "city": "Salvador",
+        "state": "BA"
+      },
+      "location": "Auditório da SME - Salvador - BA",
+      "image": "assets/images/mockups/oficina-artes.png",
+      "description": "Discussão de políticas e metodologias educacionais.",
+      "categories": ["Educação Ambiental", "Gestão Pública"],
+      "userId": 1
     }
   ]
 }
