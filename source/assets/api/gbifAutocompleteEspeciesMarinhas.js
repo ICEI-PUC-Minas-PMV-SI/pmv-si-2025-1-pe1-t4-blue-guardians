@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Object.entries(filtros).forEach(([key, value]) => {
       if (value) params.append(key, value);
     });
-    params.append('limit', '10');
+    params.append('limit', '50');
 
     try {
       const response = await fetch(`https://api.gbif.org/v1/occurrence/search?${params}`);
