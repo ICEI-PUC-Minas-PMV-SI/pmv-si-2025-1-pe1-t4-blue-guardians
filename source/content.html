@@ -21,10 +21,8 @@
     
     <div class="dropdown-user">
       <i class="fa-solid fa-circle-user"></i>
-      <div class="dropdown-content">
-        <a href="profile.html">Meu Perfil</a>
-        <a href="login.html">Entrar</a>
-        <a href="register.html">Cadastrar-se</a>
+      <div class="dropdown-content" id="userDropdown">
+        <!-- Conteúdo será preenchido dinamicamente via JavaScript -->
       </div>
     </div>
   </div>
@@ -90,8 +88,43 @@
     toggle.addEventListener('click', () => {
       links.classList.toggle('show');
     });
-  </script>  
+  </script>
+    <script>
+  function checkLoginStatus() {
+    const userDropdown = document.getElementById('userDropdown');
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
+    if (usuarioLogado) {
+      userDropdown.innerHTML = `
+        <a href="profile.html">Meu Perfil</a>
+        <a href="#" id="logoutBtn">Sair</a>
+      `;
+    } else {
+      // Usuário não logado - Mostra opções padrão
+      userDropdown.innerHTML = `
+        <a href="profile.html">Meu Perfil</a>
+        <a href="login.html">Entrar</a>
+        <a href="register.html">Cadastrar-se</a>
+      `;
+    }
+  }
+
+  function handleLogout() {
+    localStorage.removeItem('usuarioLogado');
+    window.location.href = 'index.html';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    checkLoginStatus();
+    
+    document.addEventListener('click', (e) => {
+      if (e.target.id === 'logoutBtn') {
+        e.preventDefault();
+        handleLogout();
+      }
+    });
+  });
+</script>
   <script src="assets/js/home.js"></script>
 </body>
 </html>
