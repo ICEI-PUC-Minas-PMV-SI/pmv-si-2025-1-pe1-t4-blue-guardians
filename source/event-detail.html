@@ -32,44 +32,15 @@
   </header> 
 
   <main>
-    <div class="evento-card">
-      <img src="assets/images/mockups/surf.png" alt="Imagem do Evento" class="evento-img">
-      
-      <div class="evento-tags">
-        <span class="tag">Surf</span>
-        <span class="tag">Conscientização</span>
-        <span class="tag">Limpeza de Praia</span>
-      </div>
-    
-      <h2 class="evento-titulo">
-        Surfe Limpo, Mar Vivo - Praia de Jaguaribe, Salvador, Brazil
-      </h2>
-    
-      <p class="evento-info">
-        <strong>Data e Local do Evento:</strong> 23/05/2025 | 07:30<br>
-        Praia de Jaguaribe - Concentração na Barraca do Zé |
-      </p>
-    
-      <p class="evento-info"><strong>Organização:</strong> @profcarlos</p>
-    
-      <p class="evento-descricao">
-        Junte-se a nós para uma manhã de surfe, conscientização e ação!<br>
-        🏄‍♂️ Aulas e torneios de surfe para todos os níveis<br>
-        ♻️ Mutirão de limpeza pós-eventos nas areias
-      </p>
-    
-      <div class="evento-botoes">
-        <button class="btn-primario">Quero participação</button>
-        <button class="btn-secundario" onclick="compartilharEvento()">Compartilhar</button>
-        <button class="btn-editar" style="background-color: #fff;">Editar Evento
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-pencil-square" viewBox="0 0 16 16">
-            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-          </svg>
-        </button>
-      </div>      
-    </div>    
-
+    <div class="evento-container">
+      <!--<img class="evento-img" src="" alt="Imagem do Evento">-->
+      <h1 class="evento-titulo">Título do Evento</h1>
+      <p class="evento-info"></p>
+      <p class="evento-info"></p>
+      <div class="evento-descricao"></div>
+      <div class="evento-tags"></div>
+      <button onclick="compartilharEvento()" class="btn-compartilhar">Compartilhar Evento</button>
+    </div>
   </main>
 
   <!-- Rodapé -->
@@ -152,5 +123,85 @@
     });
   });
 </script>
+<script>
+    function obterIdEvento() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id');
+    }
+
+    function carregarEvento() {
+  const id = obterIdEvento();
+
+    fetch("http://localhost:3000/events")
+    .then(res => {
+      if (!res.ok) throw new Error('Erro ao carregar os dados');
+      return res.json();
+    })
+    .then(eventos => {
+      const evento = eventos.find(e => e.id == id);
+
+      if (!evento) {
+        document.querySelector('.evento-container').innerHTML = "<p>Evento não encontrado.</p>";
+        return;
+      }
+
+      preencherDetalhesEvento(evento);
+    })
+    .catch(error => {
+      console.error(error);
+      document.querySelector('.evento-container').innerHTML = "<p>Erro ao carregar os dados do evento.</p>";
+    });
+  }
+    function preencherDetalhesEvento(evento) {
+      /*document.querySelector('.evento-img').src = evento.image;*/
+      /*document.querySelector('.evento-img').alt = evento.title;*/
+
+      document.querySelector('.evento-titulo').textContent = evento.title;
+
+      const data = new Date(evento.date);
+      const dataFormatada = data.toLocaleDateString("pt-BR");
+      const horaFormatada = data.toLocaleTimeString("pt-BR", {
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+
+      document.querySelectorAll('.evento-info')[0].innerHTML = `
+        <strong>Data e Local do Evento:</strong> ${dataFormatada} | ${horaFormatada}<br>
+        ${evento.location}
+      `;
+
+      document.querySelectorAll('.evento-info')[1].innerHTML = `
+        <strong>Organização:</strong> ${evento.organizer}
+      `;
+
+      document.querySelector('.evento-descricao').textContent = evento.description;
+
+      const tagsContainer = document.querySelector('.evento-tags');
+      tagsContainer.innerHTML = "";
+      (evento.categories || []).forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = tag;
+        tagsContainer.appendChild(span);
+      });
+    }
+
+    function compartilharEvento() {
+      const url = window.location.href;
+      const titulo = document.querySelector('.evento-titulo')?.textContent || "Veja esse evento!";
+
+      if (navigator.share) {
+        navigator.share({
+          title: titulo,
+          url: url
+        });
+      } else {
+        navigator.clipboard.writeText(url);
+        alert("Link copiado para a área de transferência!");
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', carregarEvento);
+  </script>
 </body>
 </html>
