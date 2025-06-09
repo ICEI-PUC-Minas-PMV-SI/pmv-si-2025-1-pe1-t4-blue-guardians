@@ -30,29 +30,64 @@ npm install json-server --save-dev
 ```
 
 ---
-## 2. Rodar o JSON Server
+## 2. Rodar o JSON Server com o `db.json`
+
 No terminal, dentro da pasta do projeto, execute:
 
 ```bash
-json-server --watch source/assets/api/db.json --port 3000
+json-server --watch source/assets/api/db.json --port 3001
 ```
-Isso vai iniciar uma API REST simulada que escuta a porta 3001.
 
-As rotas disponíveis (exemplo para o seu db.json) serão:
+Isso vai iniciar uma API REST simulada que escuta na porta **3001**.
+
+As rotas disponíveis (exemplo para o seu `db.json`) serão:
 ```bash
 http://localhost:3001/eventos
 http://localhost:3001/usuarios
 http://localhost:3001/denuncias
+http://localhost:3001/contents
+http://localhost:3001/tabData
+http://localhost:3001/feedbacks
 ```
 ---
-## 3. Rodar o JSON Server com o arquivo especies_marinhas.json
+## 3. Rodar o JSON Server com o arquivo `especies_marinhas.json`
+
+Se desejar rodar o servidor para o arquivo de espécies marinhas, execute:
+
 ```bash
 json-server --watch source/assets/api/especies_marinhas.json --port 3000
 ```
-Isso vai iniciar um servidor API local na porta 3000, que vai disponibilizar os dados do JSON para o seu projeto.
-*Importante:* certifique-se de que a porta 3000 esteja disponível e não esteja sendo usada por outro programa, para que tudo funcione direitinho.
 
-## 4.Por que não funciona abrir o arquivo direto no navegador?
+Isso vai iniciar um servidor API local na porta **3000**, disponibilizando os dados desse JSON para seu projeto.
+
+> **Importante:** certifique-se de que a porta escolhida (3001, 3000, etc.) esteja disponível e não esteja sendo usada por outro programa, para evitar conflitos.
+
+## 4. Rodar os JSON Servers
+
+### 4.1 Instalar as dependências
+No terminal, dentro da pasta do projeto, execute para instalar as bibliotecas necessárias:
+```bash
+npm install json-server concurrently --save-dev
+```
+
+## 4.2 Configurar o script no package.json
+No arquivo `package.json`, é comprovado que está disponível o seguinte script na seção "scripts":
+```json
+"scripts": {
+  "api": "concurrently \"json-server --watch source/assets/api/db.json --port 3001\" \"json-server --watch source/assets/api/especies_marinhas.json --port 3000\""
+}
+```
+
+## 4.3 Executar os Servidores JSON
+No terminal, execute:
+```bash
+npm run api
+```
+Isso vai iniciar dois servidores JSON simultaneamente:
+- API principal com os dados db.jsonna porta 3001
+- API das espécies marinhas na especies_marinhas.jsonporta 3000
+
+## 5.Por que não funciona abrir o arquivo direto no navegador?
 Por questões de segurança, os navegadores bloqueiam requisições fetch() para arquivos locais (file://). Por isso, abrir o arquivo HTML diretamente (ex: duplo clique no arquivo) pode não carregar os dados do JSON.
 
 ### Solução: rodar um servidor local

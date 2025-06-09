@@ -28,7 +28,7 @@ form.addEventListener('submit', function (event) {
   }
 
   // Primeira etapa: envio do e-mail e geração do código
-  fetch("http://localhost:3000/users")
+  fetch("http://localhost:3001/users")
     .then(res => res.json())
     .then(usuarios => {
       const usuario = usuarios.find(user => user.email.toLowerCase() === email.toLowerCase());
@@ -79,7 +79,7 @@ function redefinirSenha() {
     return;
   }
 
-fetch(`http://localhost:3000/users/${usuarioEncontrado.id}`, {
+fetch(`http://localhost:3001/users/${usuarioEncontrado.id}`, {
   method: 'PATCH',
   headers: {
     'Content-Type': 'application/json'

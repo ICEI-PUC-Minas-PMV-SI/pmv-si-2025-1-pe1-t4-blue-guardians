@@ -132,7 +132,7 @@
     function carregarEvento() {
   const id = obterIdEvento();
 
-    fetch("http://localhost:3000/events")
+    fetch("http://localhost:3001/events")
     .then(res => {
       if (!res.ok) throw new Error('Erro ao carregar os dados');
       return res.json();

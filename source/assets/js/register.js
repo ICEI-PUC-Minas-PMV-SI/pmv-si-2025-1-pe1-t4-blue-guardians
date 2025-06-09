@@ -29,7 +29,7 @@ form.addEventListener('submit', function (event) {
   }
 
   // Verificar se o e-mail já existe
-  fetch("http://localhost:3000/users")
+  fetch("http://localhost:3001/users")
     .then(res => res.json())
     .then(usuarios => {
       const emailJaExiste = usuarios.some(user => user.email.toLowerCase() === email.toLowerCase());
@@ -49,7 +49,7 @@ form.addEventListener('submit', function (event) {
       };
 
 
-      return fetch("http://localhost:3000/users", {
+      return fetch("http://localhost:3001/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

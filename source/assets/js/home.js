@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/contents")
+fetch("http://localhost:3001/contents")
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById("conteudo-cards");
@@ -66,7 +66,7 @@ function setupTabClicks() {
 }
 
 // 🔄 Busca os dados do arquivo db.json
-fetch("http://localhost:3000/tabData")
+fetch("http://localhost:3001/tabData")
   .then(res => res.json())
   .then(data => {
     tabData = data;
@@ -86,7 +86,7 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
 if (id) {
-fetch(`http://localhost:3000/contents/${id}`)
+fetch(`http://localhost:3001/contents/${id}`)
     .then(response => {
     if (!response.ok) throw new Error("Conteúdo não encontrado");
     return response.json();
@@ -147,7 +147,7 @@ document.getElementById("btn-send-feedback").addEventListener("click", () => {
     data: new Date().toISOString()
   };
 
-  fetch("http://localhost:3000/feedbacks", {
+  fetch("http://localhost:3001/feedbacks", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

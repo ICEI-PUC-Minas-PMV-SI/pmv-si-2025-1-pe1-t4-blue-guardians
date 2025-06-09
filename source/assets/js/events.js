@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Carregar eventos do backend
-  fetch("http://localhost:3000/events")
+  fetch("http://localhost:3001/events")
     .then(response => {
       if (!response.ok) {
         throw new Error("Erro ao carregar eventos");
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         // Enviar para a API
-        const response = await fetch("http://localhost:3000/events", {
+        const response = await fetch("http://localhost:3001/events", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
