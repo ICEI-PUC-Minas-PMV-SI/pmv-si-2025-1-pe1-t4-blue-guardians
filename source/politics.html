@@ -100,41 +100,49 @@
             <p>&copy; 2025 Blue Guardians. Todos os direitos reservados.</p>
         </div>
     </footer>
-      <script>
-  function checkLoginStatus() {
-    const userDropdown = document.getElementById('userDropdown');
-    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-
-    if (usuarioLogado) {
-      userDropdown.innerHTML = `
-        <a href="profile.html">Meu Perfil</a>
-        <a href="#" id="logoutBtn">Sair</a>
-      `;
-    } else {
-      // Usuário não logado - Mostra opções padrão
-      userDropdown.innerHTML = `
-        <a href="profile.html">Meu Perfil</a>
-        <a href="login.html">Entrar</a>
-        <a href="register.html">Cadastrar-se</a>
-      `;
-    }
-  }
-
-  function handleLogout() {
-    localStorage.removeItem('usuarioLogado');
-    window.location.href = 'index.html';
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    checkLoginStatus();
-    
-    document.addEventListener('click', (e) => {
-      if (e.target.id === 'logoutBtn') {
-        e.preventDefault();
-        handleLogout();
+  <script>
+    function checkLoginStatus() {
+      const userDropdown = document.getElementById('userDropdown');
+      const userItem = localStorage.getItem("usuarioLogado");
+      
+      let usuarioLogado = null;
+      
+      if (userItem && userItem !== "undefined") {
+          try {
+          usuarioLogado = JSON.parse(userItem);
+          } catch (e) {
+          console.error("Erro ao analisar JSON:", e);
+          }
       }
+
+      if (usuarioLogado) {
+          userDropdown.innerHTML = `
+          <a href="profile.html">Meu Perfil</a>
+          <a href="#" id="logoutBtn">Sair</a>
+          `;
+      } else {
+          userDropdown.innerHTML = `
+          <a href="profile.html">Meu Perfil</a>
+          <a href="login.html">Entrar</a>
+          <a href="register.html">Cadastrar-se</a>
+          `;
+      }
+    }
+    function handleLogout() {
+        localStorage.removeItem('usuarioLogado');
+        window.location.href = 'index.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      checkLoginStatus();
+      
+      document.addEventListener('click', (e) => {
+      if (e.target.id === 'logoutBtn') {
+          e.preventDefault();
+          handleLogout();
+      }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
