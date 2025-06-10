@@ -149,7 +149,7 @@
     document.querySelector("form").addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const user = {
+      const updatedUser = {
         ...JSON.parse(localStorage.getItem("usuarioLogado")),
         name: document.getElementById("username").value,
         email: document.getElementById("email").value,
@@ -157,7 +157,20 @@
         bio: document.getElementById("bio").value,
       };
 
-      localStorage.setItem("usuarioLogado", JSON.stringify(user));
+      // Atualiza o usuarioLogado
+      localStorage.setItem("usuarioLogado", JSON.stringify(updatedUser));
+
+      // Atualiza o usuário dentro do array de todos os usuários
+      const usuariosStr = localStorage.getItem("usuariosCadastrados");
+      if (usuariosStr) {
+        let usuarios = JSON.parse(usuariosStr);
+        const index = usuarios.findIndex(u => u.email === updatedUser.email);
+        if (index !== -1) {
+          usuarios[index] = updatedUser;
+          localStorage.setItem("usuariosCadastrados", JSON.stringify(usuarios));
+        }
+      }
+
       alert("Dados atualizados com sucesso!");
     });
   </script>
