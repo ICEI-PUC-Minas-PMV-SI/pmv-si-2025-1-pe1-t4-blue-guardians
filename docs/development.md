@@ -25,26 +25,39 @@ As tabelas a seguir apresentam os requisitos funcionais e não-funcionais que re
 
 | ID     | Descrição do Requisito                                                                                        | Responsável                          | Artefato Criado                    |
 | ------ | ------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ---------------------------------- |
-| RF-001 | A plataforma Blue Guardians deve permitir a exibição e o cadastro de eventos ambientais.                      | Elisangela Maria da Silva (@likannp) | `event.html` e `event-detail.html` |
-| RF-002 | O sistema deve permitir a busca e filtragem de espécies por localizações específicas.             | Elisangela Maria da Silva (@likannp) | `filter.html`                      |
-| RF-003 | A plataforma deve exibir detalhes de eventos individuais, incluindo a data, local, descrição e organizadores. | Elisangela Maria da Silva (@likannp) | `event-detail.html`                |               |
-| RF-005 | A plataforma deve ser responsiva, adaptando-se a diferentes tamanhos de tela.                                 | Todos                                | Design Responsivo com Bootstrap    |             |
-|RF-011|Permitir filtros por habitat, status de conservação, região geográfica via API.|Elisangela Maria da Silva| `filter.html` |
-|RF-012|Integração com APIs científicas (OBIS, GBIF).|Elisangela Maria da Silva (@likannp)|`filter.html`|
-|RF-014| Compartilhamento de conteúdo em redes sociais. | Elisangela Maria da Silva (@likannp)|Em desenvolvimento|
+| RF-001 | A plataforma deve permitir exibição e cadastro de eventos ambientais                                          | Elisangela Maria da Silva (@likannp) | `events.html`                      |
+| RF-002 | O sistema deve permitir busca e filtragem de eventos por texto e categorias                                   | Elisangela Maria da Silva (@likannp) | `events.html`                      |
+| RF-003 | A plataforma deve exibir detalhes de eventos individuais                                                      | Elisangela Maria da Silva (@likannp) | `event-detail.html`                |
+| RF-005 | A plataforma deve ser responsiva                                                                              | Todos                                | Design Responsivo com Bootstrap    |
+| RF-011 | Permitir filtros por categorias de eventos                                                                    | Elisangela Maria da Silva (@likannp) | `events.html`                      |
+| RF-014 | Compartilhamento de conteúdo                                                                                  | Elisangela Maria da Silva (@likannp) | Em desenvolvimento                 |
+| RF-015 | Ordenação de eventos (alfabética e por data)                                                                  | Elisangela Maria da Silva (@likannp) | `events.html`                      |
+| RF-016 | Paginação de resultados                                                                                       | Elisangela Maria da Silva (@likannp) | `events.html`                      |
+| RF-017 | Cadastro de eventos com validação de usuário logado                                                           | Elisangela Maria da Silva (@likannp) | `events.html`                      |
 
 ## Descrição das Estruturas
 
-### Evento
+## Evento
 
-|    **Nome**   | **Tipo**         | **Descrição**                          | **Exemplo**                                                          |
-| :-----------: | ---------------- | -------------------------------------- | -------------------------------------------------------------------- |
-|   id\_evento  | Número (Inteiro) | Identificador único do evento          | 1                                                                    |
-|     título    | Texto            | Título do evento                       | Limpeza de Praias em Itacimirim                                      |
-|   descrição   | Texto            | Descrição do evento                    | Evento de conscientização sobre a importância da limpeza das praias. |
-|  data\_evento | Data             | Data em que o evento ocorrerá          | 2025-06-15                                                           |
-|     local     | Texto            | Local do evento                        | Praia de Itacimirim                                                  |
-| organizadores | Texto            | Organizador ou organizadores do evento | Associação de Pescadores de Itacimirim                               |
+| Campo          | Tipo             | Descrição                                   | Exemplo                                      |
+| -------------- | ---------------- | ------------------------------------------- | -------------------------------------------- |
+| id             | Integer          | ID único do evento                          | 1                                            |
+| title          | String           | Título do evento                            | Limpeza de Praias                            |
+| description    | String           | Descrição detalhada do evento               | Conscientização sobre preservação marinha    |
+| date           | DateTime (ISO)   | Data e hora do evento                       | "2025-06-15T14:00:00"                        |
+| organizer      | String           | Organizador do evento                       | Associação de Pescadores                     |
+| location       | String           | Local completo do evento                    | "Praia de Itacimirim, Salvador - BA"         |
+| image          | URL              | Imagem representativa do evento             | "assets/images/mockups/oficina-artes.png"    |
+| categories     | Array[String]    | Categorias associadas ao evento             | ["Limpeza", "Educação"]                      |
+| userId         | Integer          | ID do usuário criador do evento             | 5                                            |
+| address        | Object           | Detalhes completos do endereço:             |                                              |
+| └ cep          | String           | CEP do local                                | "41700000"                                   |
+| └ street       | String           | Nome da rua                                 | "Av. Oceânica"                               |
+| └ number       | String           | Número do local                             | "123"                                        |
+| └ district     | String           | Bairro                                      | "Itacimirim"                                 |
+| └ city         | String           | Cidade                                      | "Salvador"                                   |
+| └ state        | String           | Estado (UF)                                 | "BA"                                         |
+| └ referencia   | String           | Ponto de referência (opcional)              | "Próximo ao Farol"   
 
 ---
 
