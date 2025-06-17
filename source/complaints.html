@@ -82,7 +82,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <label for="" class="form-label">CEP</label>
-                            <input type="text" class="form-control" placeholder="" aria-label="CEP">
+                            <input type="text" class="form-control" placeholder="" aria-label="CEP" id="inputCep">
                         </div>
                         <div class="col-sm">
                             <label for="" class="form-label">Cidade</label>
@@ -127,59 +127,7 @@
         <!-- Cards Eventos -->
         <section class="cards">
             <div class="card-grid">
-                <div class="card">
-                    <img src="assets/images/complains_header.jpg" alt="Ecossistemas Marinhos">
-                    <div class="card-content">
-                        <h3>Poluição por Plástico nas Praias</h3>
-                        <p>Denúncia sobre o crescente acúmulo de resíduos plásticos nas praias, afetando diretamente a vida marinha...</p>
-                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/images/pesca_ilegal.jpg" alt="Ecossistemas Marinhos">
-                    <div class="card-content">
-                        <h3>Pesca Ilegal em Áreas Protegidas</h3>
-                        <p>Relato de práticas de pesca ilegal em áreas protegidas, onde a captura de espécies marinhas ameaçadas é recorrente...</p>
-                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/images/destruicao-corais.jpg" alt="Ecossistemas Marinhos">
-                    <div class="card-content">
-                        <h3>Destruição de Recifes de Coral</h3>
-                        <p>Denúncia sobre a destruição de recifes de corais devido ao turismo irresponsável e práticas de mergulho não...</p>
-                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/images/complains_header.jpg" alt="Ecossistemas Marinhos">
-                    <div class="card-content">
-                        <h3>Poluição por Plástico nas Praias</h3>
-                        <p>Denúncia sobre o crescente acúmulo de resíduos plásticos nas praias, afetando diretamente a vida marinha...</p>
-                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/images/pesca_ilegal.jpg" alt="Ecossistemas Marinhos">
-                    <div class="card-content">
-                        <h3>Pesca Ilegal em Áreas Protegidas</h3>
-                        <p>Relato de práticas de pesca ilegal em áreas protegidas, onde a captura de espécies marinhas ameaçadas é recorrente...</p>
-                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/images/destruicao-corais.jpg" alt="Ecossistemas Marinhos">
-                    <div class="card-content">
-                        <h3>Destruição de Recifes de Coral</h3>
-                        <p>Denúncia sobre a destruição de recifes de corais devido ao turismo irresponsável e práticas de mergulho não...</p>
-                        <!-- <a href="event-detail.html" class="btn">Saber mais</a> -->
-                    </div>
-                </div>
+                
             </div>
         </section>
     
@@ -223,51 +171,259 @@
         toggle.addEventListener('click', () => {
         links.classList.toggle('show');
         });
+
+        const searchInput = document.querySelector('.input-pesquisa');
+        const searchButton = document.querySelector('.btn-pesquisa');
+        const orderButton = document.querySelector('.ordenar-btn');
+        const cardGrid = document.querySelector('.card-grid');
+
+        let cards = Array.from(cardGrid.children);
+
+        function filtrarCards() {
+        const termo = searchInput.value.toLowerCase();
+
+        cards.forEach(card => {
+            const titulo = card.querySelector('h3').textContent.toLowerCase();
+            const descricao = card.querySelector('p').textContent.toLowerCase();
+            const mostrar = titulo.includes(termo) || descricao.includes(termo);
+            card.style.display = mostrar ? '' : 'none';
+        });
+        }
+
+        function ordenarCards(criterio = 'titulo') {
+        // critério pode ser 'titulo' ou 'data' (se tiver)
+        cards.sort((a, b) => {
+            let aValor, bValor;
+            if (criterio === 'titulo') {
+            aValor = a.querySelector('h3').textContent.toLowerCase();
+            bValor = b.querySelector('h3').textContent.toLowerCase();
+            return aValor.localeCompare(bValor);
+            }
+            // Caso tenha data, implementar aqui
+            return 0;
+        });
+
+        // Remonta o grid com os cards ordenados
+        cards.forEach(card => cardGrid.appendChild(card));
+        }
+
+        // Ativa pesquisa ao digitar ou clicar no botão
+        searchInput.addEventListener('input', filtrarCards);
+        searchButton.addEventListener('click', filtrarCards);
+
+        // Exemplo para ordenar quando clicar no botão de ordenar
+        orderButton.addEventListener('click', () => {
+        ordenarCards('titulo'); // pode modificar para 'data' depois
+        filtrarCards(); // reaplica filtro após ordenar
+        });
+
+        const itensPorPagina = 4; // ex: 4 cards por página
+        const paginacaoDiv = document.querySelector('.paginacao');
+        let paginaAtual = 1;
+
+        function mostrarPagina(pagina) {
+        paginaAtual = pagina;
+        const inicio = (pagina - 1) * itensPorPagina;
+        const fim = inicio + itensPorPagina;
+
+        cards.forEach((card, index) => {
+            card.style.display = (index >= inicio && index < fim) ? '' : 'none';
+        });
+
+        atualizarPaginacao();
+        }
+
+        function atualizarPaginacao() {
+        paginacaoDiv.innerHTML = '';
+
+        const totalPaginas = Math.ceil(cards.length / itensPorPagina);
+
+        for(let i = 1; i <= totalPaginas; i++) {
+            const btn = document.createElement('button');
+            btn.textContent = i;
+            if(i === paginaAtual) btn.classList.add('ativo');
+            btn.addEventListener('click', () => mostrarPagina(i));
+            paginacaoDiv.appendChild(btn);
+        }
+        }
+
+        // Inicializa
+        mostrarPagina(1);
+
+
+        // CEP
+        const inputCep = document.getElementById('inputCep');
+        const inputCidade = document.querySelector('input[aria-label="Cidade"]');
+        const inputEstado = document.querySelector('input[aria-label="Estado"]');
+        const inputPontoRef = document.getElementById('inputPontoReferencia'); // se quiser preencher
+
+        inputCep.addEventListener('blur', () => {
+        const cep = inputCep.value.replace(/\D/g, '');
+        if (cep.length !== 8) {
+            alert('CEP inválido!');
+            return;
+        }
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(res => res.json())
+            .then(data => {
+            if (data.erro) {
+                alert('CEP não encontrado');
+                return;
+            }
+            inputCidade.value = data.localidade;
+            inputEstado.value = data.uf;
+            // Se quiser preencher mais campos: data.logradouro, data.bairro
+            })
+            .catch(() => {
+            alert('Erro ao consultar CEP');
+            });
+        });
+
+        // Inclusão das denuncias
+        document.addEventListener('DOMContentLoaded', function() {
+            const saveButton = document.querySelector('.btn-primario'); // Botão "Salvar"
+            
+            saveButton.addEventListener('click', async function() {
+                const titulo = document.getElementById('inputTitle').value;
+                const descricao = document.getElementById('textareaDescricao').value;
+                const data = document.getElementById('inputDate').value;
+                const hora = document.getElementById('inputTime').value;
+
+                // Exemplo: categoria selecionada
+                let categoria = '';
+                const categorias = document.querySelectorAll('.btn-categoria');
+                categorias.forEach(btn => {
+                if (btn.classList.contains('selected')) {
+                    categoria = btn.textContent;
+                }
+                });
+
+                if (!titulo || !descricao) {
+                alert('Por favor, preencha título e descrição!');
+                return;
+                }
+
+                const novaDenuncia = {
+                titulo: titulo,
+                descricao: descricao,
+                data: data,
+                hora: hora,
+                categoria: categoria,
+                imagem: "assets/images/complains_header.jpg" // Por enquanto, imagem estática
+                };
+
+                try {
+                await fetch('http://localhost:3001/complaints', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(novaDenuncia)
+                });
+
+                // Fecha o modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+                modal.hide();
+
+                // Limpa os campos
+                document.getElementById('inputTitle').value = '';
+                document.getElementById('textareaDescricao').value = '';
+                document.getElementById('inputDate').value = '';
+                document.getElementById('inputTime').value = '';
+                categorias.forEach(btn => btn.classList.remove('selected'));
+
+                // Recarrega a lista de denúncias
+                carregarDenuncias();
+
+                } catch (error) {
+                console.error('Erro ao salvar denúncia:', error);
+                alert('Erro ao salvar denúncia!');
+                }
+            });
+
+            // Função para carregar as denúncias da API
+            async function carregarDenuncias() {
+                const grid = document.querySelector('.card-grid');
+                grid.innerHTML = ''; // Limpa os cards atuais
+
+                try {
+                const response = await fetch('http://localhost:3001/complaints');
+                const denuncias = await response.json();
+
+                denuncias.forEach(denuncia => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.innerHTML = `
+                    <img src="${denuncia.imagem}" alt="Imagem denúncia">
+                    <div class="card-content">
+                        <h3>${denuncia.titulo}</h3>
+                        <p>${denuncia.descricao}</p>
+                    </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                } catch (error) {
+                console.error('Erro ao carregar denúncias:', error);
+                }
+            }
+
+            carregarDenuncias(); // Carregar na primeira vez
+
+            // Seleção de categoria (estilo de toggle)
+            const categoriasBotoes = document.querySelectorAll('.btn-categoria');
+            categoriasBotoes.forEach(btn => {
+                btn.addEventListener('click', function() {
+                categoriasBotoes.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                });
+            });
+            });
+
+        // Status do login
+        function checkLoginStatus() {
+            const userDropdown = document.getElementById('userDropdown');
+            const userItem = localStorage.getItem("usuarioLogado");
+            
+            let usuarioLogado = null;
+            
+            if (userItem && userItem !== "undefined") {
+                try {
+                usuarioLogado = JSON.parse(userItem);
+                } catch (e) {
+                console.error("Erro ao analisar JSON:", e);
+                }
+            }
+
+            if (usuarioLogado) {
+                userDropdown.innerHTML = `
+                <a href="profile.html">Meu Perfil</a>
+                <a href="#" id="logoutBtn">Sair</a>
+                `;
+            } else {
+                userDropdown.innerHTML = `
+                <a href="profile.html">Meu Perfil</a>
+                <a href="login.html">Entrar</a>
+                <a href="register.html">Cadastrar-se</a>
+                `;
+            }
+            }
+            function handleLogout() {
+                localStorage.removeItem('usuarioLogado');
+                window.location.href = 'index.html';
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+            checkLoginStatus();
+            
+            document.addEventListener('click', (e) => {
+            if (e.target.id === 'logoutBtn') {
+                e.preventDefault();
+                handleLogout();
+            }
+            });
+            });
     </script>
-  <script>
-    function checkLoginStatus() {
-      const userDropdown = document.getElementById('userDropdown');
-      const userItem = localStorage.getItem("usuarioLogado");
-      
-      let usuarioLogado = null;
-      
-      if (userItem && userItem !== "undefined") {
-          try {
-          usuarioLogado = JSON.parse(userItem);
-          } catch (e) {
-          console.error("Erro ao analisar JSON:", e);
-          }
-      }
-
-      if (usuarioLogado) {
-          userDropdown.innerHTML = `
-          <a href="profile.html">Meu Perfil</a>
-          <a href="#" id="logoutBtn">Sair</a>
-          `;
-      } else {
-          userDropdown.innerHTML = `
-          <a href="profile.html">Meu Perfil</a>
-          <a href="login.html">Entrar</a>
-          <a href="register.html">Cadastrar-se</a>
-          `;
-      }
-    }
-    function handleLogout() {
-        localStorage.removeItem('usuarioLogado');
-        window.location.href = 'index.html';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      checkLoginStatus();
-      
-      document.addEventListener('click', (e) => {
-      if (e.target.id === 'logoutBtn') {
-          e.preventDefault();
-          handleLogout();
-      }
-      });
-    });
-  </script>
-    
 </body>
 </html>

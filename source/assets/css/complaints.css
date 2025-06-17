@@ -232,6 +232,11 @@
     box-shadow: inset 0 0 0.1rem rgba(0, 0, 0, 0.2);
   }
 
+  .btn-categoria.selected {
+    background-color: #026395;
+    color: white;
+  }
+
   .paginacao {
     text-align: center;
     margin-top: 2rem;
