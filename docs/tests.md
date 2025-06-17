@@ -25,20 +25,52 @@ Nesta seção o grupo deverá documentar os testes de software que verificam a c
 Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe qual o Requisito Funcional ou não funcional que ele está verificando. Associe também a página (ou artefato) onde o teste será realizado e descreva o cenário do teste. Veja a tabela de exemplo.
 
 
-**Caso de Teste** | **CT01 - Criar conta parte 1**
+**Caso de Teste** | **CT01 – Visualizar conteúdo explicativo**
  :--------------: | ------------
-**Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em criar conta <br> 2) Preencha todos os campos do formulário <br> 3) Clique no botão "Continuar".
+**Procedimento**  | 1) Navegue até a seção "O que te interessa?" <br> 2) Clique em um conteúdo para visualizar".
 **Requisitos associados** | RF-001
-**Resultado esperado** | Prosseguir para a parte 2 do cadastro
+**Resultado esperado** | Exibição do conteúdo explicativo selecionado
+**Dados de entrada** | Seleção de um conteúdo da lista
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT02 - Cadastro de usuário**
+ :--------------: | ------------
+**Procedimento**  | 1) Clique em “Cadastrar” <br> 2) Preencha nome, email, senha e tipo de usuário <br> 3) Clique no botão “Criar conta” <br>
+**Requisitos associados** | RF-002
+**Resultado esperado** | Usuário cadastrado
 **Dados de entrada** | Inserção de dados válidos no formulário de cadastro
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT02 - Criar conta parte 2**
+**Caso de Teste** | **CT03 - Login  de usuário**
  :--------------: | ------------
-**Procedimento**  | 1) Preencha todos os campos do formulário <br> 2) Clique no botão "Criar conta" <br> 
-**Requisitos associados** | RF-001
-**Resultado esperado** | Usuário cadastrado
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
+**Procedimento**  | 1) Clique em “Entrar” <br> 2) Preencha email e senha <br> 3) Clique no botão “Login” <br>
+**Requisitos associados** | RF-003
+**Resultado esperado** | Usuário autenticado e redirecionado para a página inicial
+**Dados de entrada** | Email: joao@exemplo.com, Senha: 123456
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT04 - Cadastrar evento**
+ :--------------: | ------------
+**Procedimento**  | 1) Realize login <br> 2) Acesse a seção “Eventos” <br> 3) Clique em “Novo evento” <br> 4) Preencha os campos (nome, data, local, descrição) <br> 5) Clique em “Salvar” <br>
+**Requisitos associados** | RF-004
+**Resultado esperado** | Evento cadastrado com sucesso
+**Dados de entrada** | Nome: Palestra Marinha, Data: 05/06/2025, Local: Auditório, Descrição: Educação ambiental
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT05 - Cadastrar denúncia**
+ :--------------: | ------------
+**Procedimento**  | 1) Realize login <br> 2) Acesse a seção “Denúncias” <br> 3) Clique em “Nova denúncia” <br> 4) Preencha os campos (local, tipo, descrição) <br> 5) Clique em “Enviar” <br>
+**Requisitos associados** | RF-005
+**Resultado esperado** | Denúncia registrada com sucesso
+**Dados de entrada** | Local: Praia Copacabana, Tipo: Lixo, Descrição: Muita sujeira na areia
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT06 - Enviar feedback sobre conteúdo**
+ :--------------: | ------------
+**Procedimento**  | 1) Realize login <br> 2) Acesse um conteúdo visualizado <br> 3) Clique em “Enviar feedback” <br> 4) Preencha o formulário com comentário <br> 5) Clique em “Enviar” <br>
+**Requisitos associados** | RF-006
+**Resultado esperado** | Feedback salvo e confirmado
+**Dados de entrada** | Comentário: Muito educativo e visual bonito
 **Resultado obtido** | Sucesso
 
 ## Registro dos Testes de Software
