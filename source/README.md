@@ -31,7 +31,7 @@ Execute no terminal (na raiz do projeto):
 npm install
 ```
 ## Passo 3: Iniciar os Servidores
-Execute o comando:
+Execute o comando dentro da pasta api (C:\source\assets\api):
 
 ```bash
 npm run api
