@@ -348,24 +348,28 @@
                 grid.innerHTML = ''; // Limpa os cards atuais
 
                 try {
-                const response = await fetch('http://localhost:3001/complaints');
-                const denuncias = await response.json();
+                    const response = await fetch('http://localhost:3001/complaints');
+                    const denuncias = await response.json();
 
-                denuncias.forEach(denuncia => {
-                    const card = document.createElement('div');
-                    card.classList.add('card');
-                    card.innerHTML = `
-                    <img src="${denuncia.imagem}" alt="Imagem denúncia">
-                    <div class="card-content">
-                        <h3>${denuncia.titulo}</h3>
-                        <p>${denuncia.descricao}</p>
-                    </div>
-                    `;
-                    grid.appendChild(card);
-                });
+                    denuncias.forEach(denuncia => {
+                        const card = document.createElement('div');
+                        card.classList.add('card');
+                        card.innerHTML = `
+                            <img src="${denuncia.imagem}" alt="Imagem denúncia">
+                            <div class="card-content">
+                                <h3>${denuncia.titulo}</h3>
+                                <p>${denuncia.descricao}</p>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    // 🔴 ATUALIZA AQUI:
+                    cards = Array.from(cardGrid.children);
+                    mostrarPagina(1); // Reseta para página 1 ao recarregar
 
                 } catch (error) {
-                console.error('Erro ao carregar denúncias:', error);
+                    console.error('Erro ao carregar denúncias:', error);
                 }
             }
 
