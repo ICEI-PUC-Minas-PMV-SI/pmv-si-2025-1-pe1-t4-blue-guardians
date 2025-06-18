@@ -4,40 +4,67 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
 
 Para cada requisito funcional, pode ser entregue um artefato desse tipo.
 
-O professor Rommel Carneiro apresenta alguns exemplos prontos para serem utilizados como referência:
-
-* Login do sistema: [https://repl.it/@rommelpuc/LoginApp](https://repl.it/@rommelpuc/LoginApp)
-* Cadastro de Contatos: [https://repl.it/@rommelpuc/Cadastro-de-Contatos](https://repl.it/@rommelpuc/Cadastro-de-Contatos)
-
-> **Links Úteis**:
->
-> * [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> * [JSON Tutorial](https://www.w3resource.com/JSON)
-> * [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> * [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> * [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
-
 ## Requisitos Atendidos
 
 As tabelas a seguir apresentam os requisitos funcionais e não-funcionais que relacionam o escopo do projeto com os artefatos criados:
 
-### Requisitos Funcionais
+# Requisitos Funcionais Atendidos
 
-| ID     | Descrição do Requisito                                                                                        | Responsável                          | Artefato Criado                    |
-| ------ | ------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ---------------------------------- |
-| RF-001 | A plataforma deve permitir exibição e cadastro de eventos ambientais                                          | Elisangela Maria da Silva (@likannp) | `events.html`                      |
-| RF-002 | O sistema deve permitir busca e filtragem de eventos por texto e categorias                                   | Elisangela Maria da Silva (@likannp) | `events.html`                      |
-| RF-002 | O sistema deve permitir a busca e filtragem de espécies por localizações específicas.                         | Elisangela Maria da Silva (@likannp) | `filter.html`                      |
-| RF-003 | A plataforma deve exibir detalhes de eventos individuais                                                      | Elisangela Maria da Silva (@likannp) | `event-detail.html`                |
-| RF-005 | A plataforma deve ser responsiva                                                                              | Todos                                | Design Responsivo com Bootstrap    |
-| RF-011 | Permitir filtros por habitat, status de conservação, região geográfica via API.                               | Elisangela Maria da Silva (@likannp) | `filter.html`                      |
-| RF-012 | Integração com APIs científicas (OBIS, GBIF)                                                                  | Elisangela Maria da Silva (@likannp) | `filter.html`                      |
-| RF-014 | Compartilhamento de conteúdo                                                                                  | Elisangela Maria da Silva (@likannp) | Em desenvolvimento                 |
-| RF-015 | Ordenação de eventos (alfabética e por data)                                                                  | Elisangela Maria da Silva (@likannp) | `events.html`                      |
-| RF-016 | Paginação de resultados                                                                                       | Elisangela Maria da Silva (@likannp) | `events.html`                      |
-| RF-017 | Cadastro de eventos com validação de usuário logado                                                           | Elisangela Maria da Silva (@likannp) | `events.html`                      |
+| ID     | Descrição do Requisito                                                                 | Artefato Criado                          | Relação com Implementação                                                  |
+|--------|------------------------------------------------------------------------------------------|------------------------------------------|-----------------------------------------------------------------------------|
+| RF-005 | Permitir que usuários autorizados cadastrem denúncias ambientais com descrição e localização | complaints.html, complaints.js           | Formulário completo com validação e geolocalização                         |
+| RF-009 | Permitir que usuários visualizem as denúncias e eventos cadastrados publicamente       | complaints.html, events.html             | Sistema de cards com paginação e filtros                                   |
+| RF-008 | Cadastro e divulgação de eventos ambientais                                              | events.html, events.js                   | Formulário de eventos com categorias e datas                               |
+| RF-002 | Deve autenticar usuários por meio de e-mail e senha previamente cadastrados             | login.html, login.js                     | Sistema de autenticação com localStorage                                   |
+| RF-003 | Deve restringir o acesso a funcionalidades administrativas com base no tipo de usuário  | complaints.js, events.js                 | Controle de acesso para criação de eventos/denúncias                       |
+| RF-001 | Permitir que usuários se cadastrem com nome, e-mail, senha e tipo de usuário            | register.html, register.js               | Formulário de cadastro com validação                                       |
+| RF-011 | Integração com APIs científicas (OBIS, GBIF)                                             | filter.html, filter.js                   | Busca de espécies marinhas via API GBIF                                    |
+| RF-006 | Permitir filtros por habitat, status de conservação, região geográfica via API          | filter.html, filter.js                   | Interface de filtros avançados                                             |
+| RF-004 | Deve registrar e armazenar feedbacks enviados pelos usuários sobre os conteúdos acessados | feedback.html, feedback.js               | Formulário de feedback integrado ao JSON Server                            |
+| RF-007 | Registrar e armazenar feedbacks enviados pelos usuários sobre os conteúdos acessados    | feedback.html, feedback.js               | Mesmo sistema de RF-004                                                    |
+| RF-012 | Painel público com indicadores ambientais (espécies, áreas críticas, denúncias)         | dashboard.html, dashboard.js             | Gráficos e métricas baseados em dados locais                               |
+
+# Requisitos Não Funcionais Atendidos
+
+| ID       | Descrição do Requisito                                                                    | Implementação                                      |
+|----------|---------------------------------------------------------------------------------------------|---------------------------------------------------|
+| RNF-001  | Deve ser responsiva, adaptando-se a diferentes tamanhos de tela                            | Bootstrap 5 em todas as páginas                   |
+| RNF-002  | Interface intuitiva com menus claros, ícones ilustrativos e navegação fluida               | Design consistente com ícones FontAwesome         |
+| RNF-003  | Tempo de resposta inferior a 2 segundos                                                     | Paginação e cache local                           |
+| RNF-005  | Deve garantir a segurança de dados sensíveis, como senhas                                  | Criptografia básica em localStorage               |
+| RNF-006  | Dados de espécies devem vir de fontes validadas com atualização via API                    | Integração com GBIF API                           |
+| RNF-007  | Conteúdo em português e linguagem acessível                                                 | Todas as páginas em PT-BR                         |
+| RNF-011  | Deve funcionar nos principais navegadores modernos                                          | Testado em Chrome, Firefox, Edge                  |
+| RNF-012  | O filtro deve retornar resultados em tempo real, com respostas em até 2 segundos           | Debounce e otimização em filter.js                |
+| RNF-013  | A interface do filtro deve ser intuitiva e de fácil uso                                     | UI simplificada em filter.html                   |
+| RNF-014  | Deve permitir múltiplos critérios de filtragem sem travar a aplicação                      | Filtros combinados em filter.js                   |
+| RNF-015  | Os eventos devem ser organizados por data, em ordem decrescente                            | Ordenação implementada em events.js               |
+| RNF-016  | O carregamento da lista de eventos deve ser paginado ou por scroll infinito                | Paginação implementada em events.js               |
+| RNF-018  | Os dados devem ser trafegados de forma segura via protocolo HTTP local                     | Uso de HTTPS em produção (simulado local)         |
+
+# Restrições Atendidas
+
+| ID  | Restrição                                                                  | Implementação                            |
+|-----|----------------------------------------------------------------------------|------------------------------------------|
+| 02  | Não pode ser desenvolvido um módulo de backend                            | JSON Server para simulação de API        |
+| 03  | Todas as funcionalidades devem funcionar em ambiente estático             | Frontend puro com JavaScript             |
+| 04  | A aplicação deve funcionar mesmo com conexão limitada                     | Cache local e Service Workers            |
+| 05  | As integrações com APIs devem ser feitas exclusivamente via frontend      | Fetch direto para APIs externas          |
 
 ## Descrição das Estruturas
+
+### Usuário da Aplicação
+
+| Campo    | Tipo     | Descrição                                                    | Exemplo                                   |
+|----------|----------|--------------------------------------------------------------|-------------------------------------------|
+| id       | String   | Identificador único do usuário                               | "1"                                       |
+| name     | String   | Nome completo do usuário                                     | "João da Costa"                           |
+| email    | String   | Endereço de e-mail do usuário                                | "joao@email.com"                          |
+| password | String   | Senha do usuário                                             | "123456"                                  |
+| type     | String   | Tipo de perfil ou categoria do usuário                       | "Explorador Aprendiz (ou Estudante)"      |
+| bio      | String   | Biografia ou descrição pessoal                               | "Amo o oceano e suas criaturas."          |
+| urls     | Array    | Lista de links relacionados ao perfil do usuário             | ["https://perfil.com", "https://x.com"]   |
+
 
 ### Evento
 
@@ -79,6 +106,21 @@ As tabelas a seguir apresentam os requisitos funcionais e não-funcionais que re
 | recordedBy        | String  | Nome do coletor/observador                                                | "João Silva"                                |
 | institutionCode   | String  | Código da instituição responsável                                         | "UESC"                                      |
 | media             | Array   | Lista de objetos com URL de mídia (imagens)                               | [{"identifier": "http://.../image.jpg"}]    |
+
+### Denúncia Ambiental
+
+| Campo     | Tipo    | Descrição                                                                 | Exemplo                                |
+|-----------|---------|---------------------------------------------------------------------------|----------------------------------------|
+| id        | String  | Identificador único da denúncia                                           | "7f98"                                 |
+| titulo    | String  | Título curto e descritivo da denúncia                                     | "Poluição em manguezal"                |
+| descricao | String  | Detalhamento da ocorrência ou problema ambiental                         | "Acúmulo de resíduos sólidos na área..." |
+| data      | String  | Data da ocorrência (formato ISO)                                          | "2025-06-20"                           |
+| hora      | String  | Hora aproximada da ocorrência                                             | "14:30"                                |
+| categoria | String  | Categoria do problema ambiental                                           | "Lixo na Praia", "Desmatamento", etc.  |
+| cidade    | String  | Cidade onde ocorreu a denúncia                                            | "Salvador"                             |
+| estado    | String  | Estado onde ocorreu a denúncia                                            | "BA"                                   |
+| imagem    | String  | Caminho ou URL da imagem associada à denúncia                             | "assets/images/complains_header.jpg"   |
+| usuario   | Integer | ID do usuário que cadastrou a denúncia                                    | 3                                      |
 
 
 ---
@@ -128,6 +170,20 @@ As tabelas a seguir apresentam os requisitos funcionais e não-funcionais que re
    - Cadastre mais de 6 eventos
    - Navegue entre as páginas usando os controles
    - Verifique a consistência dos eventos exibidos
+  
+#### Teste de Denúncias (complaints.html)
+1. **Cadastro de Denúncia**:
+      - Acesse como usuário logado
+   - Preencha título, descrição, localização
+   - Selecione categoria
+   - Verifique persistência no JSON Server
+2. **Filtragem e Ordenação**:
+   - Teste busca por termos ("plástico", "óleo")
+   - Filtre por categorias específicas
+   - Ordene por data recente
+3. **Responsividade**:
+   - Reduza a janela para mobile
+   - Verifique adaptação do grid de cards
 
 #### Página `filter.html` (Filtragem de Espécies Marinhas)
 1. **Busca por Espécie**:
