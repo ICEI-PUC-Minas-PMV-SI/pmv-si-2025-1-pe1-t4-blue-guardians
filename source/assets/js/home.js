@@ -43,14 +43,24 @@ function renderTabs() {
 
 function renderCards(cards) {
   cardsContainer.innerHTML = "";
-  cards.forEach(src => {
+  cards.forEach((src, index) => {
     const img = document.createElement('img');
     img.src = src;
     img.alt = "Card";
+
+    // Adiciona o clique para abrir a tela content_type.html com o tipo correto
+    img.addEventListener('click', () => {
+      // Pega qual aba está ativa
+      const activeTab = document.querySelector('.tab.active');
+      if (activeTab) {
+        const tabId = activeTab.dataset.id;
+        // window.location.href = `content_type.html?type=${tabId}`;
+      }
+    });
+
     cardsContainer.appendChild(img);
   });
 }
-
 function setupTabClicks() {
   tabsContainer.addEventListener('click', (e) => {
     const tab = e.target.closest('.tab');
@@ -61,7 +71,7 @@ function setupTabClicks() {
 
     const tabId = tab.dataset.id;
     const selected = tabData.find(t => t.id === tabId);
-    renderCards(selected.cards);
+    renderCards(selected.cards);  // Só muda os cards, sem redirecionar!
   });
 }
 
@@ -169,6 +179,56 @@ document.getElementById("btn-send-feedback").addEventListener("click", () => {
   });
 });
 
+// Tipos de conteudo
+document.addEventListener('DOMContentLoaded', () => {
+  const slidesContainer = document.getElementById('slides');
+  const detailContainer = document.getElementById('detail-container');
+
+  // Função para pegar o parâmetro da URL
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  const tipo = getQueryParam('type');
+
+  if (!tipo) {
+    detailContainer.innerHTML = "<p>Tipo de conteúdo não especificado.</p>";
+    return;
+  }
+
+  fetch("http://localhost:3001/tabData")
+    .then(res => res.json())
+    .then(data => {
+      const tabData = data;
+
+      const selectedTab = tabData.find(tab => tab.id === tipo);
+
+      if (!selectedTab) {
+        detailContainer.innerHTML = "<p>Conteúdo não encontrado para este tipo.</p>";
+        return;
+      }
+
+      // Título
+      detailContainer.innerHTML = `
+        <h2>${selectedTab.label}</h2>
+        <img src="${selectedTab.icon}" alt="${selectedTab.label}" style="max-width: 150px;">
+      `;
+
+      // Carrossel de imagens (os cards)
+      slidesContainer.innerHTML = "";
+      selectedTab.cards.forEach((imgSrc, index) => {
+        const div = document.createElement('div');
+        div.className = 'slide';
+        div.innerHTML = `<img src="${imgSrc}" alt="Imagem ${index + 1}">`;
+        slidesContainer.appendChild(div);
+      });
+    })
+    .catch(err => {
+      console.error("Erro ao carregar o conteúdo:", err);
+      detailContainer.innerHTML = "<p>Erro ao carregar os dados.</p>";
+    });
+});
 
 
 
